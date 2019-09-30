@@ -1,0 +1,106 @@
+/* -------------------------
+   Common LNB Font Styles
+------------------------- */
+$white: #fff;
+$black:#000;
+// $red:#ff0000;
+// $blue:#009999;
+// $green:#008000;
+// $yellow:#DEAB21;
+
+.wht {
+	color: #fff !important;
+
+	h1, h2, h3, h4, a {
+		color: #fff !important;
+	}
+
+	#sidebar .widget & h3 {
+		color: #fff !important;
+	}
+}
+// .blk {
+// 	color:#000;
+	
+// 	h1, h2, h3, h4, a {
+// 		color:#000
+// 	}
+// }
+// .red {color:#ff0000}
+// .blue {color:#009999}
+// .green {color:#008000}
+// .yellow {color:#DEAB21}
+
+// SM Colors
+$twitter: #00aced;
+$facebook: #3b5998;
+$googleplus: #dd4b39;
+$pinterest: #cb2027;
+$linkedin: #007bb6;
+$youtube: #bb0000;
+$vimeo: #1ab7ea;
+$tumblr: #32506d;
+$instagram: #bc2a8d;
+$flickr: #ff0084;
+$dribbble: #ea4c89;
+$quora: #a82400;
+$foursquare: #0072b1;
+$forrst: #5B9A68;
+$vk: #45668e;
+$wordpress: #21759b;
+$stumbleupon: #EB4823;
+$yahoo: #7B0099;
+$blogger: #fb8f3d;
+$soundcloud: #ff3a00;
+
+.lnb-two-column-responsive-list, .lnb-three-column-responsive-list, .lnb-four-column-responsive-list {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 0;
+	padding-bottom: 1.5rem;
+
+	> li {
+		flex-grow: 0;
+		flex-shrink: 0;
+		padding-right: 1.5rem;
+	}
+
+	@include mq('phone', max) {
+		flex-direction: column;
+
+		> li {
+			flex: 1;
+		}
+	}
+}
+
+.lnb-four-column-responsive-list {
+	> li {
+		flex-basis: 25%;
+
+		@include mq('tablet', max) {
+			flex-basis: 30%;
+		}
+
+		@include mq('phone-wide', max) {
+			flex-basis: 50%;
+		}
+	}
+}
+
+.lnb-three-column-responsive-list {
+
+	> li {
+		flex-basis: 32%;
+
+		@include mq('phone-wide', max) {
+			flex-basis: 50%;
+		}
+	}
+}
+
+.lnb-two-column-responsive-list {
+	> li {
+		flex-basis: 50%;
+	}
+}
