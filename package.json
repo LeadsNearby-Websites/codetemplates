@@ -4,6 +4,7 @@
   "description": "A base project setup for LNB projects",
   "main": "gulpfile.js",
   "scripts": {
+    "dev": "gulp buildWatch",
     "start": "npm install",
     "poststart": "del-cli .git package-lock.json .gitignore .gitattributes",
     "test": "echo \"Error: no test specified\" && exit 1"

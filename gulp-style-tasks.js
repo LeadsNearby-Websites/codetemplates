@@ -8,17 +8,17 @@ import autoprefixer from 'gulp-autoprefixer';
 import errorHandler from 'gulp-error-handle';
 
 const autoprefixerOptions = {
-  grid: true,
+  grid: true
 };
 
 const sassOptions = {
   errLogToConsole: true,
-  outputStyle: 'nested',
+  outputStyle: 'nested'
 };
 
 const inputdir = './src/scss/**/*.scss';
 const input = './src/scss/style.scss';
-const output = './';
+const output = './dist/css';
 
 const log = error => console.log(error.message);
 
@@ -37,7 +37,7 @@ const compileMyCss = () => {
 
 const cleanMyCss = () => {
   return gulp
-    .src('./style.css')
+    .src('./dist/css/style.css')
     .pipe(errorHandler(log))
     .pipe(autoprefixer(autoprefixerOptions))
     .pipe(
@@ -52,18 +52,18 @@ const cleanMyCss = () => {
             afterRuleBegins: true,
             afterRuleEnds: true,
             beforeBlockEnds: true,
-            betweenSelectors: true,
+            betweenSelectors: true
           },
           indentBy: 2,
           indentWith: 'space',
           spaces: {
             aroundSelectorRelation: true,
             beforeBlockBegins: true,
-            beforeValue: false,
+            beforeValue: false
           },
-          wrapAt: false,
+          wrapAt: false
         },
-        level: 2,
+        level: 2
       })
     )
     .pipe(gulp.dest('./'));
@@ -71,27 +71,24 @@ const cleanMyCss = () => {
 
 const minifyMyCss = () => {
   return gulp
-    .src('./style.css')
+    .src('./dist/css/style.css')
     .pipe(errorHandler(log))
     .pipe(
       cleancss({
         level: {
           1: {
             all: true,
-            specialComments: 0,
-          },
-        },
+            specialComments: 0
+          }
+        }
       })
     )
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest('./'));
+    .pipe(gulp.dest('./dist/css'));
 };
 
 const watchCss = () => {
-  const watcher = gulp.watch(
-    [input, inputdir],
-    gulp.series(compileMyCss, cleanMyCss, minifyMyCss)
-  );
+  const watcher = gulp.watch([input, inputdir], gulp.series(compileMyCss, cleanMyCss, minifyMyCss));
   watcher.on('change', function(file) {
     console.log('File ' + file + ' was changed, running tasks...');
   });
