@@ -3,4 +3,7 @@ require('@babel/register')({
   presets: ['@babel/preset-env'],
 });
 
-module.exports = require('./gulp-style-tasks');
+const gulp = require('gulp');
+require('./gulpfile.js');
+
+gulp.task('default')();

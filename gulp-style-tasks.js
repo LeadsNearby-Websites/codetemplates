@@ -103,11 +103,9 @@ const watchCss = () => {
 const transpileMyJs = () => {
   return gulp
     .src('src/js/*.js')
-    .pipe(
-      babel({
-        presets: ['@babel/preset-env'],
-      })
-    )
+    .pipe(sourcemaps.init())
+    .pipe(babel())
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('dist/js'));
 };
 
