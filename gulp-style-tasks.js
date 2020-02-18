@@ -7,6 +7,7 @@ import sourcemaps from 'gulp-sourcemaps';
 import bulkSass from 'gulp-sass-bulk-import';
 import autoprefixer from 'gulp-autoprefixer';
 import errorHandler from 'gulp-error-handle';
+import babel from 'gulp-babel';
 
 const autoprefixerOptions = {
   grid: true,
@@ -99,8 +100,26 @@ const watchCss = () => {
   });
 };
 
-const buildCss = gulp.series(compileMyCss, minifyMyCss);
-const buildWatch = gulp.series(watchCss);
+const transpileMyJs = () => {
+  return gulp
+    .src('src/js/*.js')
+    .pipe(
+      babel({
+        presets: ['@babel/preset-env'],
+      })
+    )
+    .pipe(gulp.dest('dist/js'));
+};
 
-export { buildCss, buildWatch };
+const watchJs = () => {
+  const watcher = gulp.watch('src/js/*.js', gulp.series(transpileMyJs));
+  watcher.on('change', function(file) {
+    console.log('File ' + file + ' was changed, running tasks...');
+  });
+};
+
+const buildCss = gulp.series(compileMyCss, minifyMyCss);
+const buildWatch = gulp.parallel(watchCss, watchJs);
+
+export { buildCss, buildWatch, transpileMyJs, watchJs };
 export default buildWatch;
