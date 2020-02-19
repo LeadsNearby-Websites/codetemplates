@@ -8,7 +8,7 @@ const conn = new Client();
 const baseSftpConfig = {
   host: 'staging.lnbsvcs.com',
   port: 22,
-  remoteRoot: 'public_html/wp-content/themes/hypercore-child-theme',
+  remoteRoot: 'public_html/wp-content/themes/hypercore-child',
 };
 
 const customSftpConfig = require('./sftp-config.json');
@@ -42,7 +42,7 @@ const uploadFile = async file => {
       await conn.sftp('mkdir', { path: remoteRoot });
     }
     const dirExists = await conn.sftp('exists', {
-      path: path.join(path.dirname(file), remoteRoot),
+      path: path.join(remoteRoot, path.dirname(file)),
     });
     if (!dirExists) {
       await conn.sftp('mkdir', {
