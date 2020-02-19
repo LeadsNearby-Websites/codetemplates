@@ -88,10 +88,10 @@ checkConnection(sftpConfig)
         await uploadFile(filePath);
       });
       watcher.on('error', error => log.error(error));
-      // bs.init({
-      //   proxy: 'https://www.leadsnearby.com',
-      //   ui: false,
-      // });
+      bs.init({
+        proxy: `http://52.73.242.68/~${sftpConfig.username}/`,
+        ui: false,
+      });
     } else {
       console.log(chalk.red('Unable to start watching files'));
       return false;
