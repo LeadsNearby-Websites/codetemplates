@@ -2,55 +2,56 @@ const chokidar = require('chokidar');
 const log = require('./logger');
 const chalk = require('chalk');
 const bs = require('browser-sync').create();
-
-const config = {
-  host: 'staging.lnbsvcs.com',
-  port: 22,
-  username: 'user',
-  password: 'password',
-};
-
 const Client = require('sftp-client-promise');
 const conn = new Client();
-let connectionStatus = 'failed';
 
-const checkConnection = async () => {
+const baseSftpConfig = {
+  host: 'staging.lnbsvcs.com',
+  port: 22,
+  remoteRoot: 'public_html/wp-content/themes/hypercore-child-theme',
+};
+
+const customSftpConfig = require('./sftp-config.json');
+const sftpConfig = { ...baseSftpConfig, ...customSftpConfig };
+
+const checkConnection = async config => {
+  if (config.user === 'root') {
+    log.error('User root');
+    return 'failed';
+  }
   console.log('Connecting...');
   return await conn
     .connect(config)
     .then(() => {
-      connectionStatus = 'success';
       console.log(chalk.green('Connected sucessfully'));
+      return 'success';
     })
     .catch(error => {
       log.cantConnect(error);
       conn.end();
+      return 'failed';
     });
 };
 
 const uploadFile = async file => {
   const path = require('path');
-  const remoteRoot = 'public_html/wp-content/themes/Avada-Child-Theme';
-
+  const { remoteRoot } = sftpConfig;
   try {
     const rootExists = await conn.sftp('exists', { path: remoteRoot });
     if (!rootExists) {
       await conn.sftp('mkdir', { path: remoteRoot });
     }
     const dirExists = await conn.sftp('exists', {
-      path: path.dirname(file).replace('public/theme', remoteRoot),
+      path: path.join(path.dirname(file), remoteRoot),
     });
     if (!dirExists) {
       await conn.sftp('mkdir', {
-        path: path.dirname(file).replace('public/theme', remoteRoot),
+        path: path.join(path.dirname(file), remoteRoot),
       });
     }
     await conn.sftp('fastPut', {
       localPath: file,
-      remotePath: path.join(
-        path.dirname(file).replace('public/theme', remoteRoot),
-        path.basename(file)
-      ),
+      remotePath: path.join(remoteRoot, file),
     });
     const d = new Date();
     console.log(
@@ -59,7 +60,7 @@ const uploadFile = async file => {
           `${d.getHours()}:${d.getMinutes()}:${d.getMilliseconds()} ${d.getMonth()}/${d.getDay()}/${d.getYear()}`
         ) +
         '] ' +
-        chalk.green(`${path.basename(file)} was uploaded successfully`)
+        chalk.green(`${file} was uploaded successfully`)
     );
     // await conn.end();
     bs.reload();
@@ -70,7 +71,7 @@ const uploadFile = async file => {
 };
 
 const watcherOptions = {
-  //   ignored: '**/**/style.css',
+  ignored: ['*.js', 'src'],
   persistent: true,
   awaitWriteFinish: {
     stabilityThreshold: 500,
@@ -78,19 +79,19 @@ const watcherOptions = {
   },
 };
 
-checkConnection()
-  .then(async () => {
+checkConnection(sftpConfig)
+  .then(async connectionStatus => {
     if (connectionStatus !== 'failed') {
       console.log('Watching files for changes\n');
-      const watcher = chokidar.watch('public/theme/', watcherOptions);
+      const watcher = chokidar.watch('./', watcherOptions);
       await watcher.on('change', async filePath => {
         await uploadFile(filePath);
       });
       watcher.on('error', error => log.error(error));
-      bs.init({
-        proxy: 'https://www.leadsnearby.com',
-        ui: false,
-      });
+      // bs.init({
+      //   proxy: 'https://www.leadsnearby.com',
+      //   ui: false,
+      // });
     } else {
       console.log(chalk.red('Unable to start watching files'));
       return false;
