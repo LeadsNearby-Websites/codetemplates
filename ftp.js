@@ -46,7 +46,7 @@ const uploadFile = async file => {
     });
     if (!dirExists) {
       await conn.sftp('mkdir', {
-        path: path.join(path.dirname(file), remoteRoot),
+        path: path.join(remoteRoot, path.dirname(file)),
       });
     }
     await conn.sftp('fastPut', {
