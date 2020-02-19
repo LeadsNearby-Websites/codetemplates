@@ -7,7 +7,7 @@
     "build:assets": "gulp buildWatch",
     "build:ftp": "node ftp.js",
     "dev": "npm-run-all --parallel build:*",
-    "start": "npm install",
+    "start": "npm install && npm run dev",
     "poststart": "del-cli .git package-lock.json .gitignore .gitattributes",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
