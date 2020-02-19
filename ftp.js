@@ -71,7 +71,7 @@ const uploadFile = async file => {
 };
 
 const watcherOptions = {
-  ignored: ['*.js', 'src'],
+  ignored: ['*.js', 'src', 'node_modules'],
   persistent: true,
   awaitWriteFinish: {
     stabilityThreshold: 500,
