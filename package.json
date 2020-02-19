@@ -4,8 +4,10 @@
   "description": "A base project setup for LNB projects",
   "main": "gulpfile.js",
   "scripts": {
-    "dev": "gulp buildWatch",
-    "start": "npm install",
+    "build:assets": "gulp buildWatch",
+    "build:ftp": "node ftp.js",
+    "dev": "npm-run-all --parallel build:*",
+    "start": "npm install && npm run dev",
     "poststart": "del-cli .git package-lock.json .gitignore .gitattributes",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,8 +16,7 @@
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
-    "babel-preset-env": "^1.7.0",
-    "babel-register": "^6.26.0",
+    "@babel/register": "^7.8.3",
     "browser-sync": "^2.26.7",
     "chalk": "^3.0.0",
     "chokidar": "^3.3.1",
@@ -35,11 +36,26 @@
     "gulp-sass-bulk-import": "^1.0.1",
     "gulp-sourcemaps": "^2.6.5",
     "node-sass": "^4.13.1",
+    "npm-run-all": "^4.1.5",
     "path": "^0.12.7",
     "sftp-client-promise": "^1.0.4"
   },
   "dependencies": {
     "normalize-scss": "^7.0.1"
   },
-  "browserslist": "> 2%"
+  "browserslist": "> 2%",
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "browsers": [
+              "> 2%"
+            ]
+          }
+        }
+      ]
+    ]
+  }
 }
