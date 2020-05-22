@@ -4,7 +4,13 @@ You will be provided with a wp-content folder and sql file which will have all r
 
 ## Hypercore Theme Options
 
-All theme options live in the WordPress Customizer under the tab **Theme Options**. Options of note which you may need are below.
+All hypercore theme options live in the WordPress Customizer under the tab **Theme Options**. Options of note which you may need are below.
+
+### Logo/Favicon
+
+The logo and favicon should be set in the main site identity options found in **Customizer->Site Identity**.
+
+Site title and tagline can also be changed there.
 
 ### Color Palette
 
@@ -31,6 +37,19 @@ Those CSS properties should be used as much as possible when styling the site.
   background-color: var(--theme-primary);
 }
 ```
+
+### Social Links
+
+Fill these out as applicable. They are used to power social links in the footer and page builder element.
+
+### Header
+
+hypercore comes with two basic header options:
+
+* two rows, first row logo on left, freeform content on right, second row main nav
+* one row, logo on left, main nav on right
+
+If these options are not enough, please use [filters/actions](#hypercore-hooks) to change/extend the theme.
 
 ## Hypercore Hooks
 
