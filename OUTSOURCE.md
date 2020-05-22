@@ -4,11 +4,13 @@ You will be provided with a wp-content folder and sql file which will have all r
 
 ## General Instructions - PLEASE READ
 
+1. **Plugins**: Any plugins you need will come installed (and activated as necessary) in the package you are given.
 1. **hypercore**
     1. Fill out [Theme Options](#hypercore-theme-options)
     1. Use the Page Builder (and [hypercore pb elements](##hypercore-siteorigin-widgets-page-builder-elements)) as much as possible
     1. When modifying the child theme, use [hooks](#hypercore-hooks) rather than copying and modifying the parent theme template files, especially layout files like sidebar, header, footer. hypercore is very much in active develpment and copying/modifying parent theme files can cause problems with future updates.
     1. Use [shortcodes](#hypercore-shortcodes), [custom html elements](#hypercore-custom-html-elements), and [lazyloading](#hypercore-lazyloading) built into the theme.
+    1. For Font Awesome icons, use the [```<fa-icon></fa-icon>```](#fa-icon) element
 1. **Forms**: All forms should be built using Gravity Forms - it will come installed/activated in the package you are given.
 1. **Content**
     1. Content elements that are supposed to be the same for all pages should be created as mirror widgets or by using hooks.
@@ -132,6 +134,17 @@ As much as possible, the hypercore SO widgets should be **preferred**.
 
 # Hypercore Custom HTML Elements
 
+## fa-icon
+
+```<fa-icon></fa-icon>```
+
+This is the way Font Awesome icons should be used in hypercore sites.
+
+**Attributes**
+
+* **family**: default is regular, values can be *light*, *regular*, *solid*, and *brands*
+* **icon**: the name of the icon sans, "fa", eg. *fa-mobile* would be *mobile*
+
 ## hypercore-button
 
 For buttons, we custom elements to extend the builtin a element. At the moment this just adds basic styling. **However, it is important to use this for buttons rather than creating your own button class**. If you need to modify the default button styles, modify .hypercore-button class.
@@ -140,7 +153,9 @@ For buttons, we custom elements to extend the builtin a element. At the moment t
 <a is="hypercore-button" href="#">A Button</a>
 ```
 
-## ```<hypercore-nearby-now-reviews></hypercore-nearby-now-reviews>```
+## hypercore-nearby-now-reviews
+
+```<hypercore-nearby-now-reviews></hypercore-nearby-now-reviews>```
 
 This element renders a variable number of the  most recent 4+ star Nearby Now reviews in the form of cards.
 
