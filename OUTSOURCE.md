@@ -4,7 +4,9 @@ You will be provided with a wp-content folder and sql file which will have all r
 
 ## General Instructions - PLEASE READ
 
-1. **Plugins**: Any plugins you need will come installed (and activated as necessary) in the package you are given.
+1. **Plugins**: Any plugins you need will come installed (and activated as necessary) in the package you are given. This includes but may not be limited to: Akismet, Better Search and Replace, ManageWP Worker, Post SMTP, Wordfence, Yoast, Gravity Forms, WP Rocket, and a set of LeadsNearby plugins including core, fa 5, stynamic integration, bulk service area generator.
+
+    If they are not already installed, any additional plugins that are required should be listed under **LeadsNearby > Plugin Manager**
 1. **hypercore**
     1. Fill out [Theme Options](#hypercore-theme-options)
     1. Use the Page Builder (and [hypercore pb elements](##hypercore-siteorigin-widgets-page-builder-elements)) as much as possible
