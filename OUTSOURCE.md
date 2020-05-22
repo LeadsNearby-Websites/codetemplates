@@ -7,6 +7,7 @@ You will be provided with a wp-content folder and sql file which will have all r
 # Table of Contents
 
 * [Theme Options](#hypercore-theme-options)
+* [Shortcodes](#hypercore-shortcodes)
 * [Hooks (Actions/Filters)](#hypercore-hooks)
 * [SiteOrigin Widgets (Page Builder Elements)](#hypercore-siteorigin-widgets-page-builder-elements)
 
@@ -59,6 +60,44 @@ hypercore comes with two basic header options:
 
 If these options are not enough, please use [filters/actions](#hypercore-hooks) to change/extend the theme.
 
+## Business Info
+
+Please fill this out as completely as you can.
+
+# Hypercore Shortcodes
+
+* **[hyper-toggle]**: Adds a hamburger toggle which displays the nav attached to the 'Mobile Menu' location
+* **[site_url]**: Return site_url()
+* **[site_name]**: Returns WP site title
+* **[site_copyright]**: Returns "©currentyear WP site title"
+* **[phone_number]**: Returns phone number set in theme options
+
 # Hypercore Hooks
+
+## Actions
+
+* **hypercore_custom_header**: if used, will override everything between <header></header> tags
+* **hypercore_custom_header_content**: if used, will override header content (logo and content next it)
+* **hypercore_before_header**: called right before output of header tag
+* **hypercore_before_header_inner**: called right after output of header tag
+* **hypercore_after_header_inner**: called right before close of header tag
+* **hypercore_after_header**: called right after close of header tag
+* **hypercore_after_titlebar**: called right after title bar is output
+* **hypercore_before_the_content**: called just inside main tag
+* **hypercore_before_footer**: called right before output of footer tag
+* **hypercore_after_footer_start**: called right inside the footer tag
+* **hypercore_footer**: allows you to override default footer with your own custom html
+* **hypercore_before_footer_end**: called right before close of footer tag
+* **hypercore_filter_the_title**: allows you to filter the title returned by hypercore_get_the_title()
+
+## Filters
+
+* **override_hypercore_title_bar**: return false to disable default title bar
+* **hypercore_sidebar_html**: allows filtering of sidebar HTML
+* **hypercore_terms_privacy_sitemap_links**: allows filtering terms/privacy/sitemap links in footer.
+* **hypercore_footer_after_logo**: allows filtering of text/html after footer logo. Default output is copyright text.
+* **hypercore_noonereadsthis_html**: allows filtering of terms/privacy/sitemap bar HTML
+* Page Builder Elements
+    * **hypercore_phone_cta_icon**: allows filtering icon added to phone cta page builder element. Filtered value is an array of icon and family
 
 # Hypercore SiteOrigin Widgets (Page Builder Elements)
