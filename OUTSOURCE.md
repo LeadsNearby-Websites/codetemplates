@@ -138,7 +138,9 @@ As much as possible, the hypercore SO widgets should be **preferred**.
 
 ## fa-icon
 
-```<fa-icon></fa-icon>```
+```html
+<fa-icon></fa-icon>
+```
 
 This is the way Font Awesome icons should be used in hypercore sites.
 
@@ -157,7 +159,9 @@ For buttons, we custom elements to extend the builtin a element. At the moment t
 
 ## hypercore-nearby-now-reviews
 
-```<hypercore-nearby-now-reviews></hypercore-nearby-now-reviews>```
+```html
+<hypercore-nearby-now-reviews></hypercore-nearby-now-reviews>
+```
 
 This element renders a variable number of the  most recent 4+ star Nearby Now reviews in the form of cards.
 
