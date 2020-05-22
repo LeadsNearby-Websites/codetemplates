@@ -10,6 +10,7 @@ You will be provided with a wp-content folder and sql file which will have all r
 * [Shortcodes](#hypercore-shortcodes)
 * [Hooks (Actions/Filters)](#hypercore-hooks)
 * [SiteOrigin Widgets (Page Builder Elements)](#hypercore-siteorigin-widgets-page-builder-elements)
+* [Custom HTML Elements](#hypercore-custom-html-elements)
 
 # Hypercore Theme Options
 
@@ -112,3 +113,26 @@ As much as possible, the hypercore SO widgets should be **preferred**.
 * **Hypercore Phone CTA**: This renders a basic block with a phone number and optional sub-title.
 * **Hypercore Social Links**: This renders links/icons for social links set in theme options.
 * **Hypercore Tabs**: Basic tabs element, loads no jQuery and has very basic styling for performance reasons. The styling can be easily enhanced.
+
+# Additional Page Builder Notes
+
+* **Images**: the SiteOrigin image frame should always be used for images (rather than the WP image widget)
+* **Buttons**: as much as possible within the page builder, use the SiteOrigin button widget
+
+# Hypercore Custom HTML Elements
+
+## hypercore-button
+
+For buttons, we custom elements to extend the builtin a element. At the moment this just adds basic styling. **However, it is important to use this for buttons rather than creating your own button class**. If you need to modify the default button styles, modify .hypercore-button class.
+
+```html
+<a is="hypercore-button" href="#">A Button</a>
+```
+
+## <hypercore-nearby-now-reviews></hypercore-nearby-now-reviews>
+
+This element renders a variable number of the  most recent 4+ star Nearby Now reviews in the form of cards.
+
+**Attributes**
+
+* **review-count**: default is 3
