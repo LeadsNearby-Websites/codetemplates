@@ -79,7 +79,7 @@ Use the following shortcodes as much as possible, they're designed to make it ea
 
 ## Actions
 
-* **hypercore_custom_header**: if used, will override everything between <header></header> tags
+* **hypercore_custom_header**: if used, will override everything between ```<header></header>``` tags
 * **hypercore_custom_header_content**: if used, will override header content (logo and content next it)
 * **hypercore_before_header**: called right before output of header tag
 * **hypercore_before_header_inner**: called right after output of header tag
@@ -129,7 +129,7 @@ For buttons, we custom elements to extend the builtin a element. At the moment t
 <a is="hypercore-button" href="#">A Button</a>
 ```
 
-## <hypercore-nearby-now-reviews></hypercore-nearby-now-reviews>
+## ```<hypercore-nearby-now-reviews></hypercore-nearby-now-reviews>```
 
 This element renders a variable number of the  most recent 4+ star Nearby Now reviews in the form of cards.
 
