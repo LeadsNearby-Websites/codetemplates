@@ -2,12 +2,18 @@
 
 You will be provided with a wp-content folder and sql file which will have all required plugins installed, as well as the **hypercore** parent theme and **hypercore-child** theme.
 
-## General Instructions
+## General Instructions - PLEASE READ
 
-1. Fill out [Theme Options](#hypercore-theme-options)
-1. Use the Page Builder (and [hypercore pb elements](##hypercore-siteorigin-widgets-page-builder-elements)) as much as possible
-1. When modifying the child theme, use [hooks](#hypercore-hooks) rather than copying and modifying the parent theme template files, especially layout files like sidebar, header, footer. hypercore is very much in active develpment and copying/modifying parent theme files can cause problems with future updates.
-1. Use [shortcodes](#hypercore-shortcodes), [custom html elements](#hypercore-custom-html-elements), and [lazyloading](#hypercore-lazyloading) built into the theme.
+1. **hypercore**
+    1. Fill out [Theme Options](#hypercore-theme-options)
+    1. Use the Page Builder (and [hypercore pb elements](##hypercore-siteorigin-widgets-page-builder-elements)) as much as possible
+    1. When modifying the child theme, use [hooks](#hypercore-hooks) rather than copying and modifying the parent theme template files, especially layout files like sidebar, header, footer. hypercore is very much in active develpment and copying/modifying parent theme files can cause problems with future updates.
+    1. Use [shortcodes](#hypercore-shortcodes), [custom html elements](#hypercore-custom-html-elements), and [lazyloading](#hypercore-lazyloading) built into the theme.
+1. **Forms**: All forms should be built using Gravity Forms - it will come installed/activated in the package you are given.
+1. **Content**
+    1. Content elements that are supposed to be the same for all pages should be created as mirror widgets or by using hooks.
+    1. Don’t forget to go into the City Pages folder (located in the To Publish Folder) and create those pages as well.
+
 
 # Table of Contents
 
