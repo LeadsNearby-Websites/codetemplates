@@ -8,10 +8,28 @@ All theme options live in the WordPress Customizer under the tab **Theme Options
 
 ### Color Palette
 
-**Please set these as best you can** - they will help you style the site in a way that is easy to change in the future. These options add CSS custom properties to the main body tag and those CSS properties should be used as much as possible when styling the site.
+**Please set these as best you can** - they will help you style the site in a way that is easy to change in the future. These options add CSS custom properties to the main body tag.
 
 ```html
 <body style="--theme-primary: ''; --theme-secondary: ''; --theme-accent: ''; --theme-accent-action: '';"></body>
+```
+
+Those CSS properties should be used as much as possible when styling the site.
+
+#### Don't Do
+
+```css
+.a-button {
+  background-color: '#maincolorhexcode'
+}
+```
+
+#### Instead Do
+
+```css
+.a-button {
+  background-color: var(--theme-primary);
+}
 ```
 
 ## Hypercore Hooks
