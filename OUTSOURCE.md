@@ -9,7 +9,7 @@ You will be provided with a wp-content folder and sql file which will have all r
     If they are not already installed, any additional plugins that are required should be listed under **LeadsNearby > Plugin Manager**
 1. **hypercore**
     1. Fill out [Theme Options](#hypercore-theme-options)
-    1. Use the Page Builder (and [hypercore pb elements](##hypercore-siteorigin-widgets-page-builder-elements)) as much as possible
+    1. Use the Page Builder (and [hypercore pb elements](#hypercore-siteorigin-widgets-page-builder-elements)) as much as possible
     1. When modifying the child theme, use [hooks](#hypercore-hooks) rather than copying and modifying the parent theme template files, especially layout files like sidebar, header, footer. hypercore is very much in active develpment and copying/modifying parent theme files can cause problems with future updates.
     1. Use [shortcodes](#hypercore-shortcodes), [custom html elements](#hypercore-custom-html-elements), and [lazyloading](#hypercore-lazyloading) built into the theme.
     1. For Font Awesome icons, use the [```<fa-icon></fa-icon>```](#fa-icon) element
