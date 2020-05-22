@@ -106,26 +106,26 @@ Use the following shortcodes as much as possible, they're designed to make it ea
 
 As much as possible, the hypercore SO widgets should be preferred.
 
-## Accordion
+## Hypercore Accordion
 
 Basic accordion element - doesn't load jQuery so is more ideal for page speed.
 
-## Checklist
+## Hypercore Checklist
 
 Use this element when you need to add a Font Awesome icon to a checklist, or you need a multi-column checklist.
 
-## Image CTA
+## Hypercore Image CTA
 
 This renders and image with title/text/button over an image.
 
-## Phone CTA
+## Hypercore Phone CTA
 
 This renders a basic block with a phone number and optional sub-title.
 
-## Social Links
+## Hypercore Social Lins
 
 This renders links/icons for social links set in theme options.
 
-## Tabs
+## Hypercore Tabs
 
 Basic tabs element, loads no jQuery and has very basic styling for performance reasons. The styling can be easily enhanced.
