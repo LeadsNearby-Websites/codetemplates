@@ -168,3 +168,25 @@ This element renders a variable number of the  most recent 4+ star Nearby Now re
 **Attributes**
 
 * **review-count**: default is 3
+
+# Hypercore lazyloading
+
+hypercore comes with an image lazyloader built in. This should be used as much as possible. If SiteOrigin image frames are used, lazyloading will be added to them by default.
+
+## How to Use
+
+### ```<img />``` Elements
+
+```html
+<img class="hyper-lazyload" data-lazy-src="an-image-src.jpg">
+```
+
+The image will be lazyloaded and if webp capability is enabled in theme options (will be enabled by default in package), a webp will be loaded if the browser supports it. 
+
+### Background Images
+
+```html
+<div class="hyper-lazyload-bg" data-bg-image="a-bg-image.jpg">
+```
+
+The background image will be lazyloaded and as with an img elment, a webp will be loaded if possible.
