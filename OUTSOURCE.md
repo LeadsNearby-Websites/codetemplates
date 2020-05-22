@@ -2,7 +2,11 @@
 
 You will be provided with a wp-content folder and sql file which will have all required plugins installed, as well as the **hypercore** parent theme and **hypercore-child** theme.
 
-**Note: When modifying the child theme, use [hooks](#hypercore-hooks) rather than copying and modifying the parent theme template files, especially layout files like sidebar, header, footer. hypercore is very much in active develpment and copying/modifying parent theme files can cause problems with future updates.**
+## General Instructions
+
+1. Fill out [Theme Options](#hypercore-theme-options)
+1. Use the Page Builder (and [hypercore pb elements](##hypercore-siteorigin-widgets-page-builder-elements)) as much as possible
+1. When modifying the child theme, use [hooks](#hypercore-hooks) rather than copying and modifying the parent theme template files, especially layout files like sidebar, header, footer. hypercore is very much in active develpment and copying/modifying parent theme files can cause problems with future updates.
 
 # Table of Contents
 
