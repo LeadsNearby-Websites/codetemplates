@@ -14,7 +14,7 @@ const baseSftpConfig = {
 const customSftpConfig = require('./sftp-config.json');
 const sftpConfig = { ...baseSftpConfig, ...customSftpConfig };
 
-const checkConnection = async config => {
+const checkConnection = async (config) => {
   if (config.user === 'root') {
     log.error('User root');
     return 'failed';
@@ -26,14 +26,14 @@ const checkConnection = async config => {
       console.log(chalk.green('Connected sucessfully'));
       return 'success';
     })
-    .catch(error => {
+    .catch((error) => {
       log.cantConnect(error);
       conn.end();
       return 'failed';
     });
 };
 
-const uploadFile = async file => {
+const uploadFile = async (file) => {
   const path = require('path');
   const { remoteRoot } = sftpConfig;
   try {
@@ -71,7 +71,7 @@ const uploadFile = async file => {
 };
 
 const watcherOptions = {
-  ignored: ['*.js', 'src', 'node_modules'],
+  ignored: ['*.js', 'src', 'node_modules', '*.json', '.vscode'],
   persistent: true,
   awaitWriteFinish: {
     stabilityThreshold: 500,
@@ -80,14 +80,14 @@ const watcherOptions = {
 };
 
 checkConnection(sftpConfig)
-  .then(async connectionStatus => {
+  .then(async (connectionStatus) => {
     if (connectionStatus !== 'failed') {
       console.log('Watching files for changes\n');
       const watcher = chokidar.watch('./', watcherOptions);
-      await watcher.on('change', async filePath => {
+      await watcher.on('change', async (filePath) => {
         await uploadFile(filePath);
       });
-      watcher.on('error', error => log.error(error));
+      watcher.on('error', (error) => log.error(error));
       bs.init({
         proxy: `http://52.73.242.68/~${sftpConfig.username}/`,
         ui: false,
@@ -97,7 +97,7 @@ checkConnection(sftpConfig)
       return false;
     }
   })
-  .catch(error => {
+  .catch((error) => {
     log.error(error);
   });
 
@@ -107,12 +107,12 @@ if (process.platform === 'win32') {
     output: process.stdout,
   });
 
-  rl.on('SIGINT', function() {
+  rl.on('SIGINT', function () {
     process.emit('SIGINT');
   });
 }
 
-process.on('SIGINT', async function() {
+process.on('SIGINT', async function () {
   // end connection
   console.log(chalk.yellow('\nClosing connection...'));
   await conn.end();
