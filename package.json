@@ -14,6 +14,7 @@
   "author": "Andrew Gillingham",
   "license": "ISC",
   "devDependencies": {
+    "@LeadsNearby/hypercore-dev-tools": "^1.0.0-beta.0",
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "@babel/register": "^7.9.0",
