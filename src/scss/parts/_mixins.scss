@@ -1,61 +1,63 @@
 @mixin push--auto {
-  margin: {
-    left: auto;
-    right: auto;
-  }
+    margin: {
+        left: auto;
+        right: auto;
+    }
 }
 
-@mixin pseudo($display: block, $pos: absolute, $content: '') {
-  content: $content;
-  display: $display;
-  position: $pos;
+@mixin pseudo($display: block, $pos: absolute, $content: "") {
+    content: $content;
+    display: $display;
+    position: $pos;
 }
 
 @mixin pos($pos, $t, $r, $b, $l, $z: false) {
-  @if $pos {
-    position: $pos;
-  }
-  @if $t {
-    top: $t;
-  }
-  @if $r {
-    right: $r;
-  }
-  @if $b {
-    bottom: $b;
-  }
-  @if $l {
-    left: $l;
-  }
-  @if $z {
-    z-index: $z;
-  }
+    @if $pos {
+        position: $pos;
+    }
+    @if $t {
+        top: $t;
+    }
+    @if $r {
+        right: $r;
+    }
+    @if $b {
+        bottom: $b;
+    }
+    @if $l {
+        left: $l;
+    }
+    @if $z {
+        z-index: $z;
+    }
 }
 
 $breakpoints: (
-  'phone': 640px,
-  'phone-wide': 800px,
-  'phone-wider': 940px,
-  'tablet': 1024px
+    "phone": 640px,
+    "phone-wide": 800px,
+    "phone-wider": 940px,
+    "tablet": 1024px,
+    "tablet-wide": 1194px,
+    "tablet-wider": 1366px,
 );
 @mixin mq($width, $type: min) {
-  @if map_has_key($breakpoints, $width) {
-    $width: map_get($breakpoints, $width);
-    // @if $type == max {
-    //   $width: $width + 1px;
-    // }
-    @media only screen and (#{$type}-width: $width) {
-      @content;
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        // @if $type == max {
+        //   $width: $width + 1px;
+        // }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    } @else {
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
     }
-  } @else {
-    @media only screen and (#{$type}-width: $width) {
-      @content;
-    }
-  }
 }
 
 @mixin ie {
-  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    @content;
-  }
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        @content;
+    }
 }
