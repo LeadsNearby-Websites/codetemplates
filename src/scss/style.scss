@@ -4,11 +4,11 @@ Template: hypercore
 Developer:
 */
 
-$url: "https://hypercore.local";
-$themeDir: "#{$url}/wp-content/themes/hypercore-child";
-$contentDir: "#{$url}/wp-content/uploads";
+$url: 'https://hypercore.local';
+$themeDir: '#{$url}/wp-content/themes/hypercore-child';
+$contentDir: '#{$url}/wp-content/uploads';
 
-@import "parts/_mixins";
+@import 'parts/_mixins';
 
 /*! -------------------------
    DO NOT TOUCH THIS CODE
