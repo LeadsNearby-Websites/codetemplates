@@ -4,10 +4,10 @@ function child_theme_enqueue_styles() {
 }
 add_action('wp_enqueue_scripts', 'child_theme_enqueue_styles');
 
+/* Enqueue Critical Stylesheet above all others */
 function enqueue_critical_styles() {
   wp_enqueue_style('hypercore-critical-styles', get_stylesheet_directory_uri() . '/dist/css/critical.css', '', null);
 }
-
 add_action('wp_enqueue_scripts', 'enqueue_critical_styles', 1);
 
 /* Include Custom Site Component Files */
