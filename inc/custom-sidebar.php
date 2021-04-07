@@ -1,3 +1,3 @@
 <?php
 
-/* Sidebar Code */
+/* Sidebar code with comments */
