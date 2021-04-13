@@ -10,11 +10,15 @@ function enqueue_critical_styles() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_critical_styles', 1);
 
+/* Enqueue your custom JS files in the callback below.  See: https: //developer.wordpress.org/reference/functions/wp_enqueue_script/ */
+function enqueue_custom_js() {
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_js', 2);
+
 /* Include Custom Site Component Files */
 if (file_exists(get_stylesheet_directory() . '/inc/custom-header.php')) {include_once get_stylesheet_directory() . '/inc/custom-header.php';}
 if (file_exists(get_stylesheet_directory() . '/inc/custom-sidebar.php')) {include_once get_stylesheet_directory() . '/inc/custom-sidebar.php';}
 if (file_exists(get_stylesheet_directory() . '/inc/custom-footer.php')) {include_once get_stylesheet_directory() . '/inc/custom-footer.php';}
 if (file_exists(get_stylesheet_directory() . '/inc/shortcodes.php')) {include_once get_stylesheet_directory() . '/inc/shortcodes.php';}
-if (file_exists(get_stylesheet_directory() . '/dist/js/custom.js')) {include_once get_stylesheet_directory() . '/dist/js/custom.js';}
 
 /* All other misc code that does not fall into one of the included files can be added below */
