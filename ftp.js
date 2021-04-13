@@ -8,7 +8,7 @@ const conn = new Client();
 const baseSftpConfig = {
   host: 'staging.lnbsvcs.com',
   port: 22,
-  remoteRoot: 'public_html/wp-content/themes/hypercore-child',
+  remoteRoot: 'public_html/wp-content/themes/hypercore-theme-child',
 };
 
 const customSftpConfig = require('./sftp-config.json');
