@@ -4,40 +4,363 @@ Template: hypercore
 Developer:
 */
 
-$url: 'https://hypercore.local';
-$themeDir: '#{$url}/wp-content/themes/hypercore-child';
-$contentDir: '#{$url}/wp-content/uploads';
-
-@import 'parts/_mixins';
-
 /*! -------------------------
    DO NOT TOUCH THIS CODE
    If you need to add custom styles, use the Custom CSS field in the theme options
    Changes to this particular file should be made in the style.scss sheet by a developer
 ------------------------- */
 
-/*! -------------------------
-   Variables
-------------------------- */
-:root {
+@import "parts/_mixins";
+
+// Arrow Hover Effect
+.lnbArrowHover {
+    &__arrow {
+        margin-left: 0.25em;
+    }
+
+    &:hover,
+    &:focus {
+        .lnbArrowHover__arrow {
+            animation-name: hvr-wobble-horizontal;
+            animation-duration: 1s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+    }
+}
+@keyframes hvr-wobble-horizontal {
+    16.65% {
+        -webkit-transform: translateX(4px);
+        transform: translateX(4px);
+    }
+    33.3% {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+    49.95% {
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+    66.6% {
+        -webkit-transform: translateX(-1px);
+        transform: translateX(-1px);
+    }
+    83.25% {
+        -webkit-transform: translateX(1px);
+        transform: translateX(1px);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
 }
 
-/*! -------------------------
-   Main Stylez
-------------------------- */
+// Form Box
+.lnbFormBox {
+    &_wrapper {
+        background: #efefef;
+        border: 1px solid #ccc;
+        padding: 2em 1em 3em 2em;
+        max-width: 1100px !important;
+        margin: 3em auto 2em !important;
+        display: block;
+        box-shadow: 0 3px 6px #00000029;
 
-/*! -------------------------
-   Header Stylez
-------------------------- */
+        // Progress Bar Styles
+        .gf_progressbar_percentage {
+            background: black !important;
 
-/*! -------------------------
-   Title Bar Stylez
-------------------------- */
+            span {
+                color: #fff;
+            }
+        }
 
-/*! -------------------------
-   Sidebar Stylez
-------------------------- */
+        .lnbFormBox__heading,
+        .gsection_title,
+        .gform_title {
+            font-size: clamp(1.8em, 7.33vw, 2.5em) !important;
+            font-weight: 600 !important;
+            display: block;
+            width: 100%;
+            text-align: center;
+            color: var(--theme-accent);
+            margin-bottom: 0.75em !important;
+        }
 
-/*! -------------------------
-   Footer Stylez
-------------------------- */
+        @media screen and (max-width: 640px) {
+            padding: 2em 1em 3em;
+        }
+    }
+
+    // File upload styles
+    .ginput_container_fileupload {
+        input {
+            border: none !important;
+        }
+    }
+
+    .gfield_radio {
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+            margin-right: 1em !important;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .gsection,
+    .gform_page_footer {
+        border: none !important;
+    }
+}
+
+// Slide Up Cards
+.lnbSlideUp {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    place-content: center;
+    column-gap: 1em;
+    padding: 3em 2em 0;
+    row-gap: 2em;
+
+    &__card {
+        min-width: 20em;
+        min-height: 30em;
+        display: block;
+        position: relative;
+
+        &-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            min-height: 10em;
+            width: 100%;
+            color: #fff;
+            background: transparentize($color: #000, $amount: 0.35);
+            padding: 0 2em;
+            transition: 0.5s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &:hover {
+            .lnbSlideUp__card-overlay {
+                min-height: 100%;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+// Bubble / Radiate Effects
+@mixin radiateHover($radiateColor: #5d5d5d) {
+    box-shadow: 0 0 0 0.3em transparentize($color: $radiateColor, $amount: 0.8) !important;
+    transition: 0.2s;
+}
+
+@mixin radiateAnimate($radiateColor: #5d5d5d, $radiateColorName: "default") {
+    animation: radiate-#{$radiateColorName} 3s infinite;
+
+    @keyframes radiate-#{$radiateColorName} {
+        0% {
+            box-shadow: 0 0 0 0
+                transparentize($color: $radiateColor, $amount: 0.3);
+        }
+
+        65% {
+            box-shadow: 0 0 0 0.45em
+                transparentize($color: $radiateColor, $amount: 1);
+        }
+
+        100% {
+            box-shadow: 0 0 0 0
+                transparentize($color: $radiateColor, $amount: 1);
+        }
+    }
+}
+
+.lnbRadiate {
+    @include radiateAnimate;
+    transition: 0.2s;
+    margin: 1em;
+    display: inline-block;
+
+    &:hover {
+        @include radiateHover;
+    }
+
+    &--white {
+        @extend .lnbRadiate;
+        @include radiateAnimate(#fff, "white");
+
+        &:hover {
+            @include radiateHover(#fff);
+        }
+    }
+}
+
+// About Icons
+.lnbAboutIcons {
+    text-align: center;
+    padding: 6em 1em 4em;
+    position: relative;
+
+    &__tagline {
+        display: block;
+        position: relative;
+        margin: 0 auto 1.25em;
+        z-index: 1;
+    }
+
+    &__grid {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 3em;
+        position: relative;
+        z-index: 3;
+        padding-bottom: 2em;
+
+        @include mq("phone-wider", max) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__item {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 0.75em;
+        text-align: left;
+
+        &-heading {
+            font-size: 1.15em;
+            margin-bottom: 0.3em;
+            transition: 0.2s;
+            display: block;
+            font-weight: 600;
+        }
+
+        fa-icon {
+            width: 1.75em;
+            height: 1.75em;
+            border-radius: 100%;
+            display: flex;
+            align-items: flex-start;
+            font-size: 2.5em;
+            justify-content: center;
+            transition: 0.2s;
+            display: flex;
+            align-items: center !important;
+            padding-top: 0;
+            position: relative;
+            top: -0.2em;
+        }
+
+        div {
+            padding-top: 0.7em;
+            font-size: 1.1em;
+        }
+    }
+
+    @include mq("phone-wider", max) {
+        padding: 2em 1em;
+    }
+
+    &--sidebar {
+        box-shadow: 0 0 3px #0000001f;
+        display: flex;
+        flex-direction: column;
+        padding-top: 3em;
+
+        .lnbAboutIcons {
+            &__tagline {
+                max-width: 400px;
+                width: 100%;
+            }
+
+            &__grid {
+                grid-template-columns: 1fr;
+                grid-gap: 1em;
+                max-width: 400px;
+            }
+
+            &__item {
+                padding: 0 1em;
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+// Badge Rotator
+.lnbBadgeRotator {
+    padding: 0.75em 2em;
+    background: #ededed;
+
+    &__grid {
+        display: grid;
+        padding: 2rem 0;
+        grid-gap: 1rem;
+    }
+
+    &__content {
+        position: relative;
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1em;
+        box-shadow: 0 3px 6px #00000029;
+        background: #fff;
+    }
+
+    &__carousel {
+        box-shadow: 3px 3px 6px #00000029;
+        background: #fff;
+
+        .glide {
+            &__slides {
+                align-items: center;
+                padding: 1.6rem 0;
+            }
+
+            &__slide {
+                display: flex;
+                justify-content: center;
+                width: auto !important;
+                padding: 0 1.5em;
+            }
+        }
+    }
+
+    @include mq("phone-wide") {
+        &__grid {
+            grid-template-columns: auto 1fr;
+            grid-gap: 0;
+            padding: 2rem 0;
+        }
+
+        &__carousel {
+            margin: 1.5em 0;
+            position: relative;
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -1px;
+                height: 100%;
+                width: 1px;
+                z-index: 9;
+                box-shadow: 0px 0px 10px black;
+            }
+        }
+    }
+}

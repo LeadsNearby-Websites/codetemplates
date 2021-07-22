@@ -1,6 +1,9 @@
 <?php
 function child_theme_enqueue_styles() {
   wp_enqueue_style('hypercore-child', get_stylesheet_directory_uri() . '/dist/css/style.min.css', array('hypercore'), null, false);
+  wp_enqueue_style('glide', get_stylesheet_directory_uri() . '/dist/glide/css/glide.core.min.css', array('hypercore'), null);
+  hypercore\ScriptLoader::load_script('glide', get_stylesheet_directory_uri() . '/dist/glide/glide.min.js', array(), '3.4.1');
+  hypercore\ScriptLoader::load_script('badge-rotator', get_stylesheet_directory_uri() . '/dist/js/badge-rotator.js', array('glide'), '1.0.0');
 }
 add_action('wp_enqueue_scripts', 'child_theme_enqueue_styles');
 
