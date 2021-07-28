@@ -12,7 +12,7 @@ add_shortcode('site_url', 'add_site_url');
 function output_about_icons($attr) {
   $args = shortcode_atts(array(
     'modifier' => '',
-    'heading' => 'Default Heading That Can Be Overridden',
+    'heading' => 'Heading Using Shortcode Parameter',
   ), $attr);
   ob_start();
   ?>
@@ -112,3 +112,105 @@ function output_badge_rotator() {
   }
 }
 add_shortcode('badge-rotator', 'output_badge_rotator');
+
+// Small Cards
+function output_small_cards() {
+  ob_start(); ?>
+<section class="lnbSmallCard">
+    <div class="lnbSmallCard__grid">
+        <div class="lnbSmallCard__item">
+            <div class="hyper-lazyload-bg lnbSmallCard__item-img"
+                data-bg-image="https://www.leadsnearby.com/wp-content/uploads/img-indy-car-racing-53237632729.jpg"></div>
+            <div class="lnbSmallCard__item-content">
+                <fa-icon class="lnbSmallCard__item-icon" icon="home" family="solid"></fa-icon>
+                <span class="lnbSmallCard__item-heading">Card Heading</span>
+                <span class="lnbSmallCard__item-desc">Around 275 Characters of lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere
+                    faucibus nulla, sed lacinia dui malesuada a. Integer viverra at dui a dictum. Proin malesuada risus
+                    ut diam blandit rutrum. Quisque imperdiet id sem eu convallis. Sed convallis eu.</span>
+                <a href="<?php echo site_url('/#/') ?>">Link Styled However</a>
+            </div>
+        </div>
+        <div class="lnbSmallCard__item">
+            <div class="hyper-lazyload-bg lnbSmallCard__item-img"
+                data-bg-image="https://www.leadsnearby.com/wp-content/uploads/img-indy-car-racing-53237632729.jpg"></div>
+            <div class="lnbSmallCard__item-content">
+                <fa-icon class="lnbSmallCard__item-icon" icon="home" family="solid"></fa-icon>
+                <span class="lnbSmallCard__item-heading">Card Heading</span>
+                <span class="lnbSmallCard__item-desc">Around 275 Characters of lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere
+                    faucibus nulla, sed lacinia dui malesuada a. Integer viverra at dui a dictum. Proin malesuada risus
+                    ut diam blandit rutrum. Quisque imperdiet id sem eu convallis. Sed convallis eu.</span>
+                <a href="<?php echo site_url('/#/') ?>">Link Styled However</a>
+            </div>
+        </div>
+        <div class="lnbSmallCard__item">
+            <div class="hyper-lazyload-bg lnbSmallCard__item-img"
+                data-bg-image="https://www.leadsnearby.com/wp-content/uploads/img-indy-car-racing-53237632729.jpg"></div>
+            <div class="lnbSmallCard__item-content">
+                <fa-icon class="lnbSmallCard__item-icon" icon="home" family="solid"></fa-icon>
+                <span class="lnbSmallCard__item-heading">Card Heading</span>
+                <span class="lnbSmallCard__item-desc">Around 275 Characters of lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere
+                    faucibus nulla, sed lacinia dui malesuada a. Integer viverra at dui a dictum. Proin malesuada risus
+                    ut diam blandit rutrum. Quisque imperdiet id sem eu convallis. Sed convallis eu.</span>
+                <a href="<?php echo site_url('/#/') ?>">Link Styled However</a>
+            </div>
+        </div>
+        <div class="lnbSmallCard__item">
+            <div class="hyper-lazyload-bg lnbSmallCard__item-img"
+                data-bg-image="https://www.leadsnearby.com/wp-content/uploads/img-indy-car-racing-53237632729.jpg"></div>
+            <div class="lnbSmallCard__item-content">
+                <fa-icon class="lnbSmallCard__item-icon" icon="home" family="solid"></fa-icon>
+                <span class="lnbSmallCard__item-heading">Card Heading</span>
+                <span class="lnbSmallCard__item-desc">Around 275 Characters of lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere
+                    faucibus nulla, sed lacinia dui malesuada a. Integer viverra at dui a dictum. Proin malesuada risus
+                    ut diam blandit rutrum. Quisque imperdiet id sem eu convallis. Sed convallis eu.</span>
+                <a href="<?php echo site_url('/#/') ?>">Link Styled However</a>
+            </div>
+        </div>
+    </div>
+</section>
+<?php echo ob_get_clean();
+}
+add_shortcode('small-cards', 'output_small_cards');
+
+// Large Cards
+function output_large_cards() {
+  ob_start(); ?>
+<section class="lnbLargeCard">
+    <div class="lnbLargeCard__wrap">
+        <div class="lnbLargeCard__item">
+            <img class="hyper-lazyload lnbLargeCard__item-img" data-lazy-src="<?php echo content_url('/uploads/mian-thermostat-on-wall-with-digital-display.jpeg'); ?>">
+            <fa-icon class="lnbLargeCard__item-icon" family="solid" icon="temperature-frigid"></fa-icon>
+            <div class="lnbLargeCard__item-content">
+                <p class="lnbLargeCard__item-desc">Around 275 Characters of lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuerefaucibus nulla, sed lacinia dui malesuada a. Integer viverra at dui a dictum. Proin malesuada risusut diam blandit rutrum. Quisque imperdiet id sem eu convallis. Sed convallis eu.</p>
+                <a href="<?php echo site_url('/#/'); ?>" class="hypercore-button" is="hypercore-button">Button</a>
+            </div>
+        </div>
+        <div class="lnbLargeCard__item">
+            <img class="hyper-lazyload lnbLargeCard__item-img" data-lazy-src="<?php echo content_url('/uploads/mian-thermostat-on-wall-with-digital-display.jpeg'); ?>">
+            <fa-icon class="lnbLargeCard__item-icon" family="solid" icon="temperature-frigid"></fa-icon>
+            <div class="lnbLargeCard__item-content">
+                <p class="lnbLargeCard__item-desc">Around 275 Characters of lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuerefaucibus nulla, sed lacinia dui malesuada a. Integer viverra at dui a dictum. Proin malesuada risusut diam blandit rutrum. Quisque imperdiet id sem eu convallis. Sed convallis eu.</p>
+                <a href="<?php echo site_url('/#/'); ?>" class="hypercore-button" is="hypercore-button">Button</a>
+            </div>
+        </div>
+        <div class="lnbLargeCard__item">
+            <img class="hyper-lazyload lnbLargeCard__item-img" data-lazy-src="<?php echo content_url('/uploads/mian-thermostat-on-wall-with-digital-display.jpeg'); ?>">
+            <fa-icon class="lnbLargeCard__item-icon" family="solid" icon="temperature-frigid"></fa-icon>
+            <div class="lnbLargeCard__item-content">
+                <p class="lnbLargeCard__item-desc">Around 275 Characters of lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuerefaucibus nulla, sed lacinia dui malesuada a. Integer viverra at dui a dictum. Proin malesuada risusut diam blandit rutrum. Quisque imperdiet id sem eu convallis. Sed convallis eu.</p>
+                <a href="<?php echo site_url('/#/'); ?>" class="hypercore-button" is="hypercore-button">Button</a>
+            </div>
+        </div>
+        <div class="lnbLargeCard__item">
+            <img class="hyper-lazyload lnbLargeCard__item-img" data-lazy-src="<?php echo content_url('/uploads/mian-thermostat-on-wall-with-digital-display.jpeg'); ?>">
+            <fa-icon class="lnbLargeCard__item-icon" family="solid" icon="temperature-frigid"></fa-icon>
+            <div class="lnbLargeCard__item-content">
+                <p class="lnbLargeCard__item-desc">Around 275 Characters of lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuerefaucibus nulla, sed lacinia dui malesuada a. Integer viverra at dui a dictum. Proin malesuada risusut diam blandit rutrum. Quisque imperdiet id sem eu convallis. Sed convallis eu.</p>
+                <a href="<?php echo site_url('/#/'); ?>" class="hypercore-button" is="hypercore-button">Button</a>
+            </div>
+        </div>
+    </div>
+</section>
+<?php echo ob_get_clean();
+}
+add_shortcode('large-cards', 'output_large_cards');
