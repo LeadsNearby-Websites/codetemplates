@@ -8,6 +8,71 @@ Developer:
    If you need to add custom styles, use the Custom CSS field in the theme options
    Changes to this particular file should be made in the style.scss sheet by a developer
 ------------------------- */
+@import url(https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap);
+.source-font,
+.wsp-pages-list {
+  font-family:"Source Code Pro",monospace
+}
+.home {
+  padding:0 1em
+}
+.ctHeader {
+  max-width:1100px;
+  margin:0 auto;
+  padding-top:2em
+}
+.ctHeader__text {
+  text-decoration:underline;
+  font-size:1.8em;
+  margin-right:1em
+}
+.ctHeader__btn {
+  background:0 0!important;
+  color:var(--theme-accent);
+  border:1px solid var(--theme-accent);
+  box-shadow:none!important
+}
+.wsp-pages-title {
+  display:none
+}
+.wsp-pages-list {
+  list-style:none;
+  padding:0
+}
+.wsp-pages-list .page_item_has_children > a {
+  pointer-events:none;
+  color:#333;
+  font-size:1.15em;
+  margin:.5em 0;
+  display:block
+}
+.wsp-pages-list .page_item ul {
+  list-style:none;
+  margin-bottom:1em;
+  padding-left:1.5em
+}
+.wsp-pages-list .page_item ul .page_item:not(.page_item_has_children) a {
+  pointer-events:unset;
+  color:var(--theme-accent);
+  text-decoration:underline;
+  margin:0 0 .5em;
+  line-height:1.9
+}
+.wsp-pages-list .page_item ul .page_item a {
+  font-size:1.5rem
+}
+.wsp-pages-list .page_item ul .page_item:before {
+  content:"-";
+  display:inline;
+  margin-right:.5em
+}
+.wsp-pages-list .page_item ul .page_item_has_children {
+  margin:.7em 0
+}
+.footer,
+.wsp-pages-list .page_item ul .page_item_has_children:before {
+  display:none
+}
 .lnbArrowHover__arrow {
   margin-left:.25em
 }

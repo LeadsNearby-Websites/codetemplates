@@ -11,6 +11,98 @@ Developer:
 ------------------------- */
 
 @import "parts/_mixins";
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap");
+
+.source-font {
+  font-family: "Source Code Pro", monospace;
+}
+
+.home {
+  padding: 0 1em;
+}
+
+.ctHeader {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-top: 2em;
+
+  &__text {
+    text-decoration: underline;
+    font-size: 1.8em;
+    margin-right: 1em;
+  }
+
+  &__btn {
+    background: transparent !important;
+    color: var(--theme-accent);
+    border: 1px solid var(--theme-accent);
+    box-shadow: none !important;
+  }
+}
+
+.wsp-pages {
+  &-title {
+    display: none;
+  }
+
+  &-list {
+    list-style: none;
+    padding: 0;
+    @extend .source-font;
+
+    .page_item {
+      &_has_children {
+        > a {
+          pointer-events: none;
+          color: #333;
+          font-size: 1.15em;
+          margin: 0.5em 0 0.5em;
+          display: block;
+        }
+      }
+
+      ul {
+        list-style: none;
+        margin-bottom: 1em;
+        padding-left: 1.5em;
+
+        .page_item {
+          &:not(.page_item_has_children) {
+            a {
+              pointer-events: unset;
+              color: var(--theme-accent);
+              text-decoration: underline;
+              margin: 0 0 0.5em;
+              line-height: 1.9;
+            }
+          }
+
+          a {
+            font-size: 1.5rem;
+          }
+
+          &:before {
+            content: "-";
+            display: inline;
+            margin-right: 0.5em;
+          }
+
+          &_has_children {
+            margin: 0.7em 0;
+
+            &:before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  display: none;
+}
 
 // Arrow Hover Effect
 .lnbArrowHover {
