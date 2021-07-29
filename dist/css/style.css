@@ -70,7 +70,9 @@ Developer:
 .wsp-pages-list .page_item ul .page_item_has_children {
   margin:.7em 0
 }
-.wsp-pages-list .page_item ul .page_item_has_children:before {
+.wsp-pages-list .page_item ul .page_item_has_children:before,
+.wsp-posts-list,
+.wsp-posts-title {
   display:none
 }
 header {

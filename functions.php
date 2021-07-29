@@ -24,8 +24,16 @@ if (file_exists(get_stylesheet_directory() . '/inc/custom-sidebar.php')) {includ
 if (file_exists(get_stylesheet_directory() . '/inc/custom-footer.php')) {include_once get_stylesheet_directory() . '/inc/custom-footer.php';}
 if (file_exists(get_stylesheet_directory() . '/inc/shortcodes.php')) {include_once get_stylesheet_directory() . '/inc/shortcodes.php';}
 
-/* All other misc code that does not fall into one of the included files can be added below */
+// All other misc code that does not fall into one of the included files can be added below
 function register_secondary_menu() {
   register_nav_menu('secondary', __('Secondary Menu', 'upper-header-navigation'));
 }
 add_action('after_setup_theme', 'register_secondary_menu');
+
+// Fallback Blog Image
+add_filter('post_thumbnail_html', function ($html, $post_id, $thumb_id, $size, $attr) {
+  if (empty($html) && get_post_type($post_id) === 'post') {
+    return wp_get_attachment_image(187, $size, false, $attr);
+  }
+  return $html;
+}, 10, 5);
