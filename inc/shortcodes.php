@@ -12,7 +12,7 @@ add_shortcode('site_url', 'add_site_url');
 function output_about_icons($attr) {
   $args = shortcode_atts(array(
     'modifier' => '',
-    'heading' => 'Heading Using Shortcode Parameter',
+    'heading'  => 'Heading Using Shortcode Parameter',
   ), $attr);
   ob_start();
   ?>
@@ -182,7 +182,7 @@ function output_large_cards() {
             <fa-icon class="lnbLargeCard__item-icon" family="solid" icon="temperature-frigid"></fa-icon>
             <div class="lnbLargeCard__item-content">
                 <p class="lnbLargeCard__item-desc">Around 275 Characters of lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuerefaucibus nulla, sed lacinia dui malesuada a. Integer viverra at dui a dictum. Proin malesuada risusut diam blandit rutrum. Quisque imperdiet id sem eu convallis. Sed convallis eu.</p>
-                <a href="<?php echo site_url('/#/'); ?>" class="hypercore-button" is="hypercore-button">Button</a>
+                <a href="<?php echo site_url('/#/'); ?>">Link</a>
             </div>
         </div>
         <div class="lnbLargeCard__item">
@@ -190,7 +190,7 @@ function output_large_cards() {
             <fa-icon class="lnbLargeCard__item-icon" family="solid" icon="temperature-frigid"></fa-icon>
             <div class="lnbLargeCard__item-content">
                 <p class="lnbLargeCard__item-desc">Around 275 Characters of lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuerefaucibus nulla, sed lacinia dui malesuada a. Integer viverra at dui a dictum. Proin malesuada risusut diam blandit rutrum. Quisque imperdiet id sem eu convallis. Sed convallis eu.</p>
-                <a href="<?php echo site_url('/#/'); ?>" class="hypercore-button" is="hypercore-button">Button</a>
+                <a href="<?php echo site_url('/#/'); ?>">Link</a>
             </div>
         </div>
         <div class="lnbLargeCard__item">
@@ -198,7 +198,7 @@ function output_large_cards() {
             <fa-icon class="lnbLargeCard__item-icon" family="solid" icon="temperature-frigid"></fa-icon>
             <div class="lnbLargeCard__item-content">
                 <p class="lnbLargeCard__item-desc">Around 275 Characters of lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuerefaucibus nulla, sed lacinia dui malesuada a. Integer viverra at dui a dictum. Proin malesuada risusut diam blandit rutrum. Quisque imperdiet id sem eu convallis. Sed convallis eu.</p>
-                <a href="<?php echo site_url('/#/'); ?>" class="hypercore-button" is="hypercore-button">Button</a>
+                <a href="<?php echo site_url('/#/'); ?>">Link</a>
             </div>
         </div>
         <div class="lnbLargeCard__item">
@@ -206,7 +206,7 @@ function output_large_cards() {
             <fa-icon class="lnbLargeCard__item-icon" family="solid" icon="temperature-frigid"></fa-icon>
             <div class="lnbLargeCard__item-content">
                 <p class="lnbLargeCard__item-desc">Around 275 Characters of lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuerefaucibus nulla, sed lacinia dui malesuada a. Integer viverra at dui a dictum. Proin malesuada risusut diam blandit rutrum. Quisque imperdiet id sem eu convallis. Sed convallis eu.</p>
-                <a href="<?php echo site_url('/#/'); ?>" class="hypercore-button" is="hypercore-button">Button</a>
+                <a href="<?php echo site_url('/#/'); ?>">Link</a>
             </div>
         </div>
     </div>
@@ -269,11 +269,11 @@ function output_dual_nav_header() {
                     <nav class="nav" aria-label="Main Navigation" role="navigation">
                     <?php wp_nav_menu(array(
     'theme_location' => 'secondary',
-    'menu_class' => 'nav__menu',
-    'menu_id' => false,
-    'container' => false,
-    'fallback_cb' => false,
-    'depth' => 1));?>
+    'menu_class'     => 'nav__menu',
+    'menu_id'        => false,
+    'container'      => false,
+    'fallback_cb'    => false,
+    'depth'          => 1));?>
                     </nav>
                     <div class="lnbDualNav__afterTopNav">
                         <a class="lnbDualNav__phone phone-num" href="tel:<?php echo do_shortcode('[phone_number]'); ?>">
@@ -287,10 +287,10 @@ function output_dual_nav_header() {
                     <nav class="nav nav--main" aria-label="Main Navigation" role="navigation">
                     <?php wp_nav_menu(array(
     'theme_location' => 'primary',
-    'menu_class' => 'nav__menu',
-    'menu_id' => false,
-    'container' => false,
-    'fallback_cb' => false));?>
+    'menu_class'     => 'nav__menu',
+    'menu_id'        => false,
+    'container'      => false,
+    'fallback_cb'    => false));?>
                     </nav>
                     <div class="lnbDualNav__afterBottomNav" style="display: flex; align-items: center;">
                       Additional Content

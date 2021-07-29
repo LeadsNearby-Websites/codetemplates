@@ -503,7 +503,6 @@ main {
   padding:0 2em
 }
 .lnbLargeCard__item-content a {
-  position:absolute;
   display:block;
   bottom:2em;
   left:2em
