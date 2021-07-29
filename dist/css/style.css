@@ -10,6 +10,7 @@ Developer:
 ------------------------- */
 @import url(https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap);
 .source-font,
+.title-bar-wrapper h1,
 .wsp-pages-list {
   font-family:"Source Code Pro",monospace
 }
@@ -43,7 +44,7 @@ Developer:
   pointer-events:none;
   color:#333;
   font-size:1.15em;
-  margin:.5em 0;
+  margin:.75em 0;
   display:block
 }
 .wsp-pages-list .page_item ul {
@@ -72,6 +73,15 @@ Developer:
 .footer,
 .wsp-pages-list .page_item ul .page_item_has_children:before {
   display:none
+}
+.title-bar-wrapper h1 {
+  max-width:1100px;
+  margin:0 auto;
+  text-align:left;
+  font-size:1.8em
+}
+main {
+  padding-bottom:5em
 }
 .lnbArrowHover__arrow {
   margin-left:.25em
@@ -103,24 +113,18 @@ Developer:
     transform:translateX(0)
   }
 }
-.lnbFormBox_wrapper {
+.lnbFormBox {
   background:#efefef;
   border:1px solid #ccc;
-  padding:2em 1em 3em 2em;
+  padding:3em 1em 3em 2em;
   max-width:1100px!important;
   margin:3em auto 2em!important;
   display:block;
   box-shadow:0 3px 6px #00000029
 }
-.lnbFormBox_wrapper .gf_progressbar_percentage {
-  background:#000!important
-}
-.lnbFormBox_wrapper .gf_progressbar_percentage span {
-  color:#fff
-}
-.lnbFormBox_wrapper .gform_title,
-.lnbFormBox_wrapper .gsection_title,
-.lnbFormBox_wrapper .lnbFormBox__heading {
+.lnbFormBox .gform_title,
+.lnbFormBox .gsection_title,
+.lnbFormBox__heading {
   font-size:clamp(1.8em,7.33vw,2.5em)!important;
   font-weight:600!important;
   display:block;
@@ -129,26 +133,39 @@ Developer:
   color:var(--theme-accent);
   margin-bottom:.75em!important
 }
-@media screen and (max-width:640px) {
-  .lnbFormBox_wrapper {
-    padding:2em 1em 3em
-  }
+.lnbFormBox__content {
+  max-width:800px;
+  margin:0 auto
 }
-.lnbFormBox .ginput_container_fileupload input {
+.lnbFormBox__form .gf_progressbar_percentage {
+  background:var(--theme-accent)!important
+}
+.lnbFormBox__form .gf_progressbar_percentage span {
+  color:#fff
+}
+.lnbFormBox__form .ginput_container_fileupload input {
   border:none!important
 }
-.lnbFormBox .gfield_radio {
+.lnbFormBox__form .gfield_radio {
   display:flex;
   flex-wrap:wrap
 }
-.lnbFormBox .gfield_radio li {
+.lnbFormBox__form .gfield_radio li {
   margin-right:1em!important;
   display:flex;
   align-items:center
 }
-.lnbFormBox .gform_page_footer,
-.lnbFormBox .gsection {
+.lnbFormBox__form .gform_page_footer,
+.lnbFormBox__form .gsection {
   border:none!important
+}
+.lnbFormBox__form .button {
+  height:unset!important
+}
+@media screen and (max-width:640px) {
+  .lnbFormBox {
+    padding:2em 1em 3em
+  }
 }
 .lnbSlideUp {
   display:flex;
@@ -160,13 +177,13 @@ Developer:
   padding:3em 2em 0;
   row-gap:2em
 }
-.lnbSlideUp__card {
+.lnbSlideUp__box {
   min-width:20em;
   min-height:30em;
   display:block;
   position:relative
 }
-.lnbSlideUp__card-overlay {
+.lnbSlideUp__box-overlay {
   position:absolute;
   bottom:0;
   left:0;
@@ -180,7 +197,7 @@ Developer:
   justify-content:center;
   align-items:center
 }
-.lnbSlideUp__card:hover .lnbSlideUp__card-overlay {
+.lnbSlideUp__box:hover .lnbSlideUp__card-overlay {
   min-height:100%;
   cursor:pointer
 }

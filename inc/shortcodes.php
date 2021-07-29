@@ -214,3 +214,43 @@ function output_large_cards() {
 <?php echo ob_get_clean();
 }
 add_shortcode('large-cards', 'output_large_cards');
+
+// Large Cards
+function output_slide_up() {
+  ob_start(); ?>
+<div class="lnbSlideUp">
+    <div class="lnbSlideUp__box hyper-lazyload-bg" data-bg-image="">
+        <div class="lnbSlideUp__box-overlay">
+            Testing 1
+        </div>
+    </div>
+    <div class="lnbSlideUp__box hyper-lazyload-bg" data-bg-image="">
+        <div class="lnbSlideUp__box-overlay">
+            Testing 2
+        </div>
+    </div>
+    <div class="lnbSlideUp__box hyper-lazyload-bg" data-bg-image="">
+        <div class="lnbSlideUp__box-overlay">
+            Testing 3
+        </div>
+    </div>
+    <div class="lnbSlideUp__box hyper-lazyload-bg" data-bg-image="">
+        <div class="lnbSlideUp__box-overlay">
+            Testing 4
+        </div>
+    </div>
+    <div class="lnbSlideUp__box hyper-lazyload-bg" data-bg-image="">
+        <div class="lnbSlideUp__box-overlay">
+            Testing 5
+        </div>
+    </div>
+    <div class="lnbSlideUp__box hyper-lazyload-bg" data-bg-image="">
+        <div class="lnbSlideUp__box-overlay">
+            Testing 6
+        </div>
+    </div>
+</div>
+
+<?php echo ob_get_clean();
+}
+add_shortcode('slide-up-box', 'output_slide_up');

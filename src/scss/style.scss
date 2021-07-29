@@ -56,7 +56,7 @@ Developer:
           pointer-events: none;
           color: #333;
           font-size: 1.15em;
-          margin: 0.5em 0 0.5em;
+          margin: 0.75em 0;
           display: block;
         }
       }
@@ -104,6 +104,20 @@ Developer:
   display: none;
 }
 
+.title-bar-wrapper {
+  h1 {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 1.8em;
+    @extend .source-font;
+  }
+}
+
+main {
+  padding-bottom: 5em;
+}
+
 // Arrow Hover Effect
 .lnbArrowHover {
   &__arrow {
@@ -149,62 +163,71 @@ Developer:
 
 // Form Box
 .lnbFormBox {
-  &_wrapper {
-    background: #efefef;
-    border: 1px solid #ccc;
-    padding: 2em 1em 3em 2em;
-    max-width: 1100px !important;
-    margin: 3em auto 2em !important;
-    display: block;
-    box-shadow: 0 3px 6px #00000029;
+  background: #efefef;
+  border: 1px solid #ccc;
+  padding: 3em 1em 3em 2em;
+  max-width: 1100px !important;
+  margin: 3em auto 2em !important;
+  display: block;
+  box-shadow: 0 3px 6px #00000029;
 
+  &__heading,
+  .gsection_title,
+  .gform_title {
+    font-size: clamp(1.8em, 7.33vw, 2.5em) !important;
+    font-weight: 600 !important;
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: var(--theme-accent);
+    margin-bottom: 0.75em !important;
+  }
+
+  &__content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  &__form {
     // Progress Bar Styles
     .gf_progressbar_percentage {
-      background: black !important;
+      background: var(--theme-accent) !important;
 
       span {
         color: #fff;
       }
     }
 
-    .lnbFormBox__heading,
-    .gsection_title,
-    .gform_title {
-      font-size: clamp(1.8em, 7.33vw, 2.5em) !important;
-      font-weight: 600 !important;
-      display: block;
-      width: 100%;
-      text-align: center;
-      color: var(--theme-accent);
-      margin-bottom: 0.75em !important;
+    // File upload styles
+    .ginput_container_fileupload {
+      input {
+        border: none !important;
+      }
     }
 
-    @media screen and (max-width: 640px) {
-      padding: 2em 1em 3em;
-    }
-  }
+    .gfield_radio {
+      display: flex;
+      flex-wrap: wrap;
 
-  // File upload styles
-  .ginput_container_fileupload {
-    input {
+      li {
+        margin-right: 1em !important;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .gsection,
+    .gform_page_footer {
       border: none !important;
     }
-  }
 
-  .gfield_radio {
-    display: flex;
-    flex-wrap: wrap;
-
-    li {
-      margin-right: 1em !important;
-      display: flex;
-      align-items: center;
+    .button {
+      height: unset !important;
     }
   }
 
-  .gsection,
-  .gform_page_footer {
-    border: none !important;
+  @media screen and (max-width: 640px) {
+    padding: 2em 1em 3em;
   }
 }
 
@@ -219,7 +242,7 @@ Developer:
   padding: 3em 2em 0;
   row-gap: 2em;
 
-  &__card {
+  &__box {
     min-width: 20em;
     min-height: 30em;
     display: block;
