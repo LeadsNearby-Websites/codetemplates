@@ -215,7 +215,7 @@ function output_large_cards() {
 }
 add_shortcode('large-cards', 'output_large_cards');
 
-// Large Cards
+// Slide Up Boxes
 function output_slide_up() {
   ob_start(); ?>
 <div class="lnbSlideUp">
@@ -254,3 +254,123 @@ function output_slide_up() {
 <?php echo ob_get_clean();
 }
 add_shortcode('slide-up-box', 'output_slide_up');
+
+function output_dual_nav_header() {
+  ob_start(); ?>
+<section style="min-height: 2000px; overflow: hidden">
+  <div id="fake-header">
+    <div class="lnbDualNav">
+        <div class="lnbDualNav__grid">
+            <div class="lnbDualNav__logo">
+                <?php echo hypercore_get_logo() ?>
+            </div>
+            <div class="lnbDualNav__navBlocks">
+                <div class="lnbDualNav__topNav">
+                    <nav class="nav" aria-label="Main Navigation" role="navigation">
+                    <?php wp_nav_menu(array(
+    'theme_location' => 'secondary',
+    'menu_class' => 'nav__menu',
+    'menu_id' => false,
+    'container' => false,
+    'fallback_cb' => false,
+    'depth' => 1));?>
+                    </nav>
+                    <div class="lnbDualNav__afterTopNav">
+                        <a class="lnbDualNav__phone phone-num" href="tel:<?php echo do_shortcode('[phone_number]'); ?>">
+                            <span class="lnbDualNav__phone-text black-text oswald">24/7</span>
+                            <fa-icon class="lnbDualNav__phone-icon lnbRadiate" icon="phone" family="solid"></fa-icon>
+                            <span class="lnbDualNav__phone-text oswald"><?php echo do_shortcode('[phone_number]'); ?></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="lnbDualNav__bottomNav">
+                    <nav class="nav nav--main" aria-label="Main Navigation" role="navigation">
+                    <?php wp_nav_menu(array(
+    'theme_location' => 'primary',
+    'menu_class' => 'nav__menu',
+    'menu_id' => false,
+    'container' => false,
+    'fallback_cb' => false));?>
+                    </nav>
+                    <div class="lnbDualNav__afterBottomNav" style="display: flex; align-items: center;">
+                      Additional Content
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="mobileHeader">
+        <?php echo hypercore_get_logo() ?>
+        Mobile Header Goes Here
+    </div>
+</section>
+<?php echo ob_get_clean();
+}
+add_shortcode('dual-nav-header', 'output_dual_nav_header');
+
+function output_threecol_footer() {
+  ob_start(); ?>
+<section class="lnbThreeColFooter">
+    <div class="lnbThreeColFooter__grid">
+        <div class="lnbThreeColFooter__column">
+            <span class="lnbThreeColFooter__column-heading">Specific Heading</span>
+            <p class="lnbThreeColFooter__column-info">
+                <span>Phone Number etc</span>
+                <span>Phone Number etc</span>
+            </p>
+            <p class="lnbThreeColFooter__column-info">
+                <span>License # etc</span>
+                <span>License # etc</span>
+            </p>
+            <p class="lnbThreeColFooter__column-info">
+                <span>111 Example Ln.</span>
+                <span>City, State 12345</span>
+            </p>
+        </div>
+        <div class="lnbThreeColFooter__column">
+            <span class="lnbThreeColFooter__column-heading">Service Area</span>
+            <p>Short summary of service area lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin facilisis dolor leo.</p>
+        </div>
+        <div class="lnbThreeColFooter__column">
+            <span class="lnbThreeColFooter__column-heading">Helpful Links</span>
+            <ul>
+                <li><a href="<?php echo site_url('/#/'); ?>">Example Link</a></li>
+                <li><a href="<?php echo site_url('/#/'); ?>">Example Link</a></li>
+                <li><a href="<?php echo site_url('/#/'); ?>">Example Link</a></li>
+                <li><a href="<?php echo site_url('/#/'); ?>">Example Link</a></li>
+                <li><a href="<?php echo site_url('/#/'); ?>">Example Link</a></li>
+                <li><a href="<?php echo site_url('/#/'); ?>">Example Link</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="lnbSocialLinks">
+<?php
+$social_links = hypercore_get_social_links();
+  foreach ($social_links as $social_link_network => $social_link_value) {
+    $social_link_icon = $social_link_network;
+    if ($social_link_network === 'facebook') {
+      $social_link_icon = 'facebook-f';
+    }
+    if ($social_link_network === 'linkedin') {
+      $social_link_icon = 'linkedin-in';
+    }
+    echo '<a class="lnbSocialLinks__link lnbSocialLinks__link--' . $social_link_network . '" target="blank" href="' . $social_link_value . '"><fa-icon family="brands" icon="' . $social_link_icon . '"></fa-icon></a>';
+  }
+  ?>
+</section>
+<section class="lnbCopyright">
+    <div class="lnbCopyright__name">
+        <?php echo do_shortcode('[site_copyright]'); ?>
+    </div>
+    <div class="lnbCopyright__links">
+        <a href="<?php echo site_url('/terms-and-conditions/'); ?>">Terms &amp; Conditions</a> |
+        <a href="<?php echo site_url('/privacy-policy/'); ?>">Privacy Policy</a> |
+        <a href="<?php echo site_url('/sitemap/'); ?>">Sitemap</a> |
+        Design &amp; Marketing by <a target="blank" href="https://www.leadsnearby.com/">LeadsNearby</a>
+    </div>
+</section>
+<?php echo ob_get_clean();
+}
+add_shortcode('three-col-footer', 'output_threecol_footer');

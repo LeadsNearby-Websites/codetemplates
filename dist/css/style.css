@@ -9,13 +9,10 @@ Developer:
    Changes to this particular file should be made in the style.scss sheet by a developer
 ------------------------- */
 @import url(https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap);
+.hypercore-page-title-bar h1,
 .source-font,
-.title-bar-wrapper h1,
 .wsp-pages-list {
   font-family:"Source Code Pro",monospace
-}
-.home {
-  padding:0 1em
 }
 .ctHeader {
   max-width:1100px;
@@ -32,6 +29,9 @@ Developer:
   color:var(--theme-accent);
   border:1px solid var(--theme-accent);
   box-shadow:none!important
+}
+.home #pg-2-0 {
+  padding:0 1em
 }
 .wsp-pages-title {
   display:none
@@ -70,18 +70,27 @@ Developer:
 .wsp-pages-list .page_item ul .page_item_has_children {
   margin:.7em 0
 }
-.footer,
 .wsp-pages-list .page_item ul .page_item_has_children:before {
   display:none
 }
-.title-bar-wrapper h1 {
+header {
+  padding:0 1em
+}
+.footer {
+  display:none
+}
+.hypercore-page-title-bar {
+  padding:1em
+}
+.hypercore-page-title-bar h1 {
   max-width:1100px;
   margin:0 auto;
   text-align:left;
   font-size:1.8em
 }
 main {
-  padding-bottom:5em
+  padding-bottom:5em;
+  overflow:hidden
 }
 .lnbArrowHover__arrow {
   margin-left:.25em
@@ -348,12 +357,11 @@ main {
 }
 .lnbBadgeRotator__carousel .glide__slides {
   align-items:center;
-  padding:1.6rem 0
+  padding:1rem 0
 }
 .lnbBadgeRotator__carousel .glide__slide {
   display:flex;
   justify-content:center;
-  width:auto!important;
   padding:0 1.5em
 }
 @media only screen and (min-width:800px) {
@@ -365,6 +373,12 @@ main {
   .lnbBadgeRotator__carousel {
     margin:1.5em 0;
     position:relative
+  }
+  .lnbBadgeRotator__carousel .glide__slides {
+    padding:1.6rem 0
+  }
+  .lnbBadgeRotator__carousel .glide__slide {
+    width:auto!important
   }
   .lnbBadgeRotator__carousel:before {
     content:"";
@@ -498,5 +512,227 @@ main {
   .lnbLargeCard {
     padding:0 1em
   }
+}
+#fake-header {
+  position:fixed;
+  top:289px;
+  z-index:9999;
+  width:100%
+}
+.lnbDualNav {
+  padding:1em 1em 0;
+  background:rgba(255,255,255,.9);
+  box-shadow:0 0 10px #00000073
+}
+.lnbDualNav__logo {
+  padding-bottom:1em;
+  margin-right:2.5em;
+  width:clamp(200px,25%,300px);
+  display:flex;
+  align-items:center
+}
+.lnbDualNav__grid {
+  display:flex;
+  justify-content:center;
+  max-width:1300px;
+  margin:0 auto
+}
+.lnbDualNav__navBlocks {
+  display:flex;
+  flex-flow:column;
+  flex-basis:100%
+}
+.lnbDualNav__topNav {
+  display:flex;
+  justify-content:flex-end;
+  align-items:center
+}
+.lnbDualNav__bottomNav {
+  display:flex;
+  justify-content:center;
+  align-items:stretch;
+  height:100%
+}
+.lnbDualNav__bottomNav .nav {
+  padding-right:.5em
+}
+.lnbDualNav__phone {
+  display:flex;
+  align-items:center;
+  font-size:1.1em;
+  color:var(--theme-accent-action);
+  padding-left:1em
+}
+.lnbDualNav__phone-icon {
+  background:var(--theme-accent-action);
+  color:#fff;
+  width:1.5em;
+  height:1.5em;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:100%;
+  padding:.375em;
+  margin:0 .5em
+}
+.lnbDualNav__phone-text {
+  font-size:1.3em;
+  font-weight:500
+}
+.lnbDualNav__phone:hover .lnbDualNav__phone-icon {
+  box-shadow:0 0 0 .3em rgba(93,93,93,.2)!important;
+  transition:.2s
+}
+.lnbDualNav .nav {
+  background:0 0;
+  min-height:100%;
+  display:flex;
+  align-items:center
+}
+.lnbDualNav .nav ul:not(.sub-menu) {
+  display:flex;
+  list-style:none;
+  flex-wrap:wrap;
+  min-height:100%
+}
+.lnbDualNav .nav ul:not(.sub-menu) > li {
+  position:relative
+}
+.lnbDualNav .nav ul:not(.sub-menu) > li > a {
+  line-height:1em;
+  font-family:Oswald,sans-serif;
+  padding:.75em;
+  min-height:100%;
+  display:flex;
+  align-items:center;
+  -webkit-backface-visibility:hidden;
+  backface-visibility:hidden
+}
+.lnbDualNav .nav ul:not(.sub-menu) > li > a:after {
+  content:"";
+  position:absolute;
+  top:calc((100% - 1em)/ 2);
+  right:0;
+  height:1em;
+  width:2px;
+  background:#000
+}
+.lnbDualNav .nav ul:not(.sub-menu) > li:last-child {
+  margin-right:0
+}
+.lnbDualNav .nav ul:not(.sub-menu) > li:last-child a:after {
+  display:none
+}
+.lnbDualNav .nav .sub-menu .sub-menu {
+  top:-2px
+}
+@media only screen and (max-width:1060px) {
+  .lnbDualNav {
+    font-size:14px
+  }
+}
+.mobileHeader {
+  display:none;
+  flex-direction:column;
+  text-align:center;
+  padding:1em
+}
+.mobileHeader .hypercore-button {
+  margin:1em auto 0;
+  max-width:320px
+}
+@media only screen and (max-width:940px) {
+  .lnbDualNav {
+    display:none
+  }
+  .mobileHeader {
+    display:flex
+  }
+}
+.footer {
+  padding:0
+}
+.footer__row {
+  display:none
+}
+.lnbThreeColFooter {
+  padding:1em 1em 3em
+}
+.lnbThreeColFooter__grid {
+  display:grid;
+  max-width:800px;
+  grid-template-columns:auto auto auto;
+  margin:0 auto;
+  position:relative;
+  z-index:3
+}
+.lnbThreeColFooter__column {
+  text-align:left;
+  padding:1.5em 3em;
+  border-left:1px solid #333
+}
+.lnbThreeColFooter__column-heading {
+  font-size:clamp(1rem,calc(-.875rem + 8.333vw),1.35em);
+  display:block;
+  margin:0 0 .5em;
+  font-weight:600
+}
+.lnbThreeColFooter__column-info span {
+  display:block
+}
+.lnbThreeColFooter__column a {
+  text-decoration:underline;
+  line-height:1.65
+}
+.lnbThreeColFooter__column ul {
+  padding:0;
+  margin:0;
+  list-style:none
+}
+.lnbThreeColFooter__column ul li {
+  margin-bottom:.5em
+}
+.lnbThreeColFooter__column p {
+  line-height:2
+}
+.lnbThreeColFooter__column:first-child {
+  border-left:none
+}
+@media only screen and (max-width:800px) {
+  .lnbThreeColFooter__grid {
+    grid-template-columns:1fr;
+    grid-gap:2em
+  }
+  .lnbThreeColFooter__column {
+    border:none;
+    padding:0;
+    max-width:350px;
+    margin:0 auto;
+    display:inline-block
+  }
+}
+@media only screen and (max-width:640px) {
+  .lnbThreeColFooter__column {
+    max-width:100%;
+    margin:unset
+  }
+}
+.lnbSocialLinks {
+  padding:1em;
+  text-align:center;
+  background:var(--theme-accent)
+}
+.lnbSocialLinks__link {
+  color:#fff;
+  font-size:2em;
+  padding:.5em .25em
+}
+.lnbCopyright {
+  padding:2em 1em;
+  text-align:center;
+  background:#ededed
+}
+.lnbCopyright__name {
+  margin-bottom:.75em
 }
 /*# sourceMappingURL=style.css.map */
