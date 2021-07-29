@@ -208,7 +208,7 @@ main {
   justify-content:center;
   align-items:center
 }
-.lnbSlideUp__box:hover .lnbSlideUp__card-overlay {
+.lnbSlideUp__box:hover .lnbSlideUp__box-overlay {
   min-height:100%;
   cursor:pointer
 }
