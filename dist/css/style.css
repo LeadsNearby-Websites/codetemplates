@@ -736,4 +736,75 @@ main {
 .lnbCopyright__name {
   margin-bottom:.75em
 }
+.lnbTabs {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  max-width:1599px;
+  margin:0 auto;
+  place-items:center
+}
+.lnbTabs__img {
+  align-self:center;
+  background:#f7f7f7;
+  box-shadow:0 3px 6px #00000029
+}
+.lnbTabs__content {
+  padding:2em 1em;
+  display:flex;
+  align-items:center;
+  justify-content:center
+}
+@media only screen and (max-width:1200px) {
+  .lnbTabs__img {
+    order:2
+  }
+  .lnbTabs {
+    grid-template-columns:1fr;
+    justify-items:center
+  }
+}
+.toggleBox__topRow {
+  display:flex;
+  margin-bottom:1em
+}
+.toggleBox__tab {
+  padding:0 1em;
+  border-right:3px solid #313131;
+  font-size:2.6rem;
+  font-weight:600;
+  color:#313131
+}
+.toggleBox__tab:last-child {
+  border-right:none
+}
+.toggleBox__tab--selected,
+.toggleBox__tab:hover {
+  cursor:pointer
+}
+.toggleBox__content {
+  display:none;
+  max-width:800px;
+  padding:2em 0 0
+}
+.toggleBox__content p {
+  padding:2em 0 0;
+  margin-bottom:0
+}
+.toggleBox__content a {
+  margin:1.5em 0 0!important
+}
+.toggleBox__content-head {
+  font-size:clamp(1.25em,5vw,1.85em);
+  color:#313131
+}
+.toggleBox__content--active {
+  display:flex
+}
+@media only screen and (max-width:500px) {
+  .toggleBox__tab {
+    font-size:1.8rem;
+    padding-right:.5em;
+    border-width:2px
+  }
+}
 /*# sourceMappingURL=style.css.map */

@@ -374,3 +374,74 @@ $social_links = hypercore_get_social_links();
 <?php echo ob_get_clean();
 }
 add_shortcode('three-col-footer', 'output_threecol_footer');
+
+// Tabs
+function output_tabs() {
+  ob_start(); ?>
+<section class="lnbTabs">
+  <img class="lnbTabs__img hyper-lazyload " data-lazy-src="<?php echo content_url('/uploads/tabs.jpg'); ?>"/>
+    <div class="lnbTabs__content">
+          <div>
+            <div class="toggleBox">
+            <div class="toggleBox__topRow">
+                <div class="toggleBox__tab toggleBox__tab--selected">Tab 1</div>
+                <div class="toggleBox__tab">Tab 2</div>
+                <div class="toggleBox__tab">Tab 3</div>
+            </div>
+            <div class="toggleBox__content toggleBox__content--active">
+              <div>
+                <span class="toggleBox__content-head">Heading 1</span>
+                <p>1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <a class="hypercore-button" is="hypercore-button" href="<?php echo site_url('/#/'); ?>">Learn More</a>
+              </div>
+            </div>
+            <div class="toggleBox__content">
+              <div>
+                <span class="toggleBox__content-head">Heading 2</span>
+                <p>2. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>2. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <a class="hypercore-button" is="hypercore-button" href="<?php echo site_url('/#/'); ?>">Learn More</a>
+              </div>
+            </div>
+            <div class="toggleBox__content">
+              <div>
+                <span class="toggleBox__content-head">Heading 3</span>
+                <p>3. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>3. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <a class="hypercore-button" is="hypercore-button" href="<?php echo site_url('/#/'); ?>">Learn More</a>
+              </div>
+            </div>
+        </div>
+        <script>
+            (function () {
+                const tabs = document.getElementsByClassName('toggleBox__tab');
+
+                function toggleTabs(event, key) {
+
+                    // Change Toggle Tab Classes
+                    let currentActive = document.querySelector('.toggleBox__tab--selected')
+                    currentActive.classList.remove('toggleBox__tab--selected')
+                    event.target.classList.add('toggleBox__tab--selected')
+
+                    // Change Content Classes
+                    let currentActiveContent = document.querySelector('.toggleBox__content--active')
+                    const tabToggleBoxes = document.querySelectorAll('.toggleBox__content')
+                    currentActiveContent.classList.remove('toggleBox__content--active')
+                    tabToggleBoxes[key].classList.add('toggleBox__content--active')
+                }
+
+                Object.values(tabs).forEach((tab, key) => {
+                    tab.addEventListener('click', (event) => {
+                        toggleTabs(event, key)
+                    });
+                });
+
+            })();
+        </script>
+        </div>
+    </div>
+</section>
+<?php echo ob_get_clean();
+}
+add_shortcode('tabs', 'output_tabs');
