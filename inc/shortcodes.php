@@ -119,8 +119,7 @@ function output_small_cards() {
 <section class="lnbSmallCard">
     <div class="lnbSmallCard__grid">
         <div class="lnbSmallCard__item">
-            <div class="hyper-lazyload-bg lnbSmallCard__item-img"
-                data-bg-image="https://www.leadsnearby.com/wp-content/uploads/img-indy-car-racing-53237632729.jpg"></div>
+            <?php echo wp_get_attachment_image(200, $size, false, ['class' => 'lnbSmallCard__item-img']); ?>
             <div class="lnbSmallCard__item-content">
                 <fa-icon class="lnbSmallCard__item-icon" icon="home" family="solid"></fa-icon>
                 <span class="lnbSmallCard__item-heading">Card Heading</span>
@@ -131,8 +130,7 @@ function output_small_cards() {
             </div>
         </div>
         <div class="lnbSmallCard__item">
-            <div class="hyper-lazyload-bg lnbSmallCard__item-img"
-                data-bg-image="https://www.leadsnearby.com/wp-content/uploads/img-indy-car-racing-53237632729.jpg"></div>
+            <?php echo wp_get_attachment_image(200, $size, false, ['class' => 'lnbSmallCard__item-img']); ?>
             <div class="lnbSmallCard__item-content">
                 <fa-icon class="lnbSmallCard__item-icon" icon="home" family="solid"></fa-icon>
                 <span class="lnbSmallCard__item-heading">Card Heading</span>
@@ -143,8 +141,7 @@ function output_small_cards() {
             </div>
         </div>
         <div class="lnbSmallCard__item">
-            <div class="hyper-lazyload-bg lnbSmallCard__item-img"
-                data-bg-image="https://www.leadsnearby.com/wp-content/uploads/img-indy-car-racing-53237632729.jpg"></div>
+            <?php echo wp_get_attachment_image(200, $size, false, ['class' => 'lnbSmallCard__item-img']); ?>
             <div class="lnbSmallCard__item-content">
                 <fa-icon class="lnbSmallCard__item-icon" icon="home" family="solid"></fa-icon>
                 <span class="lnbSmallCard__item-heading">Card Heading</span>
@@ -155,8 +152,7 @@ function output_small_cards() {
             </div>
         </div>
         <div class="lnbSmallCard__item">
-            <div class="hyper-lazyload-bg lnbSmallCard__item-img"
-                data-bg-image="https://www.leadsnearby.com/wp-content/uploads/img-indy-car-racing-53237632729.jpg"></div>
+            <?php echo wp_get_attachment_image(200, $size, false, ['class' => 'lnbSmallCard__item-img']); ?>
             <div class="lnbSmallCard__item-content">
                 <fa-icon class="lnbSmallCard__item-icon" icon="home" family="solid"></fa-icon>
                 <span class="lnbSmallCard__item-heading">Card Heading</span>
@@ -178,7 +174,7 @@ function output_large_cards() {
 <section class="lnbLargeCard">
     <div class="lnbLargeCard__wrap">
         <div class="lnbLargeCard__item">
-            <img class="hyper-lazyload lnbLargeCard__item-img" data-lazy-src="<?php echo content_url('/uploads/mian-thermostat-on-wall-with-digital-display.jpeg'); ?>">
+            <?php echo wp_get_attachment_image(115, $size, false, ['class' => 'lnbLargeCard__item-img']); ?>
             <fa-icon class="lnbLargeCard__item-icon" family="solid" icon="temperature-frigid"></fa-icon>
             <div class="lnbLargeCard__item-content">
                 <p class="lnbLargeCard__item-desc">Around 275 Characters of lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuerefaucibus nulla, sed lacinia dui malesuada a. Integer viverra at dui a dictum. Proin malesuada risusut diam blandit rutrum. Quisque imperdiet id sem eu convallis. Sed convallis eu.</p>
@@ -186,7 +182,7 @@ function output_large_cards() {
             </div>
         </div>
         <div class="lnbLargeCard__item">
-            <img class="hyper-lazyload lnbLargeCard__item-img" data-lazy-src="<?php echo content_url('/uploads/mian-thermostat-on-wall-with-digital-display.jpeg'); ?>">
+            <?php echo wp_get_attachment_image(115, $size, false, ['class' => 'lnbLargeCard__item-img']); ?>
             <fa-icon class="lnbLargeCard__item-icon" family="solid" icon="temperature-frigid"></fa-icon>
             <div class="lnbLargeCard__item-content">
                 <p class="lnbLargeCard__item-desc">Around 275 Characters of lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuerefaucibus nulla, sed lacinia dui malesuada a. Integer viverra at dui a dictum. Proin malesuada risusut diam blandit rutrum. Quisque imperdiet id sem eu convallis. Sed convallis eu.</p>
@@ -194,7 +190,7 @@ function output_large_cards() {
             </div>
         </div>
         <div class="lnbLargeCard__item">
-            <img class="hyper-lazyload lnbLargeCard__item-img" data-lazy-src="<?php echo content_url('/uploads/mian-thermostat-on-wall-with-digital-display.jpeg'); ?>">
+            <?php echo wp_get_attachment_image(115, $size, false, ['class' => 'lnbLargeCard__item-img']); ?>
             <fa-icon class="lnbLargeCard__item-icon" family="solid" icon="temperature-frigid"></fa-icon>
             <div class="lnbLargeCard__item-content">
                 <p class="lnbLargeCard__item-desc">Around 275 Characters of lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuerefaucibus nulla, sed lacinia dui malesuada a. Integer viverra at dui a dictum. Proin malesuada risusut diam blandit rutrum. Quisque imperdiet id sem eu convallis. Sed convallis eu.</p>
@@ -202,7 +198,7 @@ function output_large_cards() {
             </div>
         </div>
         <div class="lnbLargeCard__item">
-            <img class="hyper-lazyload lnbLargeCard__item-img" data-lazy-src="<?php echo content_url('/uploads/mian-thermostat-on-wall-with-digital-display.jpeg'); ?>">
+            <?php echo wp_get_attachment_image(115, $size, false, ['class' => 'lnbLargeCard__item-img']); ?>
             <fa-icon class="lnbLargeCard__item-icon" family="solid" icon="temperature-frigid"></fa-icon>
             <div class="lnbLargeCard__item-content">
                 <p class="lnbLargeCard__item-desc">Around 275 Characters of lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuerefaucibus nulla, sed lacinia dui malesuada a. Integer viverra at dui a dictum. Proin malesuada risusut diam blandit rutrum. Quisque imperdiet id sem eu convallis. Sed convallis eu.</p>

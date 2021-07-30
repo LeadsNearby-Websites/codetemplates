@@ -416,12 +416,6 @@ main {
   flex-shrink:1;
   flex-grow:1
 }
-.lnbSmallCard__item-img {
-  min-height:20em;
-  background-position:25%;
-  background-size:cover;
-  background-repeat:no-repeat
-}
 .lnbSmallCard__item-heading {
   display:block;
   font-size:1.3em;
@@ -786,7 +780,7 @@ main {
 .toggleBox__content {
   display:none;
   max-width:800px;
-  padding:2em 0 0
+  padding:1em 0 0
 }
 .toggleBox__content p {
   padding:2em 0 0;
