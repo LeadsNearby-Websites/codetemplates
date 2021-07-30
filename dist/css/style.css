@@ -379,9 +379,6 @@ main {
   .lnbBadgeRotator__carousel .glide__slides {
     padding:1.6rem 0
   }
-  .lnbBadgeRotator__carousel .glide__slide {
-    width:auto!important
-  }
   .lnbBadgeRotator__carousel:before {
     content:"";
     position:absolute;

@@ -83,26 +83,26 @@ function output_badge_rotator() {
     </div>
     <div class="lnbBadgeRotator__carousel glide__track" data-glide-el="track">
       <ul class="glide__slides">
-          <li class="glide__slide"><img class="hyper-lazyload"
-            data-lazy-src="<?php echo content_url('uploads/lnb-logo-300x97.jpeg'); ?>">
+          <li class="glide__slide">
+              <?php echo wp_get_attachment_image(76, $size, false, $atts); ?>
           </li>
-          <li class="glide__slide"><img class="hyper-lazyload"
-            data-lazy-src="<?php echo content_url('uploads/lnb-logo-300x97.jpeg'); ?>">
+          <li class="glide__slide">
+              <?php echo wp_get_attachment_image(76, $size, false, $atts); ?>
           </li>
-          <li class="glide__slide"><img class="hyper-lazyload"
-            data-lazy-src="<?php echo content_url('uploads/lnb-logo-300x97.jpeg'); ?>">
+          <li class="glide__slide">
+              <?php echo wp_get_attachment_image(76, $size, false, $atts); ?>
           </li>
-          <li class="glide__slide"><img class="hyper-lazyload"
-            data-lazy-src="<?php echo content_url('uploads/lnb-logo-300x97.jpeg'); ?>">
+          <li class="glide__slide">
+              <?php echo wp_get_attachment_image(76, $size, false, $atts); ?>
           </li>
-          <li class="glide__slide"><img class="hyper-lazyload"
-            data-lazy-src="<?php echo content_url('uploads/lnb-logo-300x97.jpeg'); ?>">
+          <li class="glide__slide">
+              <?php echo wp_get_attachment_image(76, $size, false, $atts); ?>
           </li>
-          <li class="glide__slide"><img class="hyper-lazyload"
-            data-lazy-src="<?php echo content_url('uploads/lnb-logo-300x97.jpeg'); ?>">
+          <li class="glide__slide">
+              <?php echo wp_get_attachment_image(76, $size, false, $atts); ?>
           </li>
-          <li class="glide__slide"><img class="hyper-lazyload"
-            data-lazy-src="<?php echo content_url('uploads/lnb-logo-300x97.jpeg'); ?>">
+          <li class="glide__slide">
+              <?php echo wp_get_attachment_image(76, $size, false, $atts); ?>
           </li>
       </ul>
     </div>
