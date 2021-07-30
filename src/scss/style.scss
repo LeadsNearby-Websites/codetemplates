@@ -960,6 +960,8 @@ main {
     &--selected,
     &:hover {
       cursor: pointer;
+      color: #d6443c;
+      text-decoration: underline;
     }
   }
 

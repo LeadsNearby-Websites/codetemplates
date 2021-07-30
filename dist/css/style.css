@@ -779,7 +779,9 @@ main {
 }
 .toggleBox__tab--selected,
 .toggleBox__tab:hover {
-  cursor:pointer
+  cursor:pointer;
+  color:#d6443c;
+  text-decoration:underline
 }
 .toggleBox__content {
   display:none;
