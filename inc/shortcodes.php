@@ -174,7 +174,7 @@ function output_large_cards() {
 <section class="lnbLargeCard">
     <div class="lnbLargeCard__wrap">
         <div class="lnbLargeCard__item">
-            <?php echo wp_get_attachment_image(115, $size, false, ['class' => 'lnbLargeCard__item-img']); ?>
+            <?php echo wp_get_attachment_image(202, $size, false, ['class' => 'lnbLargeCard__item-img']); ?>
             <fa-icon class="lnbLargeCard__item-icon" family="solid" icon="temperature-frigid"></fa-icon>
             <div class="lnbLargeCard__item-content">
                 <p class="lnbLargeCard__item-desc">Around 275 Characters of lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuerefaucibus nulla, sed lacinia dui malesuada a. Integer viverra at dui a dictum. Proin malesuada risusut diam blandit rutrum. Quisque imperdiet id sem eu convallis. Sed convallis eu.</p>
@@ -182,7 +182,7 @@ function output_large_cards() {
             </div>
         </div>
         <div class="lnbLargeCard__item">
-            <?php echo wp_get_attachment_image(115, $size, false, ['class' => 'lnbLargeCard__item-img']); ?>
+            <?php echo wp_get_attachment_image(202, $size, false, ['class' => 'lnbLargeCard__item-img']); ?>
             <fa-icon class="lnbLargeCard__item-icon" family="solid" icon="temperature-frigid"></fa-icon>
             <div class="lnbLargeCard__item-content">
                 <p class="lnbLargeCard__item-desc">Around 275 Characters of lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuerefaucibus nulla, sed lacinia dui malesuada a. Integer viverra at dui a dictum. Proin malesuada risusut diam blandit rutrum. Quisque imperdiet id sem eu convallis. Sed convallis eu.</p>
@@ -190,7 +190,7 @@ function output_large_cards() {
             </div>
         </div>
         <div class="lnbLargeCard__item">
-            <?php echo wp_get_attachment_image(115, $size, false, ['class' => 'lnbLargeCard__item-img']); ?>
+            <?php echo wp_get_attachment_image(202, $size, false, ['class' => 'lnbLargeCard__item-img']); ?>
             <fa-icon class="lnbLargeCard__item-icon" family="solid" icon="temperature-frigid"></fa-icon>
             <div class="lnbLargeCard__item-content">
                 <p class="lnbLargeCard__item-desc">Around 275 Characters of lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuerefaucibus nulla, sed lacinia dui malesuada a. Integer viverra at dui a dictum. Proin malesuada risusut diam blandit rutrum. Quisque imperdiet id sem eu convallis. Sed convallis eu.</p>
@@ -198,7 +198,7 @@ function output_large_cards() {
             </div>
         </div>
         <div class="lnbLargeCard__item">
-            <?php echo wp_get_attachment_image(115, $size, false, ['class' => 'lnbLargeCard__item-img']); ?>
+            <?php echo wp_get_attachment_image(202, $size, false, ['class' => 'lnbLargeCard__item-img']); ?>
             <fa-icon class="lnbLargeCard__item-icon" family="solid" icon="temperature-frigid"></fa-icon>
             <div class="lnbLargeCard__item-content">
                 <p class="lnbLargeCard__item-desc">Around 275 Characters of lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuerefaucibus nulla, sed lacinia dui malesuada a. Integer viverra at dui a dictum. Proin malesuada risusut diam blandit rutrum. Quisque imperdiet id sem eu convallis. Sed convallis eu.</p>
