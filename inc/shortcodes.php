@@ -441,3 +441,98 @@ function output_tabs() {
 <?php echo ob_get_clean();
 }
 add_shortcode('tabs', 'output_tabs');
+
+// Tables
+function output_tables() {
+  ob_start(); ?>
+  <section class="lnbTable">
+    <div class="lnbTable__wrap">
+        <div class="lnbTable__row">
+            <span class="lnbTable__row-column--1">Subject</span>
+            <span class="lnbTable__row-column--2">Lorem ipsum dolor sit amet.</span>
+        </div>
+        <div class="lnbTable__row">
+            <span class="lnbTable__row-column--1">Subject</span>
+            <span class="lnbTable__row-column--2">Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+        </div>
+        <div class="lnbTable__row">
+            <span class="lnbTable__row-column--1">Subject</span>
+            <span class="lnbTable__row-column--2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut</span>
+        </div>
+        <div class="lnbTable__row">
+            <span class="lnbTable__row-column--1">Subject</span>
+            <span class="lnbTable__row-column--2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+        </div>
+    </div>
+    <div class="lnbTable__details">
+        <span>Rebate Amount</span>
+        <span>$XXX.XX</span>
+    </div>
+</section>
+<?php echo ob_get_clean();
+}
+add_shortcode('lnb-tables', 'output_tables');
+
+// Enhanced Tables
+function output_enhanced_tables() {
+  ob_start(); ?>
+    <section class="lnbEnhancedTable">
+        <div class="lnbEnhancedTable__head">Table Heading</div>
+        <div class="lnbEnhancedTable__price">$XX.XX Monthly</div>
+        <div class="lnbEnhancedTable__benefit">
+        <fa-icon family="solid" icon="check"></fa-icon>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="lnbEnhancedTable__benefit">
+        <fa-icon family="solid" icon="check"></fa-icon>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="lnbEnhancedTable__benefit">
+        <fa-icon family="solid" icon="check"></fa-icon>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="lnbEnhancedTable__benefit">
+        <fa-icon family="solid" icon="check"></fa-icon>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="lnbEnhancedTable__head">Add On Options</div>
+        <div class="lnbEnhancedTable__accordions">
+            <div class="lnbEnhancedTable__accordion close">
+                <span class="lnbEnhancedTable__accordion-heading">
+                    <span>Accordion Heading</span>
+                    <fa-icon family="solid" icon="chevron-down"></fa-icon>
+                </span>
+                <div class="lnbEnhancedTable__accordion-content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                </div>
+            </div>
+            <div class="lnbEnhancedTable__accordion close">
+                <span class="lnbEnhancedTable__accordion-heading">
+                    <span>Accordion Heading</span>
+                    <fa-icon family="solid" icon="chevron-down"></fa-icon>
+                </span>
+                <div class="lnbEnhancedTable__accordion-content">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        var accItem = document.getElementsByClassName('lnbEnhancedTable__accordion');
+        var accHD = document.getElementsByClassName('lnbEnhancedTable__accordion-heading');
+        for (i = 0; i < accHD.length; i++) {
+            accHD[i].addEventListener('click', toggleItem, false);
+        }
+        function toggleItem() {
+            var itemClass = this.parentNode.className;
+            for (i = 0; i < accItem.length; i++) {
+                accItem[i].className = 'lnbEnhancedTable__accordion close';
+            }
+            if (itemClass == 'lnbEnhancedTable__accordion close') {
+                this.parentNode.className = 'lnbEnhancedTable__accordion open';
+            }
+        }
+    </script>
+<?php echo ob_get_clean();
+}
+add_shortcode('lnb-enhanced-tables', 'output_enhanced_tables');
