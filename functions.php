@@ -15,6 +15,8 @@ add_action('wp_enqueue_scripts', 'enqueue_critical_styles', 1);
 
 /* Enqueue your custom JS files in the callback below.  See: https: //developer.wordpress.org/reference/functions/wp_enqueue_script/ */
 function enqueue_custom_js() {
+  wp_enqueue_style('lite-youtube-embed', get_stylesheet_directory_uri() . '/dist/lite-youtube/lite-yt-embed.css', array(), null);
+  hypercore\ScriptLoader::load_script('lite-youtube-embed', get_stylesheet_directory_uri() . '/dist/lite-youtube/lite-yt-embed.js', array(), null);
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_js', 2);
 

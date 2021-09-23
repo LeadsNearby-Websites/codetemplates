@@ -12,7 +12,7 @@ add_shortcode('site_url', 'add_site_url');
 function output_about_icons($attr) {
   $args = shortcode_atts(array(
     'modifier' => '',
-    'heading'  => 'Heading Using Shortcode Parameter',
+    'heading' => 'Heading Using Shortcode Parameter',
   ), $attr);
   ob_start();
   ?>
@@ -265,11 +265,11 @@ function output_dual_nav_header() {
                     <nav class="nav" aria-label="Main Navigation" role="navigation">
                     <?php wp_nav_menu(array(
     'theme_location' => 'secondary',
-    'menu_class'     => 'nav__menu',
-    'menu_id'        => false,
-    'container'      => false,
-    'fallback_cb'    => false,
-    'depth'          => 1));?>
+    'menu_class' => 'nav__menu',
+    'menu_id' => false,
+    'container' => false,
+    'fallback_cb' => false,
+    'depth' => 1));?>
                     </nav>
                     <div class="lnbDualNav__afterTopNav">
                         <a class="lnbDualNav__phone phone-num" href="tel:<?php echo do_shortcode('[phone_number]'); ?>">
@@ -283,10 +283,10 @@ function output_dual_nav_header() {
                     <nav class="nav nav--main" aria-label="Main Navigation" role="navigation">
                     <?php wp_nav_menu(array(
     'theme_location' => 'primary',
-    'menu_class'     => 'nav__menu',
-    'menu_id'        => false,
-    'container'      => false,
-    'fallback_cb'    => false));?>
+    'menu_class' => 'nav__menu',
+    'menu_id' => false,
+    'container' => false,
+    'fallback_cb' => false));?>
                     </nav>
                     <div class="lnbDualNav__afterBottomNav" style="display: flex; align-items: center;">
                       Additional Content
@@ -536,3 +536,39 @@ function output_enhanced_tables() {
 <?php echo ob_get_clean();
 }
 add_shortcode('lnb-enhanced-tables', 'output_enhanced_tables');
+
+// Enhanced Tables
+function output_video_facade() {
+  ob_start(); ?>
+<div class="lnbVidFacade">
+  <div class="lnbVidFacade__container">
+    <lite-youtube videoid="HSsqzzuGTPo" params="autoplay=1&controls=1&start=3&&modestbranding=1&rel=0&enablejsapi=" style="background-color: black;">
+        <div class="lnbVidFacade__background hyper-lazyload-bg" data-bg-image="<?php echo content_url('/uploads/img-indy-car-racing.jpef_.jpeg'); ?>">
+            <div class="lnbVidFacade__content">
+                <div class="lnbVidFacade__button" style="cursor: pointer;">
+                    <fa-icon icon="youtube" family="brands"></fa-icon>
+                    <div class="lnbVidFacade__button-white"></div>
+                </div>
+            </div>.
+        </div>
+		</lite-youtube>
+		<span class="lnbVidFacade__close hypercore-button" onclick="mainstageStopPlaying()" style="cursor: pointer">Close Video</span>
+	</div>
+  <script>
+  // Start Playing the Video When You Click On the Button
+  var button = document.querySelector('.lnbVidFacade__button');
+  var section = document.querySelector('.lnbVidFacade');
+  var video = document.querySelector('.lnbVidFacade lite-youtube');
+
+  // // Function for stopping the video
+  function mainstageStopPlaying() {
+      var videoPlayer = document.querySelector('.lnbVidFacade iframe');
+      section.classList.remove('playing');
+      videoPlayer.remove();
+  }
+
+  </script>
+</div>
+<?php echo ob_get_clean();
+}
+add_shortcode('lnb-video-facade', 'output_video_facade');

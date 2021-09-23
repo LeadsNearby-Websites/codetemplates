@@ -630,7 +630,8 @@ main {
   text-align:center;
   padding:1em
 }
-.mobileHeader .hypercore-button {
+.mobileHeader .hypercore-button,
+.mobileHeader .lnbVidFacade__close {
   margin:1em auto 0;
   max-width:320px
 }
@@ -957,5 +958,91 @@ main {
 }
 .close .lnbEnhancedTable__accordion-heading fa-icon {
   transition:transform .5s
+}
+.lnbVidFacade {
+  position:relative;
+  padding-top:35em;
+  transition:.5s
+}
+.lnbVidFacade__container {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%
+}
+.lnbVidFacade__close {
+  bottom:6rem;
+  position:absolute;
+  right:1em;
+  min-width:11em;
+  font-size:1.1em;
+  color:#fff;
+  z-index:-2;
+  visibility:hidden;
+  opacity:0;
+  transition:opacity .3s
+}
+.lnbVidFacade__background {
+  position:absolute;
+  background-color:#009;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  transition:.5s;
+  z-index:2
+}
+.lnbVidFacade__content {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:100%;
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-size:47em
+}
+.lnbVidFacade__button {
+  font-size:5em;
+  color:red;
+  position:relative;
+  display:inline-block;
+  cursor:pointer
+}
+.lnbVidFacade__button fa-icon {
+  position:relative;
+  z-index:1
+}
+.lnbVidFacade__button-white {
+  position:absolute;
+  top:30%;
+  height:40%;
+  left:10%;
+  width:80%;
+  background:#fff
+}
+.lnbVidFacade.playing .lnbVidFacade__background {
+  top:-1000%;
+  transition:2s
+}
+.lnbVidFacade.playing .lnbVidFacade__close {
+  z-index:1;
+  visibility:visible;
+  opacity:1
+}
+@media only screen and (max-width:800px) {
+  .lnbVidFacade {
+    padding-top:25em
+  }
+  .lnbVidFacade__content {
+    background-size:23em;
+    padding:0 1em 1em
+  }
+  .lnbVidFacade__button {
+    font-size:4em
+  }
+  .lnbVidFacade__close {
+    font-size:11px
+  }
 }
 /*# sourceMappingURL=style.css.map */

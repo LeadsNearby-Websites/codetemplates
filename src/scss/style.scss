@@ -1177,3 +1177,109 @@ main {
 .close .lnbEnhancedTable__accordion-heading fa-icon {
   transition: transform 0.5s ease;
 }
+
+// Video Facade
+
+.lnbVidFacade {
+  position: relative;
+  padding-top: 35em;
+  transition: 0.5s;
+
+  &__container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__close {
+    bottom: 6rem;
+    position: absolute;
+    right: 1em;
+    min-width: 11em;
+    font-size: 1.1em;
+    color: #fff;
+    z-index: -2;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    @extend .hypercore-button;
+  }
+
+  &__background {
+    position: absolute;
+    background-color: darken($color: blue, $amount: 20%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    z-index: 2;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 47em;
+  }
+
+  &__button {
+    font-size: 5em;
+    color: red;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+
+    fa-icon {
+      position: relative;
+      z-index: 1;
+    }
+
+    &-white {
+      position: absolute;
+      top: 30%;
+      height: 40%;
+      left: 10%;
+      width: 80%;
+      background: #fff;
+    }
+  }
+
+  &.playing {
+    .lnbVidFacade {
+      &__background {
+        top: -1000%;
+        transition: 2s;
+      }
+
+      &__close {
+        z-index: 1;
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+
+  @include mq("phone-wide", "max") {
+    padding-top: 25em;
+
+    &__content {
+      background-size: 23em;
+      padding: 0 1em 1em;
+    }
+
+    &__button {
+      font-size: 4em;
+    }
+
+    &__close {
+      font-size: 11px;
+    }
+  }
+}
