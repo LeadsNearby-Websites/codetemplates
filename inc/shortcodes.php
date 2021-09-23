@@ -537,7 +537,7 @@ function output_enhanced_tables() {
 }
 add_shortcode('lnb-enhanced-tables', 'output_enhanced_tables');
 
-// Enhanced Tables
+// Video Facade
 function output_video_facade() {
   ob_start(); ?>
 <div class="lnbVidFacade">
@@ -554,21 +554,57 @@ function output_video_facade() {
 		</lite-youtube>
 		<span class="lnbVidFacade__close hypercore-button" onclick="mainstageStopPlaying()" style="cursor: pointer">Close Video</span>
 	</div>
-  <script>
-  // Start Playing the Video When You Click On the Button
-  var button = document.querySelector('.lnbVidFacade__button');
-  var section = document.querySelector('.lnbVidFacade');
-  var video = document.querySelector('.lnbVidFacade lite-youtube');
-
-  // // Function for stopping the video
-  function mainstageStopPlaying() {
-      var videoPlayer = document.querySelector('.lnbVidFacade iframe');
-      section.classList.remove('playing');
-      videoPlayer.remove();
-  }
-
-  </script>
 </div>
+<script>
+// Start Playing the Video When You Click On the Button
+var button = document.querySelector('.lnbVidFacade__button');
+var section = document.querySelector('.lnbVidFacade');
+var video = document.querySelector('.lnbVidFacade lite-youtube');
+
+// // Function for stopping the video
+function mainstageStopPlaying() {
+    var videoPlayer = document.querySelector('.lnbVidFacade iframe');
+    section.classList.remove('playing');
+    videoPlayer.remove();
+}
+
+</script>
 <?php echo ob_get_clean();
 }
 add_shortcode('lnb-video-facade', 'output_video_facade');
+
+// Video Facade
+function output_image_slider() {
+  ob_start(); ?>
+<div class="lnbImageSlider glide">
+	<div class="lnbImageSlider__carousel glide__track" data-glide-el="track">
+		<ul class="glide__slides">
+			<li class="glide__slide">
+				<img class="hyper-lazyload" data-lazy-src="<?php echo content_url('/uploads/blog.png'); ?>"/>
+			</li>
+            <li class="glide__slide">
+				<img class="hyper-lazyload" data-lazy-src="<?php echo content_url('/uploads/blog.png'); ?>"/>
+			</li>
+            <li class="glide__slide">
+				<img class="hyper-lazyload" data-lazy-src="<?php echo content_url('/uploads/blog.png'); ?>"/>
+			</li>
+            <li class="glide__slide">
+				<img class="hyper-lazyload" data-lazy-src="<?php echo content_url('/uploads/blog.png'); ?>"/>
+			</li>
+            <li class="glide__slide">
+				<img class="hyper-lazyload" data-lazy-src="<?php echo content_url('/uploads/blog.png'); ?>"/>
+			</li>
+		</ul>
+        <div class="glide__arrows" data-glide-el="controls">
+			<button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+				<fa-icon icon="chevron-left"></fa-icon>
+			</button>
+			<button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+				<fa-icon icon="chevron-right"></fa-icon>
+			</button>
+		</div>
+	</div>
+</div>
+<?php echo ob_get_clean();
+}
+add_shortcode('lnb-image-slider', 'output_image_slider');

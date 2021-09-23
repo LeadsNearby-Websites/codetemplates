@@ -1283,3 +1283,40 @@ main {
     }
   }
 }
+
+// Image Slider
+
+.lnbImageSlider {
+  $imgSliderBtn: #0052b8;
+
+  .glide {
+    &__arrow {
+      box-shadow: unset !important;
+      border: none !important;
+      position: absolute !important;
+      height: 2em;
+      width: 2em;
+      font-size: 1.75em;
+      top: calc(50% - 1em);
+      border-radius: 4px !important;
+      cursor: pointer !important;
+      background: transparentize(
+        $color: $imgSliderBtn,
+        $amount: 0.2
+      ) !important;
+      color: #fff !important;
+
+      &--left {
+        left: 0 !important;
+      }
+
+      &--right {
+        right: 0 !important;
+      }
+
+      @include mq("phone", "max") {
+        font-size: 1em;
+      }
+    }
+  }
+}
