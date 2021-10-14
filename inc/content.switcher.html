@@ -1,0 +1,75 @@
+<section class="lnbContentSwitcher">
+	
+</section>
+<section class="lnbCollapsible lnbCollapsible--switcherContent">
+
+</section>
+<script>
+const switcherItems = [
+  {
+    title: 'About Icons',
+    content: '<p><strong>About Icons Content Goes Here</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec hendrerit orci. Nullam pharetra neque non risus iaculis, vitae egestas diam pretium. Proin et felis sollicitudin, egestas odio non, volutpat ante. Cras lacus elit, finibus nec dictum a, tincidunt in sapien. Duis ac posuere velit.</p><ul><li>Example List Item 1</li><li>Example List Item 2</li><li>Example List Item 3</li><li>Example List Item 4</li></ul><p>More filler content for size etc etc. Etiam sed risus porttitor, euismod dui egestas, accumsan tortor. Vivamus vel arcu ipsum. Maecenas blandit pharetra justo, non hendrerit sapien congue ut.</p>',
+    id: 'about',
+    slug: 'full-width-sections/about-icons'
+  },
+  {
+    title: 'Badge Rotator',
+    content: '<p><strong>Badge Rotator Content Goes Here</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec hendrerit orci. Nullam pharetra neque non risus iaculis, vitae egestas diam pretium. Proin et felis sollicitudin, egestas odio non, volutpat ante. Cras lacus elit, finibus nec dictum a, tincidunt in sapien. Duis ac posuere velit.</p><ul><li>Example List Item 1</li><li>Example List Item 2</li><li>Example List Item 3</li><li>Example List Item 4</li></ul><p>More filler content for size etc etc. Etiam sed risus porttitor, euismod dui egestas, accumsan tortor. Vivamus vel arcu ipsum. Maecenas blandit pharetra justo, non hendrerit sapien congue ut.</p>',
+    id: 'badges',
+    slug: 'full-width-sections/badge-rotator'
+  },
+  {
+    title: 'Large Cards',
+    content: '<p><strong>Large Cards Content Goes Here</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec hendrerit orci. Nullam pharetra neque non risus iaculis, vitae egestas diam pretium. Proin et felis sollicitudin, egestas odio non, volutpat ante. Cras lacus elit, finibus nec dictum a, tincidunt in sapien. Duis ac posuere velit.</p><ul><li>Example List Item 1</li><li>Example List Item 2</li><li>Example List Item 3</li><li>Example List Item 4</li></ul><p>More filler content for size etc etc. Etiam sed risus porttitor, euismod dui egestas, accumsan tortor. Vivamus vel arcu ipsum. Maecenas blandit pharetra justo, non hendrerit sapien congue ut.</p>',
+    id: 'cards',
+    slug: 'full-width-sections/large-cards'
+  },
+  {
+    title: 'Resources Grid',
+    content: '<p><strong>Resources Grid Content Goes Here</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec hendrerit orci. Nullam pharetra neque non risus iaculis, vitae egestas diam pretium. Proin et felis sollicitudin, egestas odio non, volutpat ante. Cras lacus elit, finibus nec dictum a, tincidunt in sapien. Duis ac posuere velit.</p><ul><li>Example List Item 1</li><li>Example List Item 2</li><li>Example List Item 3</li><li>Example List Item 4</li></ul><p>More filler content for size etc etc. Etiam sed risus porttitor, euismod dui egestas, accumsan tortor. Vivamus vel arcu ipsum. Maecenas blandit pharetra justo, non hendrerit sapien congue ut.</p>',
+    id: 'resources',
+    slug: 'full-width-sections/resources-grid'
+  },
+  {
+    title: 'Slide Up Boxes',
+    content: '<p><strong>Slide Up Boxes Content Goes Here</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec hendrerit orci. Nullam pharetra neque non risus iaculis, vitae egestas diam pretium. Proin et felis sollicitudin, egestas odio non, volutpat ante. Cras lacus elit, finibus nec dictum a, tincidunt in sapien. Duis ac posuere velit.</p><ul><li>Example List Item 1</li><li>Example List Item 2</li><li>Example List Item 3</li><li>Example List Item 4</li></ul><p>More filler content for size etc etc. Etiam sed risus porttitor, euismod dui egestas, accumsan tortor. Vivamus vel arcu ipsum. Maecenas blandit pharetra justo, non hendrerit sapien congue ut.</p>',
+    id: 'slides',
+    slug: 'full-width-sections/slide-up-boxes'
+  },
+  {
+    title: 'Tabs',
+    content: '<p><strong>Tabs Content Goes Here</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec hendrerit orci. Nullam pharetra neque non risus iaculis, vitae egestas diam pretium. Proin et felis sollicitudin, egestas odio non, volutpat ante. Cras lacus elit, finibus nec dictum a, tincidunt in sapien. Duis ac posuere velit.</p><ul><li>Example List Item 1</li><li>Example List Item 2</li><li>Example List Item 3</li><li>Example List Item 4</li></ul><p>More filler content for size etc etc. Etiam sed risus porttitor, euismod dui egestas, accumsan tortor. Vivamus vel arcu ipsum. Maecenas blandit pharetra justo, non hendrerit sapien congue ut.</p>',
+    id: 'tabs',
+    slug: 'full-width-sections/tabs'
+  },
+  {
+    title: 'Video Facade',
+    content: '<p><strong>Video Facade Content Goes Here</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec hendrerit orci. Nullam pharetra neque non risus iaculis, vitae egestas diam pretium. Proin et felis sollicitudin, egestas odio non, volutpat ante. Cras lacus elit, finibus nec dictum a, tincidunt in sapien. Duis ac posuere velit.</p><ul><li>Example List Item 1</li><li>Example List Item 2</li><li>Example List Item 3</li><li>Example List Item 4</li></ul><p>More filler content for size etc etc. Etiam sed risus porttitor, euismod dui egestas, accumsan tortor. Vivamus vel arcu ipsum. Maecenas blandit pharetra justo, non hendrerit sapien congue ut.</p>',
+    id: 'video',
+    slug: 'full-width-sections/video-facade'
+  }
+];
+
+const desktopNav = `
+  <ul class="lnbContentSwitcher__nav">
+    ${switcherItems.map(item =>
+      `<li class="lnbContentSwitcher__button" data-switcher-button="${item.id}">${item.title}</li>`
+      ).join('')}
+  </ul>
+`;
+
+const desktopContent = `
+  <div class="lnbContentSwitcher__contentWrapper">
+       ${switcherItems.map(item =>
+         `<div class="lnbContentSwitcher__content" data-switcher-content="${item.id}">
+            ${item.content}
+            <a href="[site_url]/${item.slug}">Learn More</a>
+         </div>`
+       ).join('')}
+  </div>
+`;
+
+const switcher = document.querySelectorAll(".lnbContentSwitcher")[0];
+switcher.innerHTML += desktopNav;
+switcher.innerHTML += desktopContent;
+</script>

@@ -84,25 +84,25 @@ function output_badge_rotator() {
     <div class="lnbBadgeRotator__carousel glide__track" data-glide-el="track">
       <ul class="glide__slides">
           <li class="glide__slide">
-              <?php echo wp_get_attachment_image(76, $size, false, $atts); ?>
+              <?php echo wp_get_attachment_image(76, 'full', false); ?>
           </li>
           <li class="glide__slide">
-              <?php echo wp_get_attachment_image(76, $size, false, $atts); ?>
+              <?php echo wp_get_attachment_image(76, 'full', false); ?>
           </li>
           <li class="glide__slide">
-              <?php echo wp_get_attachment_image(76, $size, false, $atts); ?>
+              <?php echo wp_get_attachment_image(76, 'full', false); ?>
           </li>
           <li class="glide__slide">
-              <?php echo wp_get_attachment_image(76, $size, false, $atts); ?>
+              <?php echo wp_get_attachment_image(76, 'full', false); ?>
           </li>
           <li class="glide__slide">
-              <?php echo wp_get_attachment_image(76, $size, false, $atts); ?>
+              <?php echo wp_get_attachment_image(76, 'full', false); ?>
           </li>
           <li class="glide__slide">
-              <?php echo wp_get_attachment_image(76, $size, false, $atts); ?>
+              <?php echo wp_get_attachment_image(76, 'full', false); ?>
           </li>
           <li class="glide__slide">
-              <?php echo wp_get_attachment_image(76, $size, false, $atts); ?>
+              <?php echo wp_get_attachment_image(76, 'full', false); ?>
           </li>
       </ul>
     </div>
@@ -119,7 +119,7 @@ function output_small_cards() {
 <section class="lnbSmallCard">
     <div class="lnbSmallCard__grid">
         <div class="lnbSmallCard__item">
-            <?php echo wp_get_attachment_image(200, $size, false, ['class' => 'lnbSmallCard__item-img']); ?>
+            <?php echo wp_get_attachment_image(200, 'full', false, ['class' => 'lnbSmallCard__item-img']); ?>
             <div class="lnbSmallCard__item-content">
                 <fa-icon class="lnbSmallCard__item-icon" icon="home" family="solid"></fa-icon>
                 <span class="lnbSmallCard__item-heading">Card Heading</span>
@@ -130,7 +130,7 @@ function output_small_cards() {
             </div>
         </div>
         <div class="lnbSmallCard__item">
-            <?php echo wp_get_attachment_image(200, $size, false, ['class' => 'lnbSmallCard__item-img']); ?>
+            <?php echo wp_get_attachment_image(200, 'full', false, ['class' => 'lnbSmallCard__item-img']); ?>
             <div class="lnbSmallCard__item-content">
                 <fa-icon class="lnbSmallCard__item-icon" icon="home" family="solid"></fa-icon>
                 <span class="lnbSmallCard__item-heading">Card Heading</span>
@@ -141,7 +141,7 @@ function output_small_cards() {
             </div>
         </div>
         <div class="lnbSmallCard__item">
-            <?php echo wp_get_attachment_image(200, $size, false, ['class' => 'lnbSmallCard__item-img']); ?>
+            <?php echo wp_get_attachment_image(200, 'full', false, ['class' => 'lnbSmallCard__item-img']); ?>
             <div class="lnbSmallCard__item-content">
                 <fa-icon class="lnbSmallCard__item-icon" icon="home" family="solid"></fa-icon>
                 <span class="lnbSmallCard__item-heading">Card Heading</span>
@@ -152,7 +152,7 @@ function output_small_cards() {
             </div>
         </div>
         <div class="lnbSmallCard__item">
-            <?php echo wp_get_attachment_image(200, $size, false, ['class' => 'lnbSmallCard__item-img']); ?>
+            <?php echo wp_get_attachment_image(200, 'full', false, ['class' => 'lnbSmallCard__item-img']); ?>
             <div class="lnbSmallCard__item-content">
                 <fa-icon class="lnbSmallCard__item-icon" icon="home" family="solid"></fa-icon>
                 <span class="lnbSmallCard__item-heading">Card Heading</span>
@@ -174,7 +174,7 @@ function output_large_cards() {
 <section class="lnbLargeCard">
     <div class="lnbLargeCard__wrap">
         <div class="lnbLargeCard__item">
-            <?php echo wp_get_attachment_image(202, $size, false, ['class' => 'lnbLargeCard__item-img']); ?>
+            <?php echo wp_get_attachment_image(202, 'full', false, ['class' => 'lnbLargeCard__item-img']); ?>
             <fa-icon class="lnbLargeCard__item-icon" family="solid" icon="temperature-frigid"></fa-icon>
             <div class="lnbLargeCard__item-content">
                 <p class="lnbLargeCard__item-desc">Around 275 Characters of lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuerefaucibus nulla, sed lacinia dui malesuada a. Integer viverra at dui a dictum. Proin malesuada risusut diam blandit rutrum. Quisque imperdiet id sem eu convallis. Sed convallis eu.</p>
@@ -182,7 +182,7 @@ function output_large_cards() {
             </div>
         </div>
         <div class="lnbLargeCard__item">
-            <?php echo wp_get_attachment_image(202, $size, false, ['class' => 'lnbLargeCard__item-img']); ?>
+            <?php echo wp_get_attachment_image(202, 'full', false, ['class' => 'lnbLargeCard__item-img']); ?>
             <fa-icon class="lnbLargeCard__item-icon" family="solid" icon="temperature-frigid"></fa-icon>
             <div class="lnbLargeCard__item-content">
                 <p class="lnbLargeCard__item-desc">Around 275 Characters of lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuerefaucibus nulla, sed lacinia dui malesuada a. Integer viverra at dui a dictum. Proin malesuada risusut diam blandit rutrum. Quisque imperdiet id sem eu convallis. Sed convallis eu.</p>
@@ -190,7 +190,7 @@ function output_large_cards() {
             </div>
         </div>
         <div class="lnbLargeCard__item">
-            <?php echo wp_get_attachment_image(202, $size, false, ['class' => 'lnbLargeCard__item-img']); ?>
+            <?php echo wp_get_attachment_image(202, 'full', false, ['class' => 'lnbLargeCard__item-img']); ?>
             <fa-icon class="lnbLargeCard__item-icon" family="solid" icon="temperature-frigid"></fa-icon>
             <div class="lnbLargeCard__item-content">
                 <p class="lnbLargeCard__item-desc">Around 275 Characters of lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuerefaucibus nulla, sed lacinia dui malesuada a. Integer viverra at dui a dictum. Proin malesuada risusut diam blandit rutrum. Quisque imperdiet id sem eu convallis. Sed convallis eu.</p>
@@ -198,7 +198,7 @@ function output_large_cards() {
             </div>
         </div>
         <div class="lnbLargeCard__item">
-            <?php echo wp_get_attachment_image(202, $size, false, ['class' => 'lnbLargeCard__item-img']); ?>
+            <?php echo wp_get_attachment_image(202, 'full', false, ['class' => 'lnbLargeCard__item-img']); ?>
             <fa-icon class="lnbLargeCard__item-icon" family="solid" icon="temperature-frigid"></fa-icon>
             <div class="lnbLargeCard__item-content">
                 <p class="lnbLargeCard__item-desc">Around 275 Characters of lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuerefaucibus nulla, sed lacinia dui malesuada a. Integer viverra at dui a dictum. Proin malesuada risusut diam blandit rutrum. Quisque imperdiet id sem eu convallis. Sed convallis eu.</p>
@@ -608,3 +608,278 @@ function output_image_slider() {
 <?php echo ob_get_clean();
 }
 add_shortcode('lnb-image-slider', 'output_image_slider');
+
+// Hover Shifter
+function output_hover_shifter() {
+  ob_start(); ?>
+<div class="lnbContentSwitcher">
+  <div class="lnbContentSwitcher__nav">
+    <span class="lnbContentSwitcher__button lnbContentSwitcher__button--active arvo" data-switcher-button="plumbing"><fa-icon icon="chevron-right"></fa-icon> Plumbing Repairs</span>
+    <span class="lnbContentSwitcher__button arvo" data-switcher-button="heaters"><fa-icon icon="chevron-right"></fa-icon> Water Heaters</span>
+    <span class="lnbContentSwitcher__button arvo" data-switcher-button="construction"><fa-icon icon="chevron-right"></fa-icon> New Construction</span>
+    <span class="lnbContentSwitcher__button arvo" data-switcher-button="gas"><fa-icon icon="chevron-right"></fa-icon> Gas Lines</span>
+    <span class="lnbContentSwitcher__button arvo" data-switcher-button="water"><fa-icon icon="chevron-right"></fa-icon> Water Lines</span>
+    <span class="lnbContentSwitcher__button arvo" data-switcher-button="sewer"><fa-icon icon="chevron-right"></fa-icon> Sewers</span>
+    <span class="lnbContentSwitcher__button arvo" data-switcher-button="drains"><fa-icon icon="chevron-right"></fa-icon> Drains</span>
+  </div>
+  <div class="lnbContentSwitcher__contentWrapper">
+    <div class="lnbContentSwitcher__content lnbContentSwitcher__content--active" data-switcher-content="plumbing">
+      <p>With things like plumbing leaks and repairs, we know that timing is important. These are issues that you should have fixed right away to prevent future damages. We work with efficiency to ensure that whatever may be happening in your home gets fixed in quick fashion. Our full repair services include but are not limited to:</p>
+      <ul>
+        <li>Leaky Pipes</li>
+        <li>Clogged Drains</li>
+        <li>Sewer Lines</li>
+        <li>Broken Fixtures</li>
+      </ul>
+      <p>Don’t delay - you can make the call today and one of our technicians will be at your property soon to take care of your plumbing emergency with pride.</p>
+      <a class="arvo arrowLink" href="<?php echo do_shortcode('[site_url]'); ?>/plumbing-repairs/">Learn More <fa-icon class="arrowLink__arrow" icon="arrow-right" family="solid"></fa-icon></a>
+    </div>
+    <div class="lnbContentSwitcher__content" data-switcher-content="heaters">
+      <p>When it comes to your water heater, many times they can be easily repaired. Sometimes, however, the best way to move forward is installing a new water heater with great care to make a tight fit work for your space. Whatever comes up with your project – you can be sure that we will tackle your issue head on to give you the quality that you deserve.</p>
+      <p>We offer repair and installation services on:</p>
+      <ul>
+        <li>Standard Tank Water Heaters</li>
+        <li>Tankless Water Heaters</li>
+        <li>Commercial Water Heaters</li>
+      </ul>
+      <p>Don’t let a broken water heater disrupt your routine — connect with Double L for fast, affordable water heater services now!</p>
+      <a class="arvo arrowLink" href="<?php echo do_shortcode('[site_url]'); ?>/water-heater-repair-replacements/">Learn More <fa-icon class="arrowLink__arrow" icon="arrow-right" family="solid"></fa-icon></a>
+    </div>
+    <div class="lnbContentSwitcher__content" data-switcher-content="construction">
+      <p>If you are building a new home or business, let Double L handle your plumbing from start to finish! We stand by our quality work that will help you prevent any potential plumbing issues into the future, and you can have confidence as a business owner that the work you paid for is work that is worth every cent.</p>
+      <p>Our renovation and new construction services include:</p>
+      <ul>
+        <li>Water Heaters</li>
+        <li>Pipes</li>
+        <li>Gas, Sewer & Water Main Line</li>
+        <li>Appliances</li>
+        <li>And More!</li>
+      </ul>
+      <p>Consult with our team for expert plumbing planning now! </p>
+      <a class="arvo arrowLink" href="<?php echo do_shortcode('[site_url]'); ?>/remodels-new-construction/">Learn More <fa-icon class="arrowLink__arrow" icon="arrow-right" family="solid"></fa-icon></a>
+    </div>
+    <div class="lnbContentSwitcher__content" data-switcher-content="gas">
+      <p>We are proud to provide full plumbing solutions in Azle, including those having to deal with your gas lines. We are a locally owned and operated business here in the community and are completely licensed and insured so that you have confidence in us working on your gas line project.</p>
+      <p>We provide:</p>
+      <ul>
+        <li>New Gas Line Installation</li>
+        <li>Gas Line Leak Detection</li>
+        <li>Gas Line Repairs</li>
+      </ul>
+      <p>Don’t let a gas line problem sit — call Double L right away for prompt affordable services now! </p>
+      <a class="arvo arrowLink" href="<?php echo do_shortcode('[site_url]'); ?>/gas-line-services/">Learn More <fa-icon class="arrowLink__arrow" icon="arrow-right" family="solid"></fa-icon></a>
+    </div>
+    <div class="lnbContentSwitcher__content" data-switcher-content="water">
+      <p>Clean water is essential to your home or business. Double L offers water main line services to ensure your water is able to come into your building easily and effectively. On top of that, our technicians are trained to give some of the best customer service that you will see in any industry.</p>
+      <p>Our water line services include:</p>
+      <ul>
+        <li>Repairs</li>
+        <li>Full Replacements</li>
+      </ul>
+      <p>Clean water is important to your health. With the help of Double L Plumbing, your water line will function properly to bring you the water you need for years to come. </p>
+      <a class="arvo arrowLink" href="<?php echo do_shortcode('[site_url]'); ?>/water-line-services/">Learn More <fa-icon class="arrowLink__arrow" icon="arrow-right" family="solid"></fa-icon></a>
+    </div>
+    <div class="lnbContentSwitcher__content" data-switcher-content="sewer">
+      <p>Sewer systems and lines can suffer a number of issues, including clogs and cracks from tree roots. Our services will help determine what is going on with your line and best next steps. Sometimes that will mean making a recommendation that will put you in a better situation to avoid costly repairs down the road.</p>
+      <p>We provide: </p>
+      <ul>
+        <li>Sewer Line Cleaning</li>
+        <li>Sewer Line Repairs</li>
+        <li>Full Sewer Line Replacements</li>
+      </ul>
+      <p>We offer appointment times that will work for you, regardless of the job size or what kind of work you need done. Call us today for your sewer needs!</p>
+      <a class="arvo arrowLink" href="<?php echo do_shortcode('[site_url]'); ?>/sewer-services/">Learn More <fa-icon class="arrowLink__arrow" icon="arrow-right" family="solid"></fa-icon></a>
+    </div>
+    <div class="lnbContentSwitcher__content" data-switcher-content="drains">
+      <p>Most plumbing jobs need to be taken care of right away, including those concerning your drains. A drain that is clogged for a long time could suffer cracks and breaks in the pipe, leading to larger damage and higher costs.  </p>
+      <p>If you are thinking about hesitating – don’t! We can help you with an evaluation of your drains and plumbing system so that you know what may be going on behind the scenes with your pipes. We also use video camera technology if necessary to really determine what next steps need to be taken. </p>
+      <p>Our customer service sets us apart from the other businesses in the area because we truly care about you and your project – your situation isn’t just another job for us, it’s a real problem that you deserve quality help with. Call us for help with your drains today! </p>
+      <a class="arvo arrowLink" href="<?php echo do_shortcode('[site_url]'); ?>/drain-cleaning/">Learn More <fa-icon class="arrowLink__arrow" icon="arrow-right" family="solid"></fa-icon></a>
+    </div>
+  </div>
+</div>
+<script>
+class switcher {
+    constructor() {
+        // Get the switcher
+        this.switcher = document.querySelector('.lnbContentSwitcher')
+        // Get buttons
+        this.buttons = document.querySelectorAll('.lnbContentSwitcher__button')
+        this.setButtonEvents()
+    }
+
+    setButtonEvents() {
+        // Hover event
+        this.buttons.forEach(button => {
+            button.addEventListener('mouseover', () => {
+                this.toggleActive(button)
+            })
+        })
+    }
+
+    // Get currently active button
+    getActive() {
+        const activeButton = document.querySelector('.lnbContentSwitcher__button--active')
+        return activeButton || false
+    }
+
+
+    toggleActive(button) {
+        const active = this.getActive();
+        console.log(active);
+        if (active && active.dataset.switcherButton == button.dataset.switcherButton) {
+            return
+        }
+        active.classList.remove('lnbContentSwitcher__button--active')
+        const activeContent = document.querySelector(`.lnbContentSwitcher__content[data-switcher-content="${active.dataset.switcherButton}"]`)
+        activeContent.classList.remove('lnbContentSwitcher__content--active')
+
+        button.classList.add('lnbContentSwitcher__button--active')
+        const content = document.querySelector(`.lnbContentSwitcher__content[data-switcher-content="${button.dataset.switcherButton}"]`)
+        content.classList.add('lnbContentSwitcher__content--active')
+    }
+
+
+    // If is the same as button being hovered on, do nothing
+    // If not, remove active class from current active button and content
+    // Add active class to hovered on button and associated content
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    new switcher()
+});
+</script>
+<div class="lnbCollapsible">
+    <button type="button" class="lnbCollapsible__button arvo">
+        <span class="lnbCollapsible__buttonText">Plumbing Repairs</span><fa-icon icon="plus" family="regular"></fa-icon>
+    </button>
+    <div class="lnbCollapsible__content">
+        <p>With things like plumbing leaks and repairs, we know that timing is important. These are issues that you should have fixed right away to prevent future damages. We work with efficiency to ensure that whatever may be happening in your home gets fixed in quick fashion. Our full repair services include but are not limited to:</p>
+      <ul>
+        <li>Leaky Pipes</li>
+        <li>Clogged Drains</li>
+        <li>Sewer Lines</li>
+        <li>Broken Fixtures</li>
+      </ul>
+      <p>Don’t delay - you can make the call today and one of our technicians will be at your property soon to take care of your plumbing emergency with pride.</p>
+      <a class="arvo arrowLink" href="<?php echo do_shortcode('[site_url]'); ?>/plumbing-repairs/">Learn More <fa-icon class="arrowLink__arrow" icon="arrow-right" family="solid"></fa-icon></a>
+    </div>
+</div>
+<div class="lnbCollapsible">
+    <button type="button" class="lnbCollapsible__button arvo">
+        <span class="lnbCollapsible__buttonText">Water Heaters</span><fa-icon icon="plus" family="regular"></fa-icon>
+    </button>
+    <div class="lnbCollapsible__content">
+      <p>When it comes to your water heater, many times they can be easily repaired. Sometimes, however, the best way to move forward is installing a new water heater with great care to make a tight fit work for your space. Whatever comes up with your project – you can be sure that we will tackle your issue head on to give you the quality that you deserve.</p>
+      <p>We offer repair and installation services on:</p>
+      <ul>
+        <li>Standard Tank Water Heaters</li>
+        <li>Tankless Water Heaters</li>
+        <li>Commercial Water Heaters</li>
+      </ul>
+      <p>Don’t let a broken water heater disrupt your routine — connect with Double L for fast, affordable water heater services now!</p>
+      <a class="arvo arrowLink" href="<?php echo do_shortcode('[site_url]'); ?>/water-heater-repair-replacements/">Learn More <fa-icon class="arrowLink__arrow" icon="arrow-right" family="solid"></fa-icon></a>
+  </div>
+</div>
+<div class="lnbCollapsible">
+    <button type="button" class="lnbCollapsible__button arvo">
+        <span class="lnbCollapsible__buttonText">New Construction</span><fa-icon icon="plus" family="regular"></fa-icon>
+    </button>
+    <div class="lnbCollapsible__content">
+       <p>If you are building a new home or business, let Double L handle your plumbing from start to finish! We stand by our quality work that will help you prevent any potential plumbing issues into the future, and you can have confidence as a business owner that the work you paid for is work that is worth every cent.</p>
+      <p>Our renovation and new construction services include:</p>
+      <ul>
+        <li>Water Heaters</li>
+        <li>Pipes</li>
+        <li>Gas, Sewer & Water Main Line</li>
+        <li>Appliances</li>
+        <li>And More!</li>
+      </ul>
+      <p>Consult with our team for expert plumbing planning now! </p>
+      <a class="arvo arrowLink" href="<?php echo do_shortcode('[site_url]'); ?>/remodels-new-construction/">Learn More <fa-icon class="arrowLink__arrow" icon="arrow-right" family="solid"></fa-icon></a>
+    </div>
+</div>
+<div class="lnbCollapsible">
+    <button type="button" class="lnbCollapsible__button arvo">
+        <span class="lnbCollapsible__buttonText">Gas Lines</span><fa-icon icon="plus" family="regular"></fa-icon>
+    </button>
+    <div class="lnbCollapsible__content">
+      <p>We are proud to provide full plumbing solutions in Azle, including those having to deal with your gas lines. We are a locally owned and operated business here in the community and are completely licensed and insured so that you have confidence in us working on your gas line project.</p>
+      <p>We provide:</p>
+      <ul>
+        <li>New Gas Line Installation</li>
+        <li>Gas Line Leak Detection</li>
+        <li>Gas Line Repairs</li>
+      </ul>
+      <p>Don’t let a gas line problem sit — call Double L right away for prompt affordable services now! </p>
+      <a class="arvo arrowLink" href="<?php echo do_shortcode('[site_url]'); ?>/gas-line-services/">Learn More <fa-icon class="arrowLink__arrow" icon="arrow-right" family="solid"></fa-icon></a>
+    </div>
+</div>
+<div class="lnbCollapsible">
+    <button type="button" class="lnbCollapsible__button arvo">
+        <span class="lnbCollapsible__buttonText">Water Lines</span><fa-icon icon="plus" family="regular"></fa-icon>
+    </button>
+    <div class="lnbCollapsible__content">
+    <p>Clean water is essential to your home or business. Double L offers water main line services to ensure your water is able to come into your building easily and effectively. On top of that, our technicians are trained to give some of the best customer service that you will see in any industry.</p>
+      <p>Our water line services include:</p>
+      <ul>
+        <li>Repairs</li>
+        <li>Full Replacements</li>
+      </ul>
+      <p>Clean water is important to your health. With the help of Double L Plumbing, your water line will function properly to bring you the water you need for years to come. </p>
+      <a class="arvo arrowLink" href="<?php echo do_shortcode('[site_url]'); ?>/water-line-services/">Learn More <fa-icon class="arrowLink__arrow" icon="arrow-right" family="solid"></fa-icon></a>
+  </div>
+</div>
+<div class="lnbCollapsible">
+    <button type="button" class="lnbCollapsible__button arvo">
+        <span class="lnbCollapsible__buttonText">Sewers</span><fa-icon icon="plus" family="regular"></fa-icon>
+    </button>
+    <div class="lnbCollapsible__content">
+      <p>Sewer systems and lines can suffer a number of issues, including clogs and cracks from tree roots. Our services will help determine what is going on with your line and best next steps. Sometimes that will mean making a recommendation that will put you in a better situation to avoid costly repairs down the road.</p>
+      <p>We provide: </p>
+      <ul>
+        <li>Sewer Line Cleaning</li>
+        <li>Sewer Line Repairs</li>
+        <li>Full Sewer Line Replacements</li>
+      </ul>
+      <p>We offer appointment times that will work for you, regardless of the job size or what kind of work you need done. Call us today for your sewer needs!</p>
+      <a class="arvo arrowLink" href="<?php echo do_shortcode('[site_url]'); ?>/sewer-services/">Learn More <fa-icon class="arrowLink__arrow" icon="arrow-right" family="solid"></fa-icon></a>
+    </div>
+</div>
+<div class="lnbCollapsible">
+    <button type="button" class="lnbCollapsible__button arvo">
+        <span class="lnbCollapsible__buttonText">Drains</span><fa-icon icon="plus" family="regular"></fa-icon>
+    </button>
+    <div class="lnbCollapsible__content">
+       <p>Most plumbing jobs need to be taken care of right away, including those concerning your drains. A drain that is clogged for a long time could suffer cracks and breaks in the pipe, leading to larger damage and higher costs.  </p>
+      <p>If you are thinking about hesitating – don’t! We can help you with an evaluation of your drains and plumbing system so that you know what may be going on behind the scenes with your pipes. We also use video camera technology if necessary to really determine what next steps need to be taken. </p>
+      <p>Our customer service sets us apart from the other businesses in the area because we truly care about you and your project – your situation isn’t just another job for us, it’s a real problem that you deserve quality help with. Call us for help with your drains today! </p>
+      <a class="arvo arrowLink" href="<?php echo do_shortcode('[site_url]'); ?>/drain-cleaning/">Learn More <fa-icon class="arrowLink__arrow" icon="arrow-right" family="solid"></fa-icon></a>
+    </div>
+</div>
+<script>
+    var acc = document.getElementsByClassName("lnbCollapsible__button");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var icon = this.getElementsByTagName('fa-icon')[0];
+            // var btnText = this.getElementsByClassName('changing-text')[0];
+            var panel = this.nextElementSibling;
+
+            if (this.classList.contains("active")) {
+                icon.setAttribute("icon", "minus");
+                // btnText.innerHTML = "Hide";
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            } else {
+                icon.setAttribute("icon", "plus");
+                // btnText.innerHTML = "View";
+                panel.style.maxHeight = null;
+            }
+        });
+    }
+</script>
+<?php echo ob_get_clean();
+}
+add_shortcode('lnb-hover-shifter', 'output_hover_shifter');
