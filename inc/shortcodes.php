@@ -365,6 +365,8 @@ function output_header_two_block() {
 }
 add_shortcode('header-two-block', 'output_header_two_block');
 
+// Header 3 Block
+//************************************************************ */
 function output_header_three_block() {
   ob_start(); ?>
   <section class="lnbHeaderThreeBlock">
@@ -428,6 +430,152 @@ function output_header_three_column() {
 }
 add_shortcode('header-three-column', 'output_header_three_column');
 
+//**************************************** */
+// MAIN STAGES //
+//**************************************** */
+
+// LNBMS6040 //
+//**************************************** */
+function output_lnb_ms_6040() {
+  ob_start(); ?>
+<section class="lnbMainstage6040">
+    <div class="lnbMainstage6040__img hyper-lazyload-bg" data-bg-image="<?php echo content_url('/uploads/img-indy-car-racing.jpef_.jpeg'); ?>">
+    </div>
+    <div class="lnbMainstage6040__content">
+        <div class="unflex">
+            <span class="lnbMainstage6040__cta">Main CTA Text Goes Here</span>
+            <span class="lnbMainstage6040__text">Additional Sub CTA Text Goes Here</span>
+            <a is="hypercore-button" class="hypercore-button lnb-radiate lnb-hover-wobble" href="<?php echo site_url('/'); ?>">
+                <fa-icon icon="arrow-right"></fa-icon>
+                <span>CTA Button Text Here</span>
+            </a>
+
+            <!-- NearbyNow Stynamic Widget -->
+            <?php echo do_shortcode('[static-nn-widget name="false" type="inline" stars="#FBB040"]'); ?>
+
+            <div class="lnbMainstage6040__badges">
+                <!-- NearbyNow Badge -->
+                <?php echo do_shortcode('[static-nn-badge]');?>
+            </div>
+        </div>
+    </div>
+</section>
+<?php echo ob_get_clean();
+}
+add_shortcode('ms-lnb-6040', 'output_lnb_ms_6040');
+
+// LNBMSBullet //
+//**************************************** */
+function output_lnb_ms_bullet() {
+  ob_start(); ?>
+<section class="lnbMSBullet hyper-lazyload-bg"
+  data-bg-image="<?php echo content_url('/uploads/img-indy-car-racing.jpef_.jpeg'); ?>">
+  <div class="lnbMSBullet__content">
+    <div class="lnbMSBullet__content--wrap">
+      <span class="lnbMSBullet__content--cta">CTA Message or Asset SVG</span>
+      <h2>H2 Heading Title Lorem Ipsum Dolor Sit Amet, Consetutur Sadipscing</h2>
+      <span class="lnbMSBullet__content--call"><strong>24/7 Call</strong>
+        <?php echo do_shortcode('[phone_number]'); ?>
+      </span>
+      <span class="lnbMSBullet__widgets">
+        <?php echo do_shortcode('[static-nn-widget name="false" type="inline" stars="#fbb040" accent="#fff"]'); ?></span>
+      </span>
+      <span class="lnbMSBullet__badges">
+
+        <!-- Put Review Badgets Here -->
+        <?php echo do_shortcode('[static-nn-badge]'); ?>
+      </span>
+    </div>
+  </div>
+</section>
+<?php echo ob_get_clean();
+}
+add_shortcode('ms-lnb-bullet', 'output_lnb_ms_bullet');
+
+// LNBMSCenterBox //
+//**************************************** */
+function output_lnb_ms_center_box() {
+  ob_start(); ?>
+<section class="lnbMSCenterBox hyper-lazyload-bg"
+  data-bg-image="<?php echo content_url('/uploads/img-indy-car-racing.jpef_.jpeg'); ?>">
+  <div class="lnbMSCenterBox__wrap">
+    <div class="lnbMSCenterBox__box">
+      <img src="<?php echo site_url() . '/wp-content/uploads/101057512_svg.svg'; ?>" />
+      <h2>Really Strong Branded Message</h2>
+      <a is="hypercore-button" class="hypercore-button" href="<?php echo site_url(); ?>">
+        <fa icon icon="arrow-right">
+          </fa-icon>
+          Request Service
+      </a>
+    </div>
+  </div>
+</section>
+<?php echo ob_get_clean();
+}
+add_shortcode('ms-lnb-center-box', 'output_lnb_ms_center_box');
+
+// LNBMSLeftBox //
+//**************************************** */
+function output_lnb_ms_left_box() {
+  ob_start(); ?>
+  <section class="lnbMSLeftBox">
+      <div class="lnbMSLeftBox__wrapper">
+          <div class="lnbMSLeftBox__left">
+          <div class="lnbMSLeftBox__left-container">
+              <div class="lnbMSLeftBox__left-content">
+                  <?php echo do_shortcode('[static-nn-widget name="false" type="inline" stars="#FBB040"]'); ?>
+                  <span class="lnbMSLeftBox__left-content--header">CTA Message or Asset SVG</span>
+                  <p>Optional text — Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+                      sed diam nonumy eirmod. WCT 15/CC 96
+                  </p>
+                  <a href="<?php echo site_url('/'); ?>" class="hypercore-button"><fa-icon icon="arrow-right" family="solid"></fa-icon>Request Service</a>
+              </div>
+          </div>
+        </div>
+          <div class="lnbMSLeftBox__right">
+              <img alt="" class="hyper-lazyload" data-lazy-src="<?php echo content_url('/uploads/img-indy-car-racing.jpef_.jpeg'); ?>">
+          </div>
+      </div>
+  </section>  
+<?php echo ob_get_clean();
+}
+add_shortcode('ms-lnb-left-box', 'output_lnb_ms_left_box');
+
+// LNBMSTwoCol //
+//**************************************** */
+function output_lnb_ms_two_col() {
+  ob_start(); ?>
+<section class="lnbMainstageTwoCol">
+    <div class="lnbMainstageTwoCol__content">
+        <div class="unflex">
+            <span class="lnbMainstageTwoCol__cta">CTA Message or Asset SVG</span>
+            <h2>H2 Heading Title Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing</h2>
+            <span class="lnbMainstageTwoCol__phone">24/7 Call <?php echo do_shortcode('[phone_link]'); ?></span>
+
+            <!-- NearbyNow Stynamic Widget -->
+            <?php echo do_shortcode('[static-nn-widget name="false" type="inline" stars="#FBB040"]'); ?>
+
+            <div class="lnbMainstageTwoCol__badges">
+                <!-- NearbyNow Badge -->
+                <?php echo do_shortcode('[static-nn-badge]');?>
+            </div>
+        </div>
+    </div>
+    <div class="lnbMainstageTwoCol__img hyper-lazyload-bg"
+  data-bg-image="<?php echo content_url('/uploads/img-indy-car-racing.jpef_.jpeg'); ?>">
+    </div>
+</section>  
+<?php echo ob_get_clean();
+}
+add_shortcode('ms-lnb-two-col', 'output_lnb_ms_two_col');
+
+
+//**************************************** */
+// FOOTERS //
+//**************************************** */
+
+// Three Column Footer //
+//**************************************** */
 function output_threecol_footer() {
     ob_start(); ?>
 <section class="lnb3ColFooter">
@@ -532,73 +680,79 @@ function output_threecol_footer() {
     </div>
   </div>
 </section>
-  <?php echo ob_get_clean();
+<?php echo ob_get_clean();
+}
+add_shortcode('three-col-footer', 'output_threecol_footer');
+
+//**************************************** */
+// COPYRIGHT //
+//**************************************** */
+
+// Copyright //
+//**************************************** */
+function output_copyright() {
+  ob_start();
+  $bi_type = get_theme_mod('hypercore_bi_type', true);
+  switch ($bi_type) {
+    case "Electrician":
+      $bi_type_name = "Electrician";
+      $bi_type_industry = "electricians";
+      break;
+    case "General Contractor":
+      $bi_type_name = "General Contractor";
+      $bi_type_industry = "general-contractor";
+      break;
+    case "Home & Construction Business":
+      $bi_type_name = "Home & Construction";
+      $bi_type_industry = "home-construction";
+      break;
+    case "House Painter":
+      $bi_type_name = "Painter";
+      $bi_type_industry = "painters";
+      break;
+    case "HVAC":
+      $bi_type_name = "HVAC";
+      $bi_type_industry = "hvac-companies";
+      break;
+    case "Local Business":
+      $bi_type_name = "Local Business";
+      $bi_type_industry = "local-business";
+      break;
+    case "Locksmith":
+      $bi_type_name = "Locksmith";
+      $bi_type_industry = "locksmith";
+      break;
+    case "Moving Company":
+      $bi_type_name = "Moving Company";
+      $bi_type_industry = "moving-companies";
+      break;
+    case "Plumber":
+      $bi_type_name = "Plumber";
+      $bi_type_industry = "plumbers";
+      break;
+    case "Roofing Contractor":
+      $bi_type_name = "Roofing Contractor";
+      $bi_type_industry = "roofing-companies";
+      break;    
   }
-  add_shortcode('three-col-footer', 'output_threecol_footer');
-  
-  function output_copyright() {
-    ob_start();
-    $bi_type = get_theme_mod('hypercore_bi_type', true);
-    switch ($bi_type) {
-      case "Electrician":
-        $bi_type_name = "Electrician";
-        $bi_type_industry = "electricians";
-        break;
-      case "General Contractor":
-        $bi_type_name = "General Contractor";
-        $bi_type_industry = "general-contractor";
-        break;
-      case "Home & Construction Business":
-        $bi_type_name = "Home & Construction";
-        $bi_type_industry = "home-construction";
-        break;
-      case "House Painter":
-        $bi_type_name = "Painter";
-        $bi_type_industry = "painters";
-        break;
-      case "HVAC":
-        $bi_type_name = "HVAC";
-        $bi_type_industry = "hvac-companies";
-        break;
-      case "Local Business":
-        $bi_type_name = "Local Business";
-        $bi_type_industry = "local-business";
-        break;
-      case "Locksmith":
-        $bi_type_name = "Locksmith";
-        $bi_type_industry = "locksmith";
-        break;
-      case "Moving Company":
-        $bi_type_name = "Moving Company";
-        $bi_type_industry = "moving-companies";
-        break;
-      case "Plumber":
-        $bi_type_name = "Plumber";
-        $bi_type_industry = "plumbers";
-        break;
-      case "Roofing Contractor":
-        $bi_type_name = "Roofing Contractor";
-        $bi_type_industry = "roofing-companies";
-        break;    
-    }
-    ?>
-    <section class="lnbCopyright">
-      <div class="lnbCopyright--wrap">
-        <div class="lnbCopyright__info">
-          <?php echo do_shortcode('[site_copyright]');?>
-          <div class="lnbCopyright__info-links">
-            <a href="<?php echo site_url('/terms-conditions/');?>">Terms & Conditions</a> | <a href="<?php echo site_url('/privacy-policy/');?>">Privacy Policy</a> | <a href="<?php echo site_url('/sitemap/');?>">Sitemap</a>
-          </div> 
-        </div>
-        <div class="lnbCopyright__lnb">
-          <a href="https://www.leadsnearby.com/"><img class="hyper-lazyload" data-lazy-src="https://site-template-files.s3.amazonaws.com/LNB-logo-footer.svg"/></a>
-          <span><a href="https://leadsnearby.com/who-we-serve/<?php echo $bi_type_industry ?>" title="<?php echo $bi_type_name ?> Marketing and SEO"><?php echo $bi_type_name ?> Marketing and SEO</a> by <a href="https://www.leadsnearby.com/">LeadsNearby</a></span>
-        </div>
+  ?>
+  <section class="lnbCopyright">
+    <div class="lnbCopyright--wrap">
+      <div class="lnbCopyright__info">
+        <?php echo do_shortcode('[site_copyright]');?>
+        <div class="lnbCopyright__info-links">
+          <a href="<?php echo site_url('/terms-conditions/');?>">Terms & Conditions</a> | <a href="<?php echo site_url('/privacy-policy/');?>">Privacy Policy</a> | <a href="<?php echo site_url('/sitemap/');?>">Sitemap</a>
+        </div> 
       </div>
-    </section>
-    <?php echo ob_get_clean();
-  }
-  add_shortcode('copyright', 'output_copyright');
+      <div class="lnbCopyright__lnb">
+        <a href="https://www.leadsnearby.com/"><img class="hyper-lazyload" data-lazy-src="https://site-template-files.s3.amazonaws.com/LNB-logo-footer.svg"/></a>
+        <span><a href="https://leadsnearby.com/who-we-serve/<?php echo $bi_type_industry ?>" title="<?php echo $bi_type_name ?> Marketing and SEO"><?php echo $bi_type_name ?> Marketing and SEO</a> by <a href="https://www.leadsnearby.com/">LeadsNearby</a></span>
+      </div>
+    </div>
+  </section>
+  <?php echo ob_get_clean();
+}
+add_shortcode('copyright', 'output_copyright');
 
 // Tabs
 function output_tabs() {
@@ -1112,3 +1266,1042 @@ document.addEventListener("DOMContentLoaded", function () {
 <?php echo ob_get_clean();
 }
 add_shortcode('lnb-hover-shifter', 'output_hover_shifter');
+
+//**************************************** */
+// HOME PAGE ELEMENTS //
+//**************************************** */
+
+// Before and After //
+//**************************************** */
+function output_before_after() {
+  ob_start(); ?>
+<section class="lnbBeforeAfter">
+    <figure class="lnbBeforeAfter__container">
+        <!-- After Image -->
+        <img src="<?php echo content_url('/uploads/img-indy-car-racing-gray.jpg');?>">
+        <div class="lnbBeforeAfter__resize">
+            <!-- Before Image -->
+            <img src="<?php echo content_url('/uploads/img-indy-car-racing.jpef_-1536x696.jpeg');?>">
+            <span class="lnbBeforeAfter__label lnbBeforeAfter__label--before" data-type="modified">Before</span>
+        </div>
+        <span class="lnbBeforeAfter__label lnbBeforeAfter__label--after" data-type="original">After</span>
+        <span class="lnbBeforeAfter__handle">
+            <svg enable-background="new 0 0 32 32" height="32" viewBox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg"><g fill="#000"><path d="m13 21-5-5 5-5z"/><path d="m19 11 5 5-5 5z"/></g></svg>
+        </span>
+    </figure>
+    <script>
+    jQuery(function($) {
+    /******************** Before/After Comparission Slider ********************/
+    var dragging = false,
+    scrolling = false,
+    resizing = false;
+    var imageComparisonContainers = $('.lnbBeforeAfter__container');
+    checkPosition(imageComparisonContainers);
+    $(window).on('scroll', function() {
+    if (!scrolling) {
+        scrolling = true;
+        !window.requestAnimationFrame
+        ? setTimeout(function() {
+            checkPosition(imageComparisonContainers);
+            }, 100)
+        : requestAnimationFrame(function() {
+            checkPosition(imageComparisonContainers);
+            });
+    }
+    });
+    imageComparisonContainers.each(function() {
+    var actual = $(this);
+    drags(
+        actual.find('.lnbBeforeAfter__handle'),
+        actual.find('.lnbBeforeAfter__resize'),
+        actual,
+        actual.find('.lnbBeforeAfter__label[data-type="original"]'),
+        actual.find('.lnbBeforeAfter__label[data-type="modified"]')
+    );
+    });
+    $(window).on('resize', function() {
+    if (!resizing) {
+        resizing = true;
+        !window.requestAnimationFrame
+        ? setTimeout(function() {
+            checkLabel(imageComparisonContainers);
+            }, 100)
+        : requestAnimationFrame(function() {
+            checkLabel(imageComparisonContainers);
+            });
+    }
+    });
+
+    function checkPosition(container) {
+    container.each(function() {
+        var actualContainer = $(this);
+        if (
+        $(window).scrollTop() + $(window).height() * 0.5 >
+        actualContainer.offset().top
+        ) {
+        actualContainer.addClass('is-visible');
+        }
+    });
+    scrolling = false;
+    }
+
+    function drags(
+    dragElement,
+    resizeElement,
+    container,
+    labelContainer,
+    labelResizeElement
+    ) {
+    dragElement
+        .on('mousedown vmousedown', function(e) {
+        dragElement.addClass('draggable');
+        resizeElement.addClass('resizable');
+        var dragWidth = dragElement.outerWidth(),
+            xPosition = dragElement.offset().left + dragWidth - e.pageX,
+            containerOffset = container.offset().left,
+            containerWidth = container.outerWidth(),
+            minLeft = containerOffset + 10,
+            maxLeft = containerOffset + containerWidth - dragWidth - 10;
+        dragElement
+            .parents()
+            .on('mousemove vmousemove', function(e) {
+            if (!dragging) {
+                dragging = true;
+                !window.requestAnimationFrame
+                ? setTimeout(function() {
+                    animateDraggedHandle(
+                        e,
+                        xPosition,
+                        dragWidth,
+                        minLeft,
+                        maxLeft,
+                        containerOffset,
+                        containerWidth,
+                        resizeElement,
+                        labelContainer,
+                        labelResizeElement
+                    );
+                    }, 100)
+                : requestAnimationFrame(function() {
+                    animateDraggedHandle(
+                        e,
+                        xPosition,
+                        dragWidth,
+                        minLeft,
+                        maxLeft,
+                        containerOffset,
+                        containerWidth,
+                        resizeElement,
+                        labelContainer,
+                        labelResizeElement
+                    );
+                    });
+            }
+            })
+            .on('mouseup vmouseup', function(e) {
+            dragElement.removeClass('draggable');
+            resizeElement.removeClass('resizable');
+            });
+        e.preventDefault();
+        })
+        .on('mouseup vmouseup', function(e) {
+        dragElement.removeClass('draggable');
+        resizeElement.removeClass('resizable');
+        });
+    }
+
+    function animateDraggedHandle(
+    e,
+    xPosition,
+    dragWidth,
+    minLeft,
+    maxLeft,
+    containerOffset,
+    containerWidth,
+    resizeElement,
+    labelContainer,
+    labelResizeElement
+    ) {
+    var leftValue = e.pageX + xPosition - dragWidth;
+    if (leftValue < minLeft) {
+        leftValue = minLeft;
+    } else if (leftValue > maxLeft) {
+        leftValue = maxLeft;
+    }
+    var widthValue =
+        ((leftValue + dragWidth / 2 - containerOffset) * 100) / containerWidth +
+        '%';
+    $('.draggable')
+        .css('left', widthValue)
+        .on('mouseup vmouseup', function() {
+        $(this).removeClass('draggable');
+        resizeElement.removeClass('resizable');
+        });
+    $('.resizable').css('width', widthValue);
+    dragging = false;
+    }
+    /******************** End Before/After Comparission Slider ********************/
+    });
+    </script>
+</section>
+  <?php echo ob_get_clean();
+}
+add_shortcode('before-after', 'output_before_after');
+
+// Block H2 //
+//**************************************** */
+function output_block_h2() {
+  ob_start(); ?>
+  <h2 class="lnbBlockH2">H2 Heading Title Length Flexible</h2>
+  <?php echo ob_get_clean();
+}
+add_shortcode('block-h2', 'output_block_h2');
+
+// Block H3 //
+//**************************************** */
+function output_block_h3() {
+  ob_start(); ?>
+  <section class="lnbBlockH3">
+    <h3>H3 Heading Title Length Flexible</h3>
+    <span class="lnbBlockH3__sub">Compelling Word or Phrase</span>
+  </section>
+  <?php echo ob_get_clean();
+}
+add_shortcode('block-h3', 'output_block_h3');
+
+// Block P //
+//**************************************** */
+function output_block_p() {
+  ob_start(); ?>
+  <section class="lnbBlockParagraph">
+    <span class="lnbBlockParagraph__title">1-5 Word Compelling</span>
+    <h3>H3 Heading Title Length Flexible</h3>
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
+  </section>
+  <?php echo ob_get_clean();
+}
+add_shortcode('block-p', 'output_block_p');
+
+// CTA Center Box //
+//**************************************** */
+function output_center_box() {
+  ob_start(); ?>
+<section class="lnbCTACenterBox hyper-lazyload-bg" data-bg-image="<?php echo content_url('/uploads/img-indy-car-racing-gray.jpg'); ?>">
+    <div class="lnbCTACenterBox__container hyper-lazyload-bg" data-bg-image="<?php echo content_url('/uploads/img-indy-car-racing.jpef_-1536x696.jpeg'); ?>">
+        <div class="lnbCTACenterBox__container-content">
+            <h3>H3 Heading Title Length Flexible Lorem Ipsum 5-7 WCC</h3>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna. WCT 18/CC 120</p>
+            <div class="lnbCTACenterBox__container-contacts">
+                <div class="lnbCTACenterBox__container-contacts--num">
+                    <?php echo do_shortcode('[phone_link]'); ?>
+                </div>
+                <div class="lnbCTACenterBox__container-contacts--btn">
+                    <a is="hypercore-button" class="hypercore-button lnbArrowHover" href="<?php echo site_url('/#/'); ?>">
+                        <fa-icon icon="arrow-right" family="solid" class="lnbArrowHover__arrow"></fa-icon>
+                        <span>Button CTA</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+  <?php echo ob_get_clean();
+}
+add_shortcode('center-box', 'output_center_box');
+
+// Icon Rectangles //
+//**************************************** */
+function output_icon_rects() {
+  ob_start(); ?>
+<section class="lnbIconRects">
+    <div class="lnbIconRects__blocks">
+        <div class="lnbIconRects__blocks-item">
+            <span class="lnbIconRects__blocks-item--icon"><fa-icon icon="heart" family="solid"></fa-icon></span>
+            <div class="lnbIconRects__blocks-content">
+                <span class="lnbIconRects__blocks-content--title">Item Title 1/3 WCT</span>
+                <span class="lnbIconRects__blocks-text">Lorem ipsum dolor sit amet consetetur sadipscing elitr. <a href="<?php echo site_url('/'); ?>">WCT 8/CC 55</a></span>
+                <span class="lnbIconRects__blocks-text--arrow arrow"><fa-icon icon="arrow-right" family="solid"></span>
+            </div>
+        </div>
+        <div class="lnbIconRects__blocks-item">
+        <span class="lnbIconRects__blocks-item--icon"><fa-icon icon="heart" family="solid"></fa-icon></span>
+            <div class="lnbIconRects__blocks-content">
+                <span class="lnbIconRects__blocks-content--title">Item Title 1/3 WCT</span>
+                <span class="lnbIconRects__blocks-text">Lorem ipsum dolor sit amet consetetur sadipscing elitr. <a href="<?php echo site_url('/'); ?>">WCT 8/CC 55</a></span>
+                <span class="lnbIconRects__blocks-text--arrow arrow"><fa-icon icon="arrow-right" family="solid"></span>
+            </div>
+        </div>
+        <div class="lnbIconRects__blocks-item">
+        <span class="lnbIconRects__blocks-item--icon"><fa-icon icon="heart" family="solid"></fa-icon></span>
+            <div class="lnbIconRects__blocks-content">
+                <span class="lnbIconRects__blocks-content--title">Item Title 1/3 WCT</span>
+                <span class="lnbIconRects__blocks-text">Lorem ipsum dolor sit amet consetetur sadipscing elitr. <a href="<?php echo site_url('/'); ?>">WCT 8/CC 55</a></span>
+                <span class="lnbIconRects__blocks-text--arrow arrow"><fa-icon icon="arrow-right" family="solid"></span>
+            </div>
+        </div>
+        <div class="lnbIconRects__blocks-item">
+        <span class="lnbIconRects__blocks-item--icon"><fa-icon icon="heart" family="solid"></fa-icon></span>
+            <div class="lnbIconRects__blocks-content">
+                <span class="lnbIconRects__blocks-content--title">Item Title 1/3 WCT</span>
+                <span class="lnbIconRects__blocks-text">Lorem ipsum dolor sit amet consetetur sadipscing elitr. <a href="<?php echo site_url('/'); ?>">WCT 8/CC 55</a></span>
+                <span class="lnbIconRects__blocks-text--arrow arrow"><fa-icon icon="arrow-right" family="solid"></span>
+            </div>
+        </div>
+    </div>
+</section>
+  <?php echo ob_get_clean();
+}
+add_shortcode('icon-rects', 'output_icon_rects');
+
+
+// Icon Squares //
+//**************************************** */
+function output_icon_squares() {
+  ob_start(); ?>
+
+<section class="lnbIconSquares">
+  <div class="lnbIconSquares__grid">
+    <a class="lnbIconSquares__card" href="<?php echo site_url('/#/'); ?>">
+      <div class="lnbIconSquares__content">
+        <fa-icon icon="tools" family="solid" role="presentation" aria-label="Display Icon"></fa-icon>
+        <span class="lnbIconSquares__title">Item Title</span>
+      </div>
+    </a>
+    <a class="lnbIconSquares__card" href="<?php echo site_url('/#/'); ?>">
+      <div class="lnbIconSquares__content">
+        <fa-icon icon="tools" family="solid" role="presentation" aria-label="Display Icon"></fa-icon>
+        <span class="lnbIconSquares__title">Item Title</span>
+      </div>
+    </a>
+    <a class="lnbIconSquares__card" href="<?php echo site_url('/#/'); ?>">
+      <div class="lnbIconSquares__content">
+        <fa-icon icon="tools" family="solid" role="presentation" aria-label="Display Icon"></fa-icon>
+        <span class="lnbIconSquares__title">Item Title</span>
+      </div>
+    </a>
+    <a class="lnbIconSquares__card" href="<?php echo site_url('/#/'); ?>">
+      <div class="lnbIconSquares__content">
+        <fa-icon icon="tools" family="solid" role="presentation" aria-label="Display Icon"></fa-icon>
+        <span class="lnbIconSquares__title">Item Title</span>
+      </div>
+    </a>
+    <a class="lnbIconSquares__card" href="<?php echo site_url('/#/'); ?>">
+      <div class="lnbIconSquares__content">
+        <fa-icon icon="tools" family="solid" role="presentation" aria-label="Display Icon"></fa-icon>
+        <span class="lnbIconSquares__title">Item Title</span>
+      </div>
+    </a>
+    <a class="lnbIconSquares__card" href="<?php echo site_url('/#/'); ?>">
+      <div class="lnbIconSquares__content">
+        <fa-icon icon="tools" family="solid" role="presentation" aria-label="Display Icon"></fa-icon>
+        <span class="lnbIconSquares__title">Item Title</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<?php echo ob_get_clean();
+}
+add_shortcode('icon-squares', 'output_icon_squares');
+
+
+// Icon Squares BG//
+//**************************************** */
+function output_icon_squares_bg() {
+  ob_start(); ?>
+
+<section class="lnbIconSquaresBG hyper-lazyload-bg" data-bg-image="<?php echo content_url('/uploads/img-indy-car-racing-gray.jpg'); ?>">
+  <div class="lnbIconSquaresBG__squares"> 
+    <a class="lnbIconSquaresBG__square" href="<?php echo site_url('/#/'); ?>">
+      <div class="lnbIconSquaresBG__square-content">
+        <fa-icon icon="tools" family="solid"></fa-icon>
+        <span>Item Title Heading</span>
+      </div>
+    </a>
+    <a class="lnbIconSquaresBG__square" href="<?php echo site_url('/#/'); ?>">
+      <div class="lnbIconSquaresBG__square-content">
+        <fa-icon icon="tools" family="solid"></fa-icon>
+        <span>Item Title Heading</span>
+      </div>
+    </a>
+    <a class="lnbIconSquaresBG__square" href="<?php echo site_url('/#/'); ?>">
+      <div class="lnbIconSquaresBG__square-content">
+        <fa-icon icon="tools" family="solid"></fa-icon>
+        <span>Item Title Heading</span>
+      </div>
+    </a>
+    <a class="lnbIconSquaresBG__square" href="<?php echo site_url('/#/indoor-air-quality/'); ?>">
+      <div class="lnbIconSquaresBG__square-content">
+        <fa-icon icon="tools" family="solid"></fa-icon>
+        <span>Item Title Heading</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<?php echo ob_get_clean();
+}
+add_shortcode('icon-squares-bg', 'output_icon_squares_bg');
+
+
+// Image with Background //
+//**************************************** */
+function output_img_with_bg() {
+  ob_start(); ?>
+
+<section class="lnbImgWithBG">
+  <?php echo hypercore_get_lazyload_image( '123', 'lnbImgWithBG__img' ); ?>
+</section>
+
+<?php echo ob_get_clean();
+}
+add_shortcode('img-with-bg', 'output_img_with_bg');
+
+
+// Partial Slide Up //
+//**************************************** */
+function output_partial_slideup() {
+  ob_start(); ?>
+
+<section class="lnbPartialSlideUps">
+    <a class="lnbPartialSlideUps__box" href="<?php echo site_url('/');?>" >
+        <img class="lnbPartialSlideUps__box-image hyper-lazyload" data-lazy-src="<?php echo content_url('/uploads/img-indy-car-racing-gray.jpg') ?>" />
+        <span class="lnbPartialSlideUps__box-overlay">
+            <span class="lnbPartialSlideUps__box-heading">           
+                <h3 class="lnbPartialSlideUps__box-title"></h3>            
+            </span>
+            <span class="lnbPartialSlideUps__box-description"></span>
+        </span>
+    </a>   
+</section>
+
+<?php echo ob_get_clean();
+}
+add_shortcode('partial-slideup', 'output_partial_slideup');
+
+
+// Review Thirds //
+//**************************************** */
+function output_reviews_third() {
+  ob_start(); ?>
+
+<section>
+  <div class="lnbNNReviewThirds">
+    <h3 class="faux-h2">H3 Heading Title Length Flexible</h3>
+    <p class="lnbNNReviewThirds__compelling">1-3 Word Compelling</p>
+    <hypercore-nearby-now-reviews></hypercore-nearby-now-reviews>
+    <div class="lnbNNReviewThirds__buttons">
+      <a title="" is="hypercore-button" class="lnb-hover-wobble hypercore-button"
+        href="https://mammothmurals.com/consultation-scheduling/" aria-label="Button">
+        <fa-icon icon="arrow-right" family="solid" class="lnbArrowHover__arrow" role="presentation"
+          aria-label="Display Icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path
+              d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z">
+            </path>
+          </svg></fa-icon>
+        <span>Button CTA</span>
+      </a>
+      <a title="" is="hypercore-button" class="lnb-hover-wobble hypercore-button"
+        href="https://mammothmurals.com/consultation-scheduling/" aria-label="Button">
+        <fa-icon icon="arrow-right" family="solid" class="lnbArrowHover__arrow" role="presentation"
+          aria-label="Display Icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path
+              d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z">
+            </path>
+          </svg></fa-icon>
+        <span>About Us</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<?php echo ob_get_clean();
+}
+add_shortcode('reviews-third', 'output_reviews_third');
+
+
+// Right Content Overlay //
+//**************************************** */
+function output_right_content_overlay() {
+  ob_start(); ?>
+
+<section class="lnbRightContentOverlay hyper-lazyload-bg" data-bg-image="<?php echo content_url('/uploads/img-indy-car-racing-gray.jpg'); ?>">
+    <div class="lnbRightContentOverlay__container">
+    <div class="lnbRightContentOverlay__services">
+        <span class="lnbRightContentOverlay__header">Heading Compelling Phrase 5 - 8 WCC</span>
+            <div class="lnbRightContentOverlay__item">
+                <img src="<?php echo content_url('/uploads/check-in-circle-green42A853.svg');?>">
+                <div>
+                <span class="lnbRightContentOverlay__item-heading">H3 Lorem Ispum</span>
+                <span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore. WCT 36/CC 212</span>
+            </div>
+        </div>
+        <div class="lnbRightContentOverlay__item">
+                <img src="<?php echo content_url('/uploads/check-in-circle-green42A853.svg');?>">
+                <div>
+                <span class="lnbRightContentOverlay__item-heading">H3 Lorem Ispum</span>
+                <span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore. WCT 36/CC 212</span>
+            </div>
+        </div>
+        <div class="lnbRightContentOverlay__item">
+                <img src="<?php echo content_url('/uploads/check-in-circle-green42A853.svg');?>">
+                <div>
+                <span class="lnbRightContentOverlay__item-heading">H3 Lorem Ispum</span>
+                <span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore. WCT 36/CC 212</span>
+            </div>
+       </div>
+       <a is="hypercore-button" href="<?php echo site_url('/about-us/');?>" class="hypercore-button"><fa-icon icon="arrow-right" family="solid"></fa-icon>Button CTA</a>
+    </div>
+</section>
+
+<?php echo ob_get_clean();
+}
+add_shortcode('right-content-overlay', 'output_right_content_overlay');
+
+
+// Shifty Boxes //
+//**************************************** */
+function output_shifty_boxes() {
+  ob_start(); ?>
+
+<section class="lnbShiftyBoxes">
+    <div class="lnbShiftyBoxes__grid">
+        <div class="lnbShiftyBoxes__content">
+            <div class="lnbShiftyBoxes__heading hyper-lazyload-bg" data-bg-image="<?php echo content_url('/uploads/img-indy-car-racing-gray.jpg'); ?>">
+                <h3>H3 Heading Title Length Flexible</h3>
+            </div>
+            <!-- This commented out code allows the boxes to be paginated, delete if unncessary -->
+
+            <!-- <div class="lnbElementPagination">
+                <div class="lnbElementPagination__tabRow">
+                    <div class="lnbElementPagination__tab lnbElementPagination__tab--first lnbElementPagination__tab--selected">
+                    <span class="lnbElementPagination__tab-text">1</span>
+                    </div>
+                    <div class="lnbElementPagination__tab">
+                    <span class="lnbElementPagination__tab-text">2</span>
+                    </div>
+                    <span class="lnbElementPagination__next" onclick="lnbNextTab(this)"><fa-icon icon="arrow-right"></fa-icon></span>
+                </div>
+                <div class="lnbElementPagination__content lnbElementPagination__content--first lnbElementPagination__content--active"> -->
+                <div class="lnbShiftyBoxes__boxes">
+                    <a class="lnbShiftyBoxes__box" href="<?php echo site_url('/'); ?>">
+                        <span class="lnbShiftyBoxes__box-content">
+                            <span class="lnbShiftyBoxes__box-upper">
+                                <fa-icon icon="heart" class="title--large" family="solid"></fa-icon>
+                                <span class="lnbShiftyBoxes__box-title">Item Title 1/3 WCT</span>
+                            </span>
+                            <span class="lnbShiftyBoxes__box-description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat voluptua. WCT 22/CC 145</span>
+                            <fa-icon class="lnbShiftyBoxes__box-arrow" family="regular" icon="long-arrow-alt-right"></fa-icon>
+                        </span>
+                    </a>
+                    <a class="lnbShiftyBoxes__box" href="<?php echo site_url('/'); ?>">
+                        <span class="lnbShiftyBoxes__box-content">
+                            <span class="lnbShiftyBoxes__box-upper">
+                                <fa-icon icon="heart" class="title--large" family="solid"></fa-icon>
+                                <span class="lnbShiftyBoxes__box-title">Item Title 1/3 WCT</span>
+                            </span>
+                            <span class="lnbShiftyBoxes__box-description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat voluptua. WCT 22/CC 145</span>
+                            <fa-icon class="lnbShiftyBoxes__box-arrow" family="regular" icon="long-arrow-alt-right"></fa-icon>
+                        </span>
+                    </a>
+                    <a class="lnbShiftyBoxes__box" href="<?php echo site_url('/'); ?>">
+                        <span class="lnbShiftyBoxes__box-content">
+                            <span class="lnbShiftyBoxes__box-upper">
+                                <fa-icon icon="heart" class="title--large" family="solid"></fa-icon>
+                                <span class="lnbShiftyBoxes__box-title">Item Title 1/3 WCT</span>
+                            </span>
+                            <span class="lnbShiftyBoxes__box-description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat voluptua. WCT 22/CC 145</span>
+                            <fa-icon class="lnbShiftyBoxes__box-arrow" family="regular" icon="long-arrow-alt-right"></fa-icon>
+                        </span>
+                    </a>
+                    <a class="lnbShiftyBoxes__box" href="<?php echo site_url('/'); ?>">
+                        <span class="lnbShiftyBoxes__box-content">
+                            <span class="lnbShiftyBoxes__box-upper">
+                                <fa-icon icon="heart" class="title--large" family="solid"></fa-icon>
+                                <span class="lnbShiftyBoxes__box-title">Item Title 1/3 WCT</span>
+                            </span>
+                            <span class="lnbShiftyBoxes__box-description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat voluptua. WCT 22/CC 145</span>
+                            <fa-icon class="lnbShiftyBoxes__box-arrow" family="regular" icon="long-arrow-alt-right"></fa-icon>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <!-- This commented out code allows the boxes to be paginated, delete if unncessary -->
+
+            <!-- <div class="lnbElementPagination__content">
+            
+            </div>
+        </div> 
+        </div> -->
+        <div class="lnbShiftyBoxes__img hyper-lazyload-bg" data-bg-image="<?php echo content_url('/uploads/img-indy-car-racing-gray.jpg'); ?>">
+        </div>
+    </div>
+</section>
+
+<?php echo ob_get_clean();
+}
+add_shortcode('shifty-boxes', 'output_shifty_boxes');
+
+
+// Static Badges //
+//**************************************** */
+function output_static_badges() {
+  ob_start(); ?>
+
+<section class="lnbStaticBadges">
+    <div class="lnbStaticBadges__grid">
+        <?php echo hypercore_get_lazyload_image(1, 'lnbStaticBadges__badge'); ?>
+    </div>
+</section>
+
+<?php echo ob_get_clean();
+}
+add_shortcode('static-badges', 'output_static_badges');
+
+
+// Two Column Hover Images //
+//**************************************** */
+function output_two_col_hov_img() {
+  ob_start(); ?>
+
+<section class="lnbTwoColHoverImgs">
+  <div class="lnbTwoColHoverImgs__imgs">
+    <a class="lnbTwoColHoverImgs__imgs-link" href="<?php echo site_url('/#/'); ?>">
+      <?php echo hypercore_get_lazyload_image( '123' ); ?>
+    </a>
+    <a class="lnbTwoColHoverImgs__imgs-link" href="<?php echo site_url('/#/'); ?>">
+      <?php echo hypercore_get_lazyload_image( '123' ); ?>
+    </a>
+  </div>
+  <div class="lnbTwoColHoverImgs__content">
+    <div class="lnbTwoColHoverImgs__content-inner">
+      <span>1-2 Word Compelling</span>
+      <h3>H3 Heading Title Length Flexible</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus euismod quis viverra nibh cras. Ut sem nulla pharetra diam sit amet nisl. Nunc scelerisque viverra mauris in aliquam sem.</p>
+      <a is="hypercore-button" class="hypercore-button lnbArrowHover" href="<?php echo site_url('#'); ?>">
+        <fa-icon icon="arrow-right" family="solid" class="lnbArrowHover__arrow"></fa-icon>
+        <span>Button CTA</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<?php echo ob_get_clean();
+}
+add_shortcode('two-col-hov-imgs', 'output_two_col_hov_img');
+
+
+// Two Columns Left Content//
+//**************************************** */
+function output_two_col_left_content() {
+  ob_start(); ?>
+
+<section class="lnbTwoColLeftContent">
+  <div class="lnbTwoColLeftContent__content">
+    <div class="lnbTwoColLeftContent__content-inner hyper-lazyload-bg" data-bg-image="<?php echo content_url('/uploads/2022/04/background-svg.svg'); ?>">
+    <span class="lnbTwoColLeftContent__content-inner--header">1-2 Word Compelling</span>
+      <h3>H3 Heading Title Length Flexible</h3>
+      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren. WCT 36-85/CC 212-530</p>
+      <a is="hypercore-button" class="hypercore-button lnbArrowHover" href="<?php echo site_url('/#/'); ?>">
+        <fa-icon icon="arrow-right" family="solid" class="lnbArrowHover__arrow"></fa-icon>
+        <span>Button CTA</span>
+      </a>
+    </div>
+  </div>
+  <img src="<?php echo content_url('/uploads/img-indy-car-racing-gray.jpg');?>">
+</section>
+
+<?php echo ob_get_clean();
+}
+add_shortcode('two-col-left-content', 'output_two_col_left_content');
+
+
+// Two Column Link List //
+//**************************************** */
+function output_two_col_link_list() {
+  ob_start(); ?>
+
+<section class="lnbTwoColLinkList">
+    <div class="lnbTwoColLinkList__content">
+        <div class="unflex">
+            <h3 class="lnbTwoColLinkList__heading"></h3>
+            <ul class="lnbTwoColLinkList__list">
+                <li>
+                    <a href="<?php echo site_url(''); ?>">
+                        <fa-icon icon="map-marker-alt" family="solid"></fa-icon> 
+                        <span>City Name, State</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo site_url(''); ?>">
+                        <fa-icon icon="map-marker-alt" family="solid"></fa-icon> 
+                        <span>City Name, State</span>
+                    </a>
+                </li> 
+                <li>
+                    <a href="<?php echo site_url(''); ?>">
+                        <fa-icon icon="map-marker-alt" family="solid"></fa-icon> 
+                        <span>City Name, State</span>
+                    </a>
+                </li> 
+                <li>
+                    <a href="<?php echo site_url(''); ?>">
+                        <fa-icon icon="map-marker-alt" family="solid"></fa-icon> 
+                        <span>City Name, State</span>
+                    </a>
+                </li>   
+            </ul>
+            <span class="lnbTwoColLinkList__text"></span>
+            <a is="hypercore-button" class="hypercore-button lnb-radiate lnb-hover-wobble" href="<?php echo site_url('/'); ?>">
+                <fa-icon icon="arrow-right"></fa-icon>
+                <span></span>
+            </a>
+        </div>
+    </div>
+    <div class="lnbTwoColLinkList__img hyper-lazyload-bg" data-bg-image="<?php echo content_url('/uploads/img-indy-car-racing-gray.jpg'); ?>">
+    </div>
+</section>
+
+<?php echo ob_get_clean();
+}
+add_shortcode('two-col-link-list', 'output_two_col_link_list');
+
+
+// Two Columns Right Content//
+//**************************************** */
+function output_two_col_right_content() {
+  ob_start(); ?>
+
+<section class="lnbTwoColRightContent">
+  <div class="lnbTwoColRightContent__img hyper-lazyload-bg" data-bg-image="<?php echo content_url('/uploads/img-indy-car-racing-gray.jpg'); ?>"></div>
+  <div class="lnbTwoColRightContent__content">
+    <div class="lnbTwoColRightContent__content-inner">
+      <?php echo hypercore_get_logo('large', true, 'lnbTwoColRightContent'); ?>
+      <h3>H3 Heading Title Length Flexible</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus euismod quis viverra nibh cras. Ut sem nulla pharetra diam sit amet nisl. Nunc scelerisque viverra mauris in aliquam sem. In ornare quam viverra orci. Consectetur adipiscing elit pellentesque habitant morbi tristique. Enim neque volutpat ac tincidunt. Erat velit scelerisque in dictum non consectetur a. Feugiat in ante metus dictum at tempor.</p>
+      <a is="hypercore-button" class="hypercore-button lnbArrowHover" href="<?php echo site_url('/#/'); ?>">
+        <fa-icon icon="arrow-right" family="solid" class="lnbArrowHover__arrow"></fa-icon>
+        <span>Button CTA</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<?php echo ob_get_clean();
+}
+add_shortcode('two-col-right-content', 'output_two_col_right_content');
+
+
+// Two Columns Right Content Short//
+//**************************************** */
+function output_two_col_right_content_short() {
+  ob_start(); ?>
+
+<section class="lnbTwoColRightContentShort">
+  <div class="lnbTwoColRightContentShort__img hyper-lazyload-bg" data-bg-image="<?php echo content_url('/uploads/img-indy-car-racing-gray.jpg'); ?>"></div>
+  <div class="lnbTwoColRightContentShort__content">
+    <div class="lnbTwoColRightContentShort__content-inner">
+      <h3>H3 Heading Title 1-5 WCT</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus euismod quis viverra nibh cras. Ut sem nulla pharetra diam sit amet nisl.</p>
+      <a is="hypercore-button" class="hypercore-button lnbArrowHover" href="<?php echo site_url('#'); ?>">
+        <fa-icon icon="arrow-right" family="solid" class="lnbArrowHover__arrow"></fa-icon>
+        <span>Button CTA</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<?php echo ob_get_clean();
+}
+add_shortcode('two-col-right-content-short', 'output_two_col_right_content_short');
+
+
+// Two Col Specials //
+//**************************************** */
+function output_two_col_specials() {
+  ob_start(); ?>
+
+<section class="lnbTwoColSpecials hyper-lazyload-bg" data-bg-image="<?php echo content_url('/uploads/img-indy-car-racing-gray.jpg'); ?>">
+    <div class="lnbTwoColSpecials__content">
+        <div class="unflex">    
+            <div class="lnbTwoColSpecials__headings hyper-lazyload-bg" data-bg-image="<?php echo content_url('/'); ?>">
+                <span class="lnbTwoColSpecials__cta">Some Content Can Go Here</span>
+                <h3>Some additional content can go here</h3>
+            </div>
+            <span class="lnbTwoColSpecials__text"></span>
+            <a is="hypercore-button" class="hypercore-button lnbTwoColSpecials__btn lnbCapsuleBtn lnb-hover-wobble" href="<?php echo site_url('/'); ?>">
+                <fa-icon icon="arrow-right"></fa-icon>
+                <span>CTA Button Text</span>
+            </a>
+        </div>
+    </div>
+    <div class="lnbTwoColSpecials__rotator">
+        <div class="lnbEnhancedRotator">
+            <?php echo do_shortcode('[clipit_rotator tag="home"]'); ?>
+        </div>      
+        <script>
+            function styleRotator() {
+                var rotator = document.querySelector('.clipit-rotator');
+                
+                var specialOffer = document.createElement("span");
+                specialOffer.classList.add('clipit-rotator__heading');
+                specialOffer.innerHTML = "Special Offer";
+                rotator.prepend(specialOffer);
+
+                var tagline = document.createElement("span");
+                tagline.classList.add('clipit-rotator__tagline');
+                tagline.innerHTML = "Available when you need us!";
+                rotator.append(tagline);
+
+                var button = document.createElement("a");
+                button.setAttribute('is', 'hypercore-button');
+                button.setAttribute('href', '<?php echo site_url('/contact-us/') ?>');
+                button.classList.add('hypercore-button', 'lnbEnhancedRotator__btn', 'lnbCapsuleBtn', 'lnb-hover-wobble');
+                button.innerHTML = "<fa-icon icon=\"arrow-right\" family=\"solid\"></fa-icon><span>Contact PDM</span>";
+                rotator.append(button);
+
+                var navLeft = document.querySelector('.clipit-rotator__nav--previous');
+                var navRight = document.querySelector('.clipit-rotator__nav--next');
+            }
+            addEventListener('DOMContentLoaded', setTimeout(styleRotator, 1000));
+        </script>    
+    </div>
+</section>
+
+<?php echo ob_get_clean();
+}
+add_shortcode('two-col-specials', 'output_two_col_specials');
+
+
+// Two Column Tabs //
+//**************************************** */
+function output_two_col_tabs() {
+  ob_start(); ?>
+
+<section class="lnbTwoColTabs">
+    <div class="lnbTwoColTabs__img hyper-lazyload-bg" data-bg-image="<?php echo content_url('/uploads/img-indy-car-racing-gray.jpg'); ?>">
+    </div>
+    <div class="lnbTwoColTabs__content">
+        <div class="unflex">
+        <div>
+            <div class="toggleBox">
+            <div class="toggleBox__topRow">
+                <div class="toggleBox__tab toggleBox__tab--selected">Tab 1</div>
+                <div class="toggleBox__tab">Tab 2</div>
+                <div class="toggleBox__tab">Tab 3</div>
+            </div>
+            <div class="toggleBox__content toggleBox__content--active">
+                <div>
+                    <h3 class="lnbTwoColTabs__heading">H3 Heading Title For Tab 1</h3>
+                    <span class="lnbTwoColTabs__text"></span>
+                    <a is="hypercore-button" class="hypercore-button lnb-radiate lnb-hover-wobble" href="<?php echo site_url('/'); ?>">
+                        <fa-icon icon="arrow-right"></fa-icon>
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+            <div class="toggleBox__content">
+                <div>
+                    <h3 class="lnbTwoColTabs__heading">H3 Heading Title For Tab 2</h3>
+                    <span class="lnbTwoColTabs__text"></span>
+                    <a is="hypercore-button" class="hypercore-button lnb-radiate lnb-hover-wobble" href="<?php echo site_url('/'); ?>">
+                        <fa-icon icon="arrow-right"></fa-icon>
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+            <div class="toggleBox__content">
+                <div>
+                    <h3 class="lnbTwoColTabs__heading">H3 Heading Title For Tab 3</h3>
+                    <span class="lnbTwoColTabs__text"></span>
+                    <a is="hypercore-button" class="hypercore-button lnb-radiate lnb-hover-wobble" href="<?php echo site_url('/'); ?>">
+                        <fa-icon icon="arrow-right"></fa-icon>
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <script>
+            (function () {
+                const tabs = document.getElementsByClassName('toggleBox__tab');
+
+                function toggleTabs(event, key) {
+
+                    // Change Toggle Tab Classes
+                    let currentActive = document.querySelector('.toggleBox__tab--selected')
+                    currentActive.classList.remove('toggleBox__tab--selected')
+                    event.target.classList.add('toggleBox__tab--selected')
+
+                    // Change Content Classes
+                    let currentActiveContent = document.querySelector('.toggleBox__content--active')
+                    const tabToggleBoxes = document.querySelectorAll('.toggleBox__content')
+                    currentActiveContent.classList.remove('toggleBox__content--active')
+                    tabToggleBoxes[key].classList.add('toggleBox__content--active')
+                }
+
+                Object.values(tabs).forEach((tab, key) => {
+                    tab.addEventListener('click', (event) => {
+                        toggleTabs(event, key)
+                    });
+                });
+
+            })();
+        </script>
+        </div>
+        </div>
+    </div>
+</section>
+
+<?php echo ob_get_clean();
+}
+add_shortcode('two-col-tabs', 'output_two_col_tabs');
+
+
+// Two Image CTAs //
+//**************************************** */
+function output_two_img_cta() {
+  ob_start(); ?>
+
+<section class="lnbTwoImgCTA">
+    <div class="lnbTwoImgCTA__grid">
+        <?php echo hypercore_get_lazyload_image(1, 'lnbTwoImgCTA__img');?>
+        <div class="lnbTwoImgCTA__content">
+            <span class="lnbTwoImgCTA__content-heading">Call or Text 24/7</span>
+            <?php echo do_shortcode('[phone_link]'); ?>
+        </div>
+        <?php echo hypercore_get_lazyload_image(1, 'lnbTwoImgCTA__img');?>
+    </div>
+</section>
+
+<?php echo ob_get_clean();
+}
+add_shortcode('two-img-cta', 'output_two_img_cta');
+
+
+// Two Steps //
+//**************************************** */
+function output_two_steps() {
+  ob_start(); ?>
+
+<section class="lnbTwoSteps">
+    <div class="lnbTwoSteps__container">
+        <div class="lnbTwoSteps__container-left">
+            <span>Call To Action Here</span>
+            <fa-icon icon="arrow-right" family="regular"></fa-icon>
+        </div>
+        <div class="lnbTwoSteps__container-right">
+            <span>Call To Action Here</span>
+            <fa-icon icon="arrow-right" family="regular"></fa-icon>
+        </div>
+    </div>
+</section>
+
+<?php echo ob_get_clean();
+}
+add_shortcode('two-steps', 'output_two_steps');
+
+//**************************************** */
+// MOBILE //
+//**************************************** */
+
+// Mobile Header Rectangles //
+//**************************************** */
+function output_mobile_header_rect() {
+  ob_start(); ?>
+<section class="lnbMobileHeaderRect">
+  <div class="lnbMobileHeaderRect__grid">
+      <div class="lnbMobileHeaderRect__content">
+        <div>
+          <div class="lnbMobileHeaderRect__content-logo">
+          <?php echo hypercore_get_logo('large', true, 'header'); ?>
+        </div>
+        <div class="lnbMobileHeaderRect__content-num">
+          <span>24/7</span>
+          <fa-icon icon="phone" family="solid"></fa-icon>
+          <?php echo do_shortcode('[phone_link]'); ?>
+        </div>
+      </div>
+    </div>
+    <div class="lnbMobileHeaderRect__menu">
+      <?php echo do_shortcode('[hyper-toggle nav-type="default"]'); ?>
+    </div>
+  </div>
+</section>
+<?php echo ob_get_clean();
+}
+add_shortcode('mobile-header-rect', 'output_mobile_header_rect');
+
+// Mobile Header Rectangles //
+//**************************************** */
+function output_mobile_sticky_bar() {
+  ob_start(); ?>
+    <div class="lnbMobileStickyBar">
+      <a class="lnbMobileStickyBar__link" href="<?php echo site_url('/#/'); ?>">
+        <fa-icon icon="heart" family="solid"></fa-icon>
+        <span>CTA max 12 C</span>
+      </a>
+      <a class="lnbMobileStickyBar__link phone-num" href="tel:<?php echo do_shortcode('[phone_number]'); ?>">
+        <fa-icon icon="phone-alt" family="solid"></fa-icon>
+        <span>Call Now</span>
+      </a>
+      <a class="lnbMobileStickyBar__link" href="<?php echo site_url('/#/'); ?>">
+        <fa-icon icon="heart" family="solid"></fa-icon>
+        <span>CTA max 12 C</span>
+      </a>
+      <a class="lnbMobileStickyBar__link" href="<?php echo site_url('/#/'); ?>">
+        <fa-icon icon="heart" family="solid"></fa-icon>
+        <span>CTA max 12 C</span>
+      </a>
+    </div>
+<?php echo ob_get_clean();
+}
+add_shortcode('mobile-sticky-bar', 'output_mobile_sticky_bar');
+
+//**************************************** */
+// Other Components //
+//**************************************** */
+
+// Back to top //
+//**************************************** */
+function output_back_to_top() {
+  ob_start(); ?>
+<span onclick="topFunction()" class="back2top" id="back2top">
+    <span>Back To Top</span>
+       <fa-icon icon="arrow-right" family="solid" role="presentation" aria-label="Display Icon"></fa-icon>
+    
+        <script>
+        const backToTop = document.getElementById('back2top');
+        window.onscroll = function() {scrollFunction()};
+        backToTop.addEventListener('click', () => {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+            })
+        </script>
+    </span>
+    <?php echo ob_get_clean();
+}
+add_shortcode('back-to-top', 'output_back_to_top');
+
+//**************************************** */
+// TITLE COMPONENT //
+//**************************************** */
+
+// Title //
+//**************************************** */
+
+function output_title_bar() {
+    ob_start();?>
+      <section class="lnbTitleBar1">
+        <div class="lnbTitleBar1--wrap">
+          <div class="lnbTitleBar1__content">
+            <h1><?php echo get_the_title(); ?></h1>
+            <a is="hypercore-button" class="hypercore-button lnb-hover-wobble" href="<?php echo site_url('/#/'); ?>"><fa-icon icon="arrow-right"></fa-icon> Request Service</a>
+          </div>
+          <div class="lnbTitleBar1__badge">
+            <?php echo do_shortcode('[static-nn-badge]');?>
+          </div>
+        </div>
+      </section>
+    <?php return ob_get_clean();
+}
+add_shortcode('title_bar', 'output_title_bar');

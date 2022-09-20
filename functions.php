@@ -40,3 +40,14 @@ add_filter('post_thumbnail_html', function ($html, $post_id, $thumb_id, $size, $
   }
   return $html;
 }, 10, 5);
+
+//Before & After Function
+
+
+// Add this function to functions.php (replace is_front_page() with is_page('page-id') if element is not occuring on homepage
+function enqueue_jquery() {
+  if (is_page('372')) {
+    wp_enqueue_script('jquery');
+  }
+}
+add_action('wp_enqueue_scripts', 'enqueue_jquery');
