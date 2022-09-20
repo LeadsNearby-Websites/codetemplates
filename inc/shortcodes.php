@@ -1650,7 +1650,7 @@ function output_img_with_bg() {
   ob_start(); ?>
 
 <section class="lnbImgWithBG">
-  <?php echo hypercore_get_lazyload_image( '123', 'lnbImgWithBG__img' ); ?>
+  <?php echo hypercore_get_lazyload_image( '375', 'lnbImgWithBG__img' ); ?>
 </section>
 
 <?php echo ob_get_clean();
@@ -1767,7 +1767,7 @@ function output_shifty_boxes() {
 <section class="lnbShiftyBoxes">
     <div class="lnbShiftyBoxes__grid">
         <div class="lnbShiftyBoxes__content">
-            <div class="lnbShiftyBoxes__heading hyper-lazyload-bg" data-bg-image="<?php echo content_url('/uploads/img-indy-car-racing-gray.jpg'); ?>">
+            <div class="lnbShiftyBoxes__heading hyper-lazyload-bg" data-bg-image="<?php echo content_url('/'); ?>">
                 <h3>H3 Heading Title Length Flexible</h3>
             </div>
             <!-- This commented out code allows the boxes to be paginated, delete if unncessary -->
@@ -1850,7 +1850,7 @@ function output_static_badges() {
 
 <section class="lnbStaticBadges">
     <div class="lnbStaticBadges__grid">
-        <?php echo hypercore_get_lazyload_image(1, 'lnbStaticBadges__badge'); ?>
+        <?php echo hypercore_get_lazyload_image(368, 'lnbStaticBadges__badge'); ?>
     </div>
 </section>
 
@@ -1867,10 +1867,10 @@ function output_two_col_hov_img() {
 <section class="lnbTwoColHoverImgs">
   <div class="lnbTwoColHoverImgs__imgs">
     <a class="lnbTwoColHoverImgs__imgs-link" href="<?php echo site_url('/#/'); ?>">
-      <?php echo hypercore_get_lazyload_image( '123' ); ?>
+      <?php echo hypercore_get_lazyload_image( '368' ); ?>
     </a>
     <a class="lnbTwoColHoverImgs__imgs-link" href="<?php echo site_url('/#/'); ?>">
-      <?php echo hypercore_get_lazyload_image( '123' ); ?>
+      <?php echo hypercore_get_lazyload_image( '368' ); ?>
     </a>
   </div>
   <div class="lnbTwoColHoverImgs__content">
@@ -2164,12 +2164,12 @@ function output_two_img_cta() {
 
 <section class="lnbTwoImgCTA">
     <div class="lnbTwoImgCTA__grid">
-        <?php echo hypercore_get_lazyload_image(1, 'lnbTwoImgCTA__img');?>
+        <?php echo hypercore_get_lazyload_image(368, 'lnbTwoImgCTA__img');?>
         <div class="lnbTwoImgCTA__content">
             <span class="lnbTwoImgCTA__content-heading">Call or Text 24/7</span>
             <?php echo do_shortcode('[phone_link]'); ?>
         </div>
-        <?php echo hypercore_get_lazyload_image(1, 'lnbTwoImgCTA__img');?>
+        <?php echo hypercore_get_lazyload_image(368, 'lnbTwoImgCTA__img');?>
     </div>
 </section>
 
