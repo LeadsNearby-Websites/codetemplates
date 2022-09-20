@@ -253,123 +253,352 @@ add_shortcode('slide-up-box', 'output_slide_up');
 
 function output_dual_nav_header() {
   ob_start(); ?>
-<section style="min-height: 2000px; overflow: hidden">
-  <div id="fake-header">
-    <div class="lnbDualNav">
-        <div class="lnbDualNav__grid">
-            <div class="lnbDualNav__logo">
-                <?php echo hypercore_get_logo() ?>
-            </div>
-            <div class="lnbDualNav__navBlocks">
-                <div class="lnbDualNav__topNav">
-                    <nav class="nav" aria-label="Main Navigation" role="navigation">
-                    <?php wp_nav_menu(array(
-    'theme_location' => 'secondary',
-    'menu_class' => 'nav__menu',
-    'menu_id' => false,
-    'container' => false,
-    'fallback_cb' => false,
-    'depth' => 1));?>
-                    </nav>
-                    <div class="lnbDualNav__afterTopNav">
-                        <a class="lnbDualNav__phone phone-num" href="tel:<?php echo do_shortcode('[phone_number]'); ?>">
-                            <span class="lnbDualNav__phone-text black-text oswald">24/7</span>
-                            <fa-icon class="lnbDualNav__phone-icon lnbRadiate" icon="phone" family="solid"></fa-icon>
-                            <span class="lnbDualNav__phone-text oswald"><?php echo do_shortcode('[phone_number]'); ?></span>
-                        </a>
-                    </div>
-                </div>
-                <div class="lnbDualNav__bottomNav">
-                    <nav class="nav nav--main" aria-label="Main Navigation" role="navigation">
-                    <?php wp_nav_menu(array(
-    'theme_location' => 'primary',
-    'menu_class' => 'nav__menu',
-    'menu_id' => false,
-    'container' => false,
-    'fallback_cb' => false));?>
-                    </nav>
-                    <div class="lnbDualNav__afterBottomNav" style="display: flex; align-items: center;">
-                      Additional Content
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  <div class="lnbHeaderDualNav">
+      <div class="lnbHeaderDualNav__grid">
+          <div class="lnbHeaderDualNav__logo">
+               <?php echo hypercore_get_logo() ?>
+          </div>
+          <div class="lnbHeaderDualNav__navBlocks">
+              <div class="lnbHeaderDualNav__topNav">
+                  <nav class="nav" aria-label="Main Navigation" role="navigation">
+                  <?php wp_nav_menu(array(
+      'theme_location' => 'secondary',
+      'menu_class' => 'nav__menu',
+      'menu_id' => false,
+      'container' => false,
+      'fallback_cb' => false,
+      'depth' => 1));?>
+                  </nav>
+                  <div class="lnbHeaderDualNav__afterTopNav">
+                      <a class="lnbHeaderDualNav__phone phone-num" href="tel:<?php echo do_shortcode('[phone_number]'); ?>">
+                          <span class="lnbHeaderDualNav__phone-text lnbHeaderDualNav__phone-text--hours">24/7</span>
+                          <fa-icon class="lnbHeaderDualNav__phone-icon lnbRadiate" icon="phone" family="solid"></fa-icon>
+                          <span class="lnbHeaderDualNav__phone-text lnbHeaderDualNav__phone-text--num"><?php echo do_shortcode('[phone_number]'); ?></span>
+                      </a>
+                  </div>
+              </div>
+              <div class="lnbHeaderDualNav__bottomNav">
+                  <nav class="nav nav--main" aria-label="Main Navigation" role="navigation">
+                  <?php wp_nav_menu(array(
+      'theme_location' => 'primary',
+      'menu_class' => 'nav__menu',
+      'menu_id' => false,
+      'container' => false,
+      'fallback_cb' => false));?>
+                  </nav>
+                  <a is="hypercore-button" class="hypercore-button lnb-radiate lnb-hover-wobble" href="<?php echo site_url('');?>">
+                    <fa-icon icon="arrow-right"></fa-icon>
+                    <span></span>
+                  </a>
+              </div>
+          </div>
+      </div>
   </div>
-  <div class="mobileHeader">
-        <?php echo hypercore_get_logo() ?>
-        Mobile Header Goes Here
-    </div>
-</section>
-<?php echo ob_get_clean();
+  <?php echo ob_get_clean();
 }
 add_shortcode('dual-nav-header', 'output_dual_nav_header');
 
-function output_threecol_footer() {
+function output_header_left_align() {
   ob_start(); ?>
-<section class="lnbThreeColFooter">
-    <div class="lnbThreeColFooter__grid">
-        <div class="lnbThreeColFooter__column">
-            <span class="lnbThreeColFooter__column-heading">Specific Heading</span>
-            <p class="lnbThreeColFooter__column-info">
-                <span>Phone Number etc</span>
-                <span>Phone Number etc</span>
-            </p>
-            <p class="lnbThreeColFooter__column-info">
-                <span>License # etc</span>
-                <span>License # etc</span>
-            </p>
-            <p class="lnbThreeColFooter__column-info">
-                <span>111 Example Ln.</span>
-                <span>City, State 12345</span>
-            </p>
-        </div>
-        <div class="lnbThreeColFooter__column">
-            <span class="lnbThreeColFooter__column-heading">Service Area</span>
-            <p>Short summary of service area lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin facilisis dolor leo.</p>
-        </div>
-        <div class="lnbThreeColFooter__column">
-            <span class="lnbThreeColFooter__column-heading">Helpful Links</span>
-            <ul>
-                <li><a href="<?php echo site_url('/#/'); ?>">Example Link</a></li>
-                <li><a href="<?php echo site_url('/#/'); ?>">Example Link</a></li>
-                <li><a href="<?php echo site_url('/#/'); ?>">Example Link</a></li>
-                <li><a href="<?php echo site_url('/#/'); ?>">Example Link</a></li>
-                <li><a href="<?php echo site_url('/#/'); ?>">Example Link</a></li>
-                <li><a href="<?php echo site_url('/#/'); ?>">Example Link</a></li>
-            </ul>
-        </div>
+  <section class="lnbHeaderLeftAlign">
+    <div class="lnbHeaderLeftAlign__logo">
+      <?php echo hypercore_get_logo('large', true, 'header'); ?>
     </div>
-</section>
-<section class="lnbSocialLinks">
-<?php
-$social_links = hypercore_get_social_links();
-  foreach ($social_links as $social_link_network => $social_link_value) {
-    $social_link_icon = $social_link_network;
-    if ($social_link_network === 'facebook') {
-      $social_link_icon = 'facebook-f';
-    }
-    if ($social_link_network === 'linkedin') {
-      $social_link_icon = 'linkedin-in';
-    }
-    echo '<a class="lnbSocialLinks__link lnbSocialLinks__link--' . $social_link_network . '" target="blank" href="' . $social_link_value . '"><fa-icon family="brands" icon="' . $social_link_icon . '"></fa-icon></a>';
-  }
-  ?>
-</section>
-<section class="lnbCopyright">
-    <div class="lnbCopyright__name">
-        <?php echo do_shortcode('[site_copyright]'); ?>
+    <div class="lnbHeaderLeftAlign__content">
+      <div class="lnbHeaderLeftAlign__content-left">
+        <div class="lnbHeaderLeftAlign__content-left-message">
+          <span> Header Short Message Optional </span>
+        </div>
+        <div class="lnbHeaderLeftAlign__content-left-phone">
+          <fa-icon icon="phone" family="solid"></fa-icon>
+          <a href="tel:555-555-555">555-555-5555</a>
+        </div>
+      </div>
+      <div class="lnbHeaderLeftAlign__content-btns">
+        <a title="Button CTA" class="hypercore-button lnb-radiate" is="hypercore-button" href="" target="_blank">
+          <fa-icon icon="arrow-right" class="" family="solid"></fa-icon>
+          <span>Button CTA</span>
+        </a>
+        <a title="Button CTA" class="hypercore-button lnb-radiate" is="hypercore-button" href="" target="_blank">
+          <fa-icon icon="arrow-right" family="solid"></fa-icon>
+          <span>Button CTA</span>
+
+        </a>
+      </div>
     </div>
-    <div class="lnbCopyright__links">
-        <a href="<?php echo site_url('/terms-and-conditions/'); ?>">Terms &amp; Conditions</a> |
-        <a href="<?php echo site_url('/privacy-policy/'); ?>">Privacy Policy</a> |
-        <a href="<?php echo site_url('/sitemap/'); ?>">Sitemap</a> |
-        Design &amp; Marketing by <a target="blank" href="https://www.leadsnearby.com/">LeadsNearby</a>
-    </div>
-</section>
-<?php echo ob_get_clean();
+  </section>
+  <?php echo ob_get_clean();
 }
-add_shortcode('three-col-footer', 'output_threecol_footer');
+add_shortcode('header-left-align', 'output_header_left_align');
+
+function output_header_two_block() {
+  ob_start(); ?>
+    <div class="lnbHeaderTwoBlock">
+        <div class="lnbHeaderTwoBlock__grid">
+            <?php echo hypercore_get_logo(); ?>
+            <div class="lnbHeaderTwoBlock__content">
+                <div class="lnbHeaderTwoBlock__content-blocks">
+                    <div class="lnbHeaderTwoBlock__block lnbHeaderTwoBlock__block--phone">
+                        <?php echo do_shortcode('[phone_link]'); ?>
+                        <span class="lnbHeaderTwoBlock__block-text">Header Short Message</span>
+                    </div>
+                    <div class="lnbHeaderTwoBlock__block lnbHeaderTwoBlock__block--about">
+                        <?php echo hypercore_get_lazyload_image(1, 'lnbHeaderTwoBlock__block-img');?>
+                        <div class="unflex">
+                            <span class="lnbHeaderTwoBlock__block-text  lnbHeaderTwoBlock__block-text--bold">Since 1970</span>
+                            <span class="lnbHeaderTwoBlock__block-text">Veteran Owned Business Family Owned & Operated</span>
+                        </div>
+                    </div>
+                </div>
+                <nav class="nav nav--main" aria-label="Main Navigation" role="navigation">
+                  <?php wp_nav_menu(array(
+      'theme_location' => 'primary',
+      'menu_class' => 'nav__menu',
+      'menu_id' => false,
+      'container' => false,
+      'fallback_cb' => false));?>
+                </nav>
+            </div>
+        </div>
+    </div>
+  <?php echo ob_get_clean();
+}
+add_shortcode('header-two-block', 'output_header_two_block');
+
+function output_header_three_block() {
+  ob_start(); ?>
+  <section class="lnbHeaderThreeBlock">
+    <div class="lnbHeaderThreeBlock__logo">
+      <?php echo hypercore_get_logo('large', true, 'header'); ?>
+    </div>
+    <div class="lnbHeaderThreeBlock__content">
+      <div class="lnbHeaderThreeBlock__content-left">
+        <fa-icon icon="users" family="solid"></fa-icon>
+        <p>
+          <span>Promotional Message</span>
+          <a title="Apply Online" href="<?php echo site_url(''); ?>">Promotional Link
+            &gt;&gt;</a>
+        </p>
+      </div>
+      <div class="phoneBlock">
+        <div class="phoneBlock__grid">
+          <fa-icon icon="phone" family="solid"></fa-icon>
+          <?php echo do_shortcode('[phone_link]'); ?>
+        </div>
+        <span>Message Goes Here</span>
+      </div>
+      <div class="lnbHeaderThreeBlock__content-btns">
+        <a title="Make A Payment" class="hypercore-button" is="hypercore-button" href=""
+          style="margin: 0.25em 0!important" target="_blank">
+          <span>Call to Action</span>
+          <fa-icon icon="caret-right" family="solid"></fa-icon>
+        </a>
+        <?php echo do_shortcode('[v8_schedule_button form-id="" heading="Schedule Your Next Service, Repair or Install" text="Schedule Now"]'); ?>
+      </div>
+    </div>
+  </section>
+  <?php echo ob_get_clean();
+}
+add_shortcode('header-three-block', 'output_header_three_block');
+
+function output_header_three_column() {
+  ob_start(); ?>
+  <section class="lnbHeaderThreeCol">
+    <div class="lnbHeaderThreeCol__logo">
+      <?php echo hypercore_get_logo('large', true, 'header'); ?>
+     </div>
+     <div class="lnbHeaderThreeCol__content">
+       <div class="lnbHeaderThreeCol__content-num">
+         <span>Call or Text 24/7</span>
+         <a class="lnbHeaderThreeCol__content-num link phone-num" href=" tel:<?php echo do_shortcode('[phone_number]'); ?>">
+           <div>
+             <fa-icon icon="phone" family="solid"></fa-icon>
+             <?php echo do_shortcode('[phone_number]'); ?>
+           </div>
+         </a>
+         </div>
+         <div class="lnbHeaderThreeCol__content-btns">
+           <a is="hypercore-button" href="<?php echo site_url('/'); ?>" class="hypercore-button"><fa-icon icon="arrow-right" family="solid"></fa-icon>CTA Button</a>
+           <a is="hypercore-button" href="<?php echo site_url('/'); ?>" class="hypercore-button"><fa-icon icon="arrow-right" family="solid"></fa-icon>CTA Button</a>
+         </div>
+      </div>
+    </div>
+  </section>
+  <?php echo ob_get_clean();
+}
+add_shortcode('header-three-column', 'output_header_three_column');
+
+function output_threecol_footer() {
+    ob_start(); ?>
+<section class="lnb3ColFooter">
+  <div class="lnb3ColFooter__logo">
+    <?php echo hypercore_get_logo() ?>
+  </div>
+  <div class="lnb3ColFooter__wrap">
+    <div class="lnb3ColFooter__col">
+      <div class="lnb3ColFooter__colHeading">
+        Serving You
+      </div>
+      <p>
+        License Numbers(s): <br />
+        XXXXXXXXXXXXXXXXXXXXX
+      </p>
+      <p>Serving XXX Community Since 1980</p>
+      <p>(Exceptional Main Services)</p>
+      <p><strong>Business Hours</strong><br />
+        Monday-Friday Xam-Xpm<br />
+        Saturday Xam - Xpm<br />
+        Service Line: 24 Hours<br />
+      </p>
+    </div>
+    <div class="lnb3ColFooter__col">
+      <div class="lnb3ColFooter__colHeading">
+        Helpful Links
+      </div>
+      <div class="lnb3ColFooter__menu">
+        <?php echo wp_nav_menu(array(
+          'menu'       => 4,
+          'menu_class' => "lnb3ColFooter__menuInner",
+        )); ?>
+      </div>
+      <div class="lnb3ColFooter__colHeading">
+        Connect
+      </div>
+      <div class="lnb3ColFooter__socialIcons">
+        <a href="" target="_blank">
+          <fa-icon icon="instagram" family="brands"></fa-icon>
+        </a>
+        <a href="" target="_blank">
+          <fa-icon icon="youtube" family="brands"></fa-icon>
+        </a>
+        <a href="" target="_blank">
+          <fa-icon icon="facebook-f" family="brands"></fa-icon>
+        </a>
+        <a href="" target="_blank">
+          <fa-icon icon="linkedin" family="brands"></fa-icon>
+        </a>
+        <a href="" target="_blank">
+          <fa-icon icon="google" family="brands"></fa-icon>
+        </a>
+        <a href="" target="_blank"><img src="<?php echo do_shortcode('[site_url]'); ?>/wp-content/uploads/icon-bbb.svg">
+        </a>
+      </div>
+    </div>
+    <div class="lnb3ColFooter__col">
+      <div class="lnb3ColFooter__colHeading">
+        Get In Touch
+      </div>
+      <div class="lnb3ColFooter__contact">
+        <section>
+          <fa-icon family="solid" icon="phone"></fa-icon>
+          <aside class="lnb3ColFooter__contactContent">
+            <span>
+              <strong><?php echo do_shortcode('[phone_link]'); ?></strong> -- Call Now
+            </span>
+          </aside>
+        </section>
+        <section>
+          <fa-icon family="solid" icon="mobile"></fa-icon>
+          <aside class="lnb3ColFooter__contactContent">
+            <span>
+              <strong><a href="tel:555-555-555">555-555-555</a></strong> -- Text Us
+            </span>
+          </aside>
+        </section>
+        <section>
+          <fa-icon family="solid" icon="envelope"></fa-icon>
+          <aside class="lnb3ColFooter__contactContent" class="lnb3ColFooter__contactContent">
+            <span>
+              <strong><a href="mailto:questions@url.com">questions@url.com</a></strong>
+            </span>
+          </aside>
+        </section>
+        <section>
+          <fa-icon family="solid" icon="calendar"></fa-icon>
+          <aside class="lnb3ColFooter__contactContent">
+            <span><strong>Schedule</strong> -- Easy Scheduling</span>
+          </aside>
+        </section>
+        <section>
+          <fa-icon family="solid" icon="map-marker">
+          </fa-icon>
+          <aside class="lnb3ColFooter__contactContent">
+            <strong>Our Location</strong>
+            <span>Street Address</span>
+            <span>City, State, Zipcode</span>
+          </aside>
+        </section>
+      </div>
+    </div>
+  </div>
+</section>
+  <?php echo ob_get_clean();
+  }
+  add_shortcode('three-col-footer', 'output_threecol_footer');
+  
+  function output_copyright() {
+    ob_start();
+    $bi_type = get_theme_mod('hypercore_bi_type', true);
+    switch ($bi_type) {
+      case "Electrician":
+        $bi_type_name = "Electrician";
+        $bi_type_industry = "electricians";
+        break;
+      case "General Contractor":
+        $bi_type_name = "General Contractor";
+        $bi_type_industry = "general-contractor";
+        break;
+      case "Home & Construction Business":
+        $bi_type_name = "Home & Construction";
+        $bi_type_industry = "home-construction";
+        break;
+      case "House Painter":
+        $bi_type_name = "Painter";
+        $bi_type_industry = "painters";
+        break;
+      case "HVAC":
+        $bi_type_name = "HVAC";
+        $bi_type_industry = "hvac-companies";
+        break;
+      case "Local Business":
+        $bi_type_name = "Local Business";
+        $bi_type_industry = "local-business";
+        break;
+      case "Locksmith":
+        $bi_type_name = "Locksmith";
+        $bi_type_industry = "locksmith";
+        break;
+      case "Moving Company":
+        $bi_type_name = "Moving Company";
+        $bi_type_industry = "moving-companies";
+        break;
+      case "Plumber":
+        $bi_type_name = "Plumber";
+        $bi_type_industry = "plumbers";
+        break;
+      case "Roofing Contractor":
+        $bi_type_name = "Roofing Contractor";
+        $bi_type_industry = "roofing-companies";
+        break;    
+    }
+    ?>
+    <section class="lnbCopyright">
+      <div class="lnbCopyright--wrap">
+        <div class="lnbCopyright__info">
+          <?php echo do_shortcode('[site_copyright]');?>
+          <div class="lnbCopyright__info-links">
+            <a href="<?php echo site_url('/terms-conditions/');?>">Terms & Conditions</a> | <a href="<?php echo site_url('/privacy-policy/');?>">Privacy Policy</a> | <a href="<?php echo site_url('/sitemap/');?>">Sitemap</a>
+          </div> 
+        </div>
+        <div class="lnbCopyright__lnb">
+          <a href="https://www.leadsnearby.com/"><img class="hyper-lazyload" data-lazy-src="https://site-template-files.s3.amazonaws.com/LNB-logo-footer.svg"/></a>
+          <span><a href="https://leadsnearby.com/who-we-serve/<?php echo $bi_type_industry ?>" title="<?php echo $bi_type_name ?> Marketing and SEO"><?php echo $bi_type_name ?> Marketing and SEO</a> by <a href="https://www.leadsnearby.com/">LeadsNearby</a></span>
+        </div>
+      </div>
+    </section>
+    <?php echo ob_get_clean();
+  }
+  add_shortcode('copyright', 'output_copyright');
 
 // Tabs
 function output_tabs() {

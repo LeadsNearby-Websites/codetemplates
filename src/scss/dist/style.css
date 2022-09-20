@@ -109,54 +109,35 @@ main {
   margin-left: 0.25em;
 }
 .lnbArrowHover:hover .lnbArrowHover__arrow, .lnbArrowHover:focus .lnbArrowHover__arrow {
-  -webkit-animation-name: hvr-wobble-horizontal;
-          animation-name: hvr-wobble-horizontal;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-}
-
-@-webkit-keyframes hvr-wobble-horizontal {
-  16.65% {
-    transform: translateX(4px);
-  }
-  33.3% {
-    transform: translateX(-3px);
-  }
-  49.95% {
-    transform: translateX(2px);
-  }
-  66.6% {
-    transform: translateX(-1px);
-  }
-  83.25% {
-    transform: translateX(1px);
-  }
-  100% {
-    transform: translateX(0);
-  }
+  animation-name: hvr-wobble-horizontal;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
 }
 
 @keyframes hvr-wobble-horizontal {
   16.65% {
+    -webkit-transform: translateX(4px);
     transform: translateX(4px);
   }
   33.3% {
+    -webkit-transform: translateX(-3px);
     transform: translateX(-3px);
   }
   49.95% {
+    -webkit-transform: translateX(2px);
     transform: translateX(2px);
   }
   66.6% {
+    -webkit-transform: translateX(-1px);
     transform: translateX(-1px);
   }
   83.25% {
+    -webkit-transform: translateX(1px);
     transform: translateX(1px);
   }
   100% {
+    -webkit-transform: translateX(0);
     transform: translateX(0);
   }
 }
@@ -167,7 +148,7 @@ main {
   max-width: 1100px !important;
   margin: 3em auto 2em !important;
   display: block;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1607843137);
+  box-shadow: 0 3px 6px #00000029;
 }
 .lnbFormBox__heading,
 .lnbFormBox .gsection_title,
@@ -221,8 +202,7 @@ main {
   flex-wrap: wrap;
   align-items: center;
   place-content: center;
-  -moz-column-gap: 1em;
-       column-gap: 1em;
+  column-gap: 1em;
   padding: 3em 2em 0;
   row-gap: 2em;
 }
@@ -252,22 +232,10 @@ main {
 }
 
 .lnbRadiate, .lnbRadiate--red {
-  -webkit-animation: radiate-default 3s infinite;
-          animation: radiate-default 3s infinite;
+  animation: radiate-default 3s infinite;
   transition: 0.2s;
   margin: 1em;
   display: inline-block;
-}
-@-webkit-keyframes radiate-default {
-  0% {
-    box-shadow: 0 0 0 0 rgba(93, 93, 93, 0.7);
-  }
-  65% {
-    box-shadow: 0 0 0 0.45em rgba(93, 93, 93, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(93, 93, 93, 0);
-  }
 }
 @keyframes radiate-default {
   0% {
@@ -285,19 +253,7 @@ main {
   transition: 0.2s;
 }
 .lnbRadiate--red {
-  -webkit-animation: radiate-red 3s infinite;
-          animation: radiate-red 3s infinite;
-}
-@-webkit-keyframes radiate-red {
-  0% {
-    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
-  }
-  65% {
-    box-shadow: 0 0 0 0.45em rgba(255, 0, 0, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
-  }
+  animation: radiate-red 3s infinite;
 }
 @keyframes radiate-red {
   0% {
@@ -379,7 +335,7 @@ main {
   }
 }
 .lnbAboutIcons--sidebar {
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1215686275);
+  box-shadow: 0 0 3px #0000001f;
   display: flex;
   flex-direction: column;
   padding-top: 3em;
@@ -415,11 +371,11 @@ main {
   justify-content: center;
   align-items: center;
   padding: 1em;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1607843137);
+  box-shadow: 0 3px 6px #00000029;
   background: #fff;
 }
 .lnbBadgeRotator__carousel {
-  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1607843137);
+  box-shadow: 3px 3px 6px #00000029;
   background: #fff;
 }
 .lnbBadgeRotator__carousel .glide__slides {
@@ -465,14 +421,13 @@ main {
   flex-wrap: wrap;
   max-width: 1600px;
   margin: 0 auto;
-  -moz-column-gap: 1.5em;
-       column-gap: 1.5em;
+  column-gap: 1.5em;
   row-gap: 1.5em;
 }
 .lnbSmallCard__item {
   position: relative;
   background: #f7f7f7;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1607843137);
+  box-shadow: 0 3px 6px #00000029;
   margin: 0 auto;
   flex-basis: 300px;
   min-width: 300px;
@@ -491,7 +446,7 @@ main {
   width: 5em;
   height: 5em;
   background: #fff;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1607843137);
+  box-shadow: 0 3px 6px #00000029;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -542,7 +497,7 @@ main {
 }
 .lnbLargeCard__item {
   background-color: #f7f7f7;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1607843137);
+  box-shadow: 0 3px 6px #00000029;
   padding: 0 0 3em 0;
 }
 .lnbLargeCard__item-icon {
@@ -553,7 +508,7 @@ main {
   position: relative;
   top: -1em;
   left: 3em;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1607843137);
+  box-shadow: 0 3px 6px #00000029;
 }
 @media only screen and (max-width: 800px) {
   .lnbLargeCard__item-icon {
@@ -586,7 +541,7 @@ main {
 .lnbHeaderDualNav {
   padding: 1em 1em 0;
   background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4509803922);
+  box-shadow: 0 0 10px #00000073;
 }
 .lnbHeaderDualNav__logo {
   padding-bottom: 1em;
@@ -680,8 +635,7 @@ main {
   min-height: 100%;
   display: flex;
   align-items: center;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   font-size: 1.125em;
   color: black;
 }
@@ -1038,7 +992,7 @@ main {
   color: #fff;
   background-color: #333;
   border-radius: 50px;
-  border: 5px solid rgba(224, 47, 39, 0.2);
+  border: 5px solid #E02F2733;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1052,8 +1006,7 @@ main {
   color: #00186A;
 }
 .lnbHeaderThreeCol__content-num:hover .link fa-icon {
-  -webkit-animation: 3s infinite pulse-grey !important;
-          animation: 3s infinite pulse-grey !important;
+  animation: 3s infinite pulse-grey !important;
   transition: 0.2s !important;
   background: transparent linear-gradient(180deg, #DD2476 0, #F34245 50%, #FF512F 100%) 0 0 no-repeat padding-box;
 }
@@ -1066,7 +1019,7 @@ main {
   text-align: center;
   border-radius: 5em;
   font-family: Lato, sans-serif;
-  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.1607843137);
+  text-shadow: 0 3px 6px #00000029;
   font-size: clamp(15px, 1.3vw, 18px) !important;
   align-items: center;
   padding: 0.72em 0.5em !important;
@@ -1083,8 +1036,7 @@ main {
 .lnbHeaderThreeCol .hypercore-button:hover, .lnbHeaderThreeCol .lnbVidFacade__close:hover {
   color: #fff;
   background: transparent linear-gradient(180deg, #F34245 0, #FF512F 50%, #FF512F 100%) 0 0 no-repeat padding-box;
-  -webkit-animation: 3s infinite pulse-grey !important;
-          animation: 3s infinite pulse-grey !important;
+  animation: 3s infinite pulse-grey !important;
   transition: 0.2s !important;
 }
 
@@ -1102,7 +1054,7 @@ main {
 .lnbHeaderTwoBlock {
   background-color: #E9E9E9;
   padding: 0 1em;
-  box-shadow: 0 0px 6px rgba(0, 0, 0, 0.4117647059);
+  box-shadow: 0 0px 6px #00000069;
 }
 .lnbHeaderTwoBlock__grid {
   max-width: 1200px;
@@ -1355,7 +1307,7 @@ main {
 .lnbTabs__img {
   align-self: center;
   background: #f7f7f7;
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
+  box-shadow: 0px 3px 6px #00000029;
 }
 @media only screen and (max-width: 1200px) {
   .lnbTabs__img {
@@ -1437,7 +1389,7 @@ main {
   font-size: 1.25em;
   text-align: center;
   background: #f7f7f7;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1607843137);
+  box-shadow: 0 3px 6px #00000029;
 }
 .lnbResources__card-icon {
   display: flex;
@@ -1496,8 +1448,7 @@ main {
   font-size: 1.5em;
   display: flex;
   flex-direction: row;
-  -moz-column-gap: 1.5em;
-       column-gap: 1.5em;
+  column-gap: 1.5em;
   padding: 1em;
 }
 
@@ -1696,4 +1647,4 @@ main {
   .lnbImageSlider .glide__arrow {
     font-size: 1em;
   }
-}/*# sourceMappingURL=style.css.map */
+}
