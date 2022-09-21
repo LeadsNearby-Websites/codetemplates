@@ -1,6 +1,6 @@
 <?php
 function child_theme_enqueue_styles() {
-  wp_enqueue_style('hypercore-child', get_stylesheet_directory_uri() . '/dist/css/style.min.css', array('hypercore'), null, false);
+  wp_enqueue_style('hypercore-child', get_stylesheet_directory_uri() . '/dist/css/style.css', array('hypercore'), null, false);
   wp_enqueue_style('glide', get_stylesheet_directory_uri() . '/dist/glide/css/glide.core.min.css', array('hypercore'), null);
   hypercore\ScriptLoader::load_script('glide', get_stylesheet_directory_uri() . '/dist/glide/glide.min.js', array(), '3.4.1');
   hypercore\ScriptLoader::load_script('badge-rotator', get_stylesheet_directory_uri() . '/dist/js/badge-rotator.js', array('glide'), '1.0.0');
@@ -43,7 +43,6 @@ add_filter('post_thumbnail_html', function ($html, $post_id, $thumb_id, $size, $
 
 //Before & After Function
 
-
 // Add this function to functions.php (replace is_front_page() with is_page('page-id') if element is not occuring on homepage
 function enqueue_jquery() {
   if (is_page('372')) {
@@ -51,3 +50,39 @@ function enqueue_jquery() {
   }
 }
 add_action('wp_enqueue_scripts', 'enqueue_jquery');
+
+// Hypercore Get Lazyload Image
+function hyper_get_lazyload_image($id, $class = '') {
+  if (is_array($class)) {
+    $class = implode(" ", $class);
+  }
+
+  // Set paramaters for Hypercore lazyloading and disable default WP lazyloading
+  $lazyAttr = array(
+    'class' => 'hyper-lazyload ' . $class,
+    'data-lazy-src' => wp_get_attachment_image_url($id, 'full'),
+    'loading' => '',
+  );
+
+  add_filter('wp_calculate_image_srcset_meta', '__return_null');
+
+  $html = wp_get_attachment_image($id, 'full', false, $lazyAttr);
+
+  remove_filter('wp_calculate_image_srcset_meta', '__return_null');
+
+  return $html;
+}
+
+//List Child Pages
+function hypercore_list_child_pages() { 
+	global $post; 
+	if ( is_page() && $post->post_parent )
+		$childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $post->post_parent . '&echo=0' );
+	else
+		$childpages = wp_list_pages( 'sort_column=menu_order&title_li=&child_of=' . $post->ID . '&echo=0' );
+	if ( $childpages ) {
+		$string = '<ul class="wpb_page_list">' . $childpages . '</ul>';
+	}
+	return $string;
+}
+add_shortcode('hypercore_childpages', 'hypercore_list_child_pages');

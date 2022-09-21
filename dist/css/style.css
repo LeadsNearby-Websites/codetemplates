@@ -43,13 +43,6 @@ Developer:
   list-style: none;
   padding: 0;
 }
-.wsp-pages-list .page_item_has_children > a {
-  pointer-events: none;
-  color: #333;
-  font-size: 1.15em;
-  margin: 0.75em 0;
-  display: block;
-}
 .wsp-pages-list .page_item ul {
   list-style: none;
   margin-bottom: 1em;

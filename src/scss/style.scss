@@ -53,15 +53,6 @@ Developer:
     @extend .source-font;
 
     .page_item {
-      &_has_children {
-        > a {
-          pointer-events: none;
-          color: #333;
-          font-size: 1.15em;
-          margin: 0.75em 0;
-          display: block;
-        }
-      }
 
       ul {
         list-style: none;
