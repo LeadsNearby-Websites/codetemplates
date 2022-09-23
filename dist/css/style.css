@@ -3801,4 +3801,86 @@ main {
   .lnbTitleBar1 {
     padding: 2rem;
   }
+}
+
+.interior-page-content-has-sidebar {
+  padding: 1rem;
+}
+
+.lnbSidebarSlogan {
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 3px 6px #333;
+  background-color: white;
+}
+
+.lnbSidebarSlogan-backgroundImg {
+  background-position: center;
+  background-size: cover;
+  padding: clamp(3em, 4vw, 4.3em) clamp(1em, 3vw, 4em);
+}
+
+.lnbSidebarSlogan__container {
+  padding: 4em clamp(1em, 3vw, 3.5em);
+}
+
+.lnbSidebarSlogan__container-slogan {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.lnbSidebarSlogan__container-slogan--svg {
+  margin-bottom: 2em;
+  max-width: 200px;
+}
+
+.lnbSidebarSlogan__container-slogan--img {
+  margin-bottom: 1em;
+}
+
+.lnbSidebarSlogan__container-links ul {
+  padding: 0;
+}
+.lnbSidebarSlogan__container-links ul li {
+  list-style: none;
+  height: 110px;
+  border-bottom: 1px solid #333;
+  display: flex;
+  gap: 1em;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  align-content: center;
+  font-size: 1.2em;
+}
+.lnbSidebarSlogan__container-links ul li fa-icon {
+  color: #f7922f;
+}
+.lnbSidebarSlogan__container-links ul li a {
+  font-weight: 600;
+  color: #3170b8;
+}
+.lnbSidebarSlogan__container-links ul li:hover fa-icon {
+  -webkit-animation: 1s infinite stankyLeg;
+          animation: 1s infinite stankyLeg;
+}
+
+@media only screen and (min-width: 1366px) {
+  .interior-page-content-has-sidebar {
+    display: grid;
+    max-width: calc(1485px + 3rem);
+    grid-gap: 5rem;
+    grid-template-columns: 2fr 2fr;
+    padding-right: 0;
+    margin-right: 0;
+  }
+}
+@media only screen and (max-width: 1366px) and (min-width: 941px) {
+  .interior-page-content-has-sidebar {
+    grid-template-columns: 2fr 1.5fr;
+    max-width: calc(1485px + 3rem);
+    grid-gap: 5rem;
+    padding-right: 0;
+    margin-right: 0;
+  }
 }/*# sourceMappingURL=style.css.map */
