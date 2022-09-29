@@ -591,8 +591,6 @@ function output_threecol_footer() {
         License Numbers(s): <br />
         XXXXXXXXXXXXXXXXXXXXX
       </p>
-      <p>Serving XXX Community Since 1980</p>
-      <p>(Exceptional Main Services)</p>
       <p><strong>Business Hours</strong><br />
         Monday-Friday Xam-Xpm<br />
         Saturday Xam - Xpm<br />
@@ -646,14 +644,6 @@ function output_threecol_footer() {
           </aside>
         </section>
         <section>
-          <fa-icon family="solid" icon="mobile"></fa-icon>
-          <aside class="lnb3ColFooter__contactContent">
-            <span>
-              <strong><a href="tel:555-555-555">555-555-555</a></strong> -- Text Us
-            </span>
-          </aside>
-        </section>
-        <section>
           <fa-icon family="solid" icon="envelope"></fa-icon>
           <aside class="lnb3ColFooter__contactContent" class="lnb3ColFooter__contactContent">
             <span>
@@ -664,7 +654,7 @@ function output_threecol_footer() {
         <section>
           <fa-icon family="solid" icon="calendar"></fa-icon>
           <aside class="lnb3ColFooter__contactContent">
-            <span><strong>Schedule</strong> -- Easy Scheduling</span>
+            <span><strong><a href="/">Request Service</a></strong></span>
           </aside>
         </section>
         <section>

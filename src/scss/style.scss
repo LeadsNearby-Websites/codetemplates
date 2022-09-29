@@ -15,6 +15,54 @@ Developer:
 @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap");
 
+.gform_button, 
+.gform_next_button,
+.gform_prev_button,
+.hypercore-button:not(.hypercore-button.noBtn) {
+  animation: 3s infinite radiate-default;
+  margin: 1em 0;
+  border-radius: 50px;
+  width: fit-content;
+  border: none!important;
+  grid-gap: 10px;
+  padding: 0.5em 1.5em;
+  position: relative;
+  font-size: clamp(1.5rem,1vw,2rem);
+  color: #fff;
+  display: flex;
+  background: var(--theme-secondary)!important;
+  font-weight: 600;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes hvr-wobble-horizontal {
+  16.65% {
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px);
+  }
+  33.3% {
+    -webkit-transform: translateX(-3px);
+    transform: translateX(-3px);
+  }
+  49.95% {
+    -webkit-transform: translateX(2px);
+    transform: translateX(2px);
+  }
+  66.6% {
+    -webkit-transform: translateX(-1px);
+    transform: translateX(-1px);
+  }
+  83.25% {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
 .source-font {
   font-family: "Source Code Pro", monospace;
 }
@@ -137,32 +185,6 @@ main {
       animation-timing-function: ease-in-out;
       animation-iteration-count: infinite;
     }
-  }
-}
-@keyframes hvr-wobble-horizontal {
-  16.65% {
-    -webkit-transform: translateX(4px);
-    transform: translateX(4px);
-  }
-  33.3% {
-    -webkit-transform: translateX(-3px);
-    transform: translateX(-3px);
-  }
-  49.95% {
-    -webkit-transform: translateX(2px);
-    transform: translateX(2px);
-  }
-  66.6% {
-    -webkit-transform: translateX(-1px);
-    transform: translateX(-1px);
-  }
-  83.25% {
-    -webkit-transform: translateX(1px);
-    transform: translateX(1px);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
   }
 }
 
@@ -1846,6 +1868,7 @@ main {
   max-width: 1100px;
   margin: 0 auto;
   padding: 25px 0 75px 0;
+  color: #202124;
 
   &__logo {
     text-align: left;
@@ -1888,15 +1911,38 @@ main {
         list-style-type: none;
         position: relative;
         margin: 7px 0 7px 0;
-
+        a {
+          background: none;
+        }
+        &:hover {
+          a {
+            font-weight: 700;
+          }
+          &::before {
+            content: '>';
+            position: absolute;
+            font-weight: bold;
+            width: 0;
+            height: 100%;
+            margin-left: .5em;
+            font-size: 25px;
+            display: flex;
+            align-items: center;
+          }
+        }
         &::before {
           content: '>';
           position: absolute;
           font-weight: bold;
           width: 0;
+          color: var(--theme-primary);
           height: 100%;
-          left: -15px;
-          font-size: 16px;
+          left: -30px;
+          transition-duration: 500ms;
+          transition-property: margin-left;
+          font-size: 25px;
+          display: flex;
+          align-items: center;
         }
       }
     }
@@ -1944,6 +1990,10 @@ main {
       }
     }
   }
+  
+  .sub-menu {
+    display:none;
+  }
 }
 // General Styles to Modify Theme Defaults
 .footer {
@@ -1964,6 +2014,11 @@ main {
 
   & a {
     color: #e9e9e9 !important;
+
+    &:hover{
+      color: #FFA400 !important;
+    } 
+
   }
 
   &__info {
